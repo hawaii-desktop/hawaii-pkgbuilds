@@ -1,5 +1,4 @@
 # Maintainer: Martin Sandsmark <sandsmark@iskrembilen.com>
-# Contributor: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=extra-cmake-modules-git
 pkgver=20121025

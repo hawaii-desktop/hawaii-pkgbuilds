@@ -1,19 +1,19 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
-pkgname=terminal-git
+pkgname=hawaii-fluid-themes-git
 pkgver=20121028
 pkgrel=1
-pkgdesc="Hawaii: Terminal"
+pkgdesc="Hawaii: Fluid themes"
 arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
 license=('LGPL')
-depends=('vibe-git')
-makedepends=('git' 'cmake')
+depends=('qt5-qtsvg-git')
+makedepends=('git' 'cmake' 'hawaii-vibe-git')
 source=()
 md5sums=()
 
-_gitroot="git://github.com/hawaii-desktop/terminal.git"
-_gitname=terminal
+_gitroot="git://github.com/hawaii-desktop/fluid-themes.git"
+_gitname=fluid-themes
 
 build() {
 	if [ ! -d "${_gitname}" ]; then

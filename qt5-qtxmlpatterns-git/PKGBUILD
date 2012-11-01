@@ -2,7 +2,7 @@
 # Contributor: Anselmo L. S. Melo <anselmolsm@gmail.com>
 
 pkgname=qt5-qtxmlpatterns-git
-pkgver=20121021
+pkgver=20121101
 pkgrel=1
 pkgdesc="Qt 5: qtxmlpatterns module"
 groups=('qt5' 'qt5-addons')
@@ -29,10 +29,18 @@ build() {
 
 	/opt/qt5/bin/qmake
 	make
+
+	# It seems the tools subdir doesn't get built
+	cd tools
+	/opt/qt5/bin/qmake
+	make
 }
 
 package() {
 	cd "${_gitname}"
 
+	make INSTALL_ROOT="${pkgdir}" install
+
+	cd tools
 	make INSTALL_ROOT="${pkgdir}" install
 }

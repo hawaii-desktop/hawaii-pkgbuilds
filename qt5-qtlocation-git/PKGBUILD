@@ -1,7 +1,7 @@
 # Maintainer: Sergio Correia <sergio.correia@uece.net>
 
 pkgname=qt5-qtlocation-git
-pkgver=20121023
+pkgver=20121101
 pkgrel=1
 pkgdesc="Qt 5: qtlocation module"
 groups=('qt5' 'qt5-addons')

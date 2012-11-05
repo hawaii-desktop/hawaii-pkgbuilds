@@ -3,7 +3,7 @@
 # Based on qt5-qtbase-git from Sergio Correia <sergio.correia@uece.net>
 
 pkgname=qt5-qtbase-for-hawaii-git
-pkgver=20121102
+pkgver=20121105
 pkgrel=1
 pkgdesc="Qt 5: qtbase module"
 arch=('i686' 'x86_64')
@@ -29,7 +29,7 @@ build() {
 	msg "GIT checkout done."
 
 	./configure -nomake demos -nomake tests -nomake examples -make libs -release --prefix=/opt/qt5 -opensource --confirm-license \
-		-opengl es2 -qpa wayland
+		-opengl es2
 	make
 }
 

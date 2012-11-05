@@ -1,7 +1,7 @@
 # Maintainer: LEW21 <lew21@xtreeme.org>
 
 pkgname=mesa-full-wayland
-pkgver=20120926
+pkgver=20121105
 _realver=9.1
 pkgrel=1
 pkgdesc="Full Mesa 3D graphics library with all its components, built from the git master branch. Identical to mesa-full, except it adds Wayland support."

@@ -9,8 +9,6 @@ url="https://qt.gitorious.org/qt/qtwayland"
 license=('LGPL')
 depends=('qt5-qtbase-git' 'qt5-qtdeclarative-git' 'libxcomposite' 'libxkbcommon' 'wayland')
 makedepends=('gcc' 'git')
-source=('plugin-install-fix.patch')
-md5sums=('9d0a4a4de5e4bca2fae9be0d68cbffda')
 
 _gitroot="git://gitorious.org/qt/qtwayland.git"
 _gitname=qt5-qtwayland
@@ -23,8 +21,6 @@ build() {
 	fi
 
 	msg "GIT checkout done."
-
-	patch -uNp1 -i ../plugin-install-fix.patch || return 1
 
 	/opt/qt5/bin/qmake
 	make

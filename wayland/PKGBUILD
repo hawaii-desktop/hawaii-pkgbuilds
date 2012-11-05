@@ -1,0 +1,27 @@
+# Maintainer: Joel Teichroeb <joel@teichroeb.net>
+
+pkgname=wayland
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="A modern display server."
+arch=(i686 x86_64)
+url="http://wayland.freedesktop.org"
+license=('MIT')
+depends=('libffi')
+makedepends=('expat' 'doxygen')
+options=(!libtool)
+conflicts=('wayland-git')
+source=(http://wayland.freedesktop.org/releases/${pkgname}-${pkgver}.tar.xz)
+sha1sums=(c8f39b099d9a5c6c5609046a31ef371655eb2c05)
+
+build() {
+	cd ${srcdir}/${pkgname}-${pkgver}
+	./configure --prefix=/usr
+	make
+}
+
+package() {
+	cd ${srcdir}/${pkgname}-${pkgver}
+	make DESTDIR="${pkgdir}" install
+}
+

@@ -1,7 +1,6 @@
 This is a list of packages that need to be uploaded to AUR:
 
  * qt5-qtbase-for-hawaii-git
- * qt5-qtwayland-git
 
 The following packages could probably be removed from AUR and this repository:
 

@@ -1,4 +1,5 @@
 # Maintainer: LEW21 <lew21@xtreeme.org>
+# Contributor: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=mesa-full-wayland
 pkgver=20121105
@@ -9,7 +10,7 @@ arch=(i686 x86_64)
 url="http://mesa3d.org/"
 license=('LGPL')
 depends=('libdrm>=2.4.34' 'dri2proto>=2.3' 'glproto>=1.4.12' 'libxxf86vm' 'libxdamage' 'expat>=2.0.1' 'llvm' 'wayland')
-makedepends=('pkgconfig' 'imake' 'python2')
+makedepends=('git' 'pkgconfig' 'imake' 'python2')
 optdepends=('libtxc_dxtn: S3TC support'
 'mesa-demos: glxinfo and glxgears')
 provides=("mesa=${_realver}" "libgl=${_realver}" "libglapi=${_realver}" "libgles=${_realver}" "libegl=${_realver}" "ati-dri=${_realver}" "intel-dri=${_realver}" "nouveau-dri=${_realver}", "khrplatform-devel=${_realver}" "libgbm=${_realver}")

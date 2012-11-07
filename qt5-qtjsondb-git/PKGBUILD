@@ -2,7 +2,7 @@
 # Contributor: Anselmo L. S. Melo <anselmolsm@gmail.com>
 
 pkgname=qt5-qtjsondb-git
-pkgver=20121023
+pkgver=20121107
 pkgrel=1
 pkgdesc="Qt 5: qtjsondb module"
 groups=('qt5' 'qt5-addons')

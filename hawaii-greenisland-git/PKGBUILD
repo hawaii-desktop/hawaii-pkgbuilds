@@ -1,12 +1,12 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=hawaii-greenisland-git
-pkgver=20121105
+pkgver=20121107
 pkgrel=1
 pkgdesc="Hawaii: Green Island"
 arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
-license=('LGPL')
+license=('GPL', 'LGPL')
 depends=('hawaii-fluid-git' 'hawaii-icon-themes-git' 'qt5-qtdeclarative-git' 'qt5-qtgraphicaleffects-git' 'qt5-qtwayland-git')
 makedepends=('git' 'cmake')
 source=()

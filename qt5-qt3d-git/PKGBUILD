@@ -1,7 +1,7 @@
 # Maintainer: Sergio Correia <sergio.correia@uece.net>
 
 pkgname=qt5-qt3d-git
-pkgver=20121023
+pkgver=20121107
 pkgrel=1
 pkgdesc="Qt 5: qt3d module"
 groups=('qt5' 'qt5-addons')
@@ -19,7 +19,7 @@ _gitname=qt5-qt3d
 
 build() {
 	if [ ! -d "${_gitname}" ]; then
-		git clone ${_gitroot} ${_gitname} && cd ${_gitname}
+		git clone --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
 	else
 		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
 	fi

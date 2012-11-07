@@ -1,7 +1,7 @@
 # Maintainer: Sergio Correia <sergio.correia@uece.net>
 
 pkgname=qt5-qtimageformats-git
-pkgver=20121023
+pkgver=20121107
 pkgrel=1
 pkgdesc="Qt 5: qtimageformats module"
 arch=('i686' 'x86_64')

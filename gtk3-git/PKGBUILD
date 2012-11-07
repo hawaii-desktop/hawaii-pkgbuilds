@@ -1,7 +1,7 @@
 # Maintainer: RKA KriK <rka_krik@mail.ru>
 
 pkgname=gtk3-git
-pkgver=20121101
+pkgver=20121106
 pkgrel=1
 _realver=3.6.1
 pkgdesc="The GTK+ Toolkit (v3.6.x, unstable, with wayland support)"
@@ -10,7 +10,7 @@ url="http://www.gtk.org/"
 install=gtk3.install
 depends=('glib2' 'atk' 'at-spi2-atk' 'cairo' 'gtk-update-icon-cache' 'libcups' 'libxcursor' 'libxinerama'
 	 'libxrandr' 'libxi' 'libxcomposite' 'libxdamage' 'shared-mime-info' 'pango'
-	 'libxkbcommon-for-qtwayland-git' 'wayland-for-qtwayland-git')
+	 'libxkbcommon' 'wayland')
 makedepends=('git' 'gobject-introspection' 'gtk-doc')
 conflicts=('gtk3')
 provides=("gtk3=${_realver}")
@@ -22,7 +22,7 @@ sha256sums=('3f2fd1ac4e0a59381e443b7c14d937b434c515e02d06c7c4b3999fb24406b784')
 
 _gitroot="git://git.gnome.org/gtk+"
 _gitname="gtk+"
-_githash="3.6.0"
+_githash="3.6.1"
 
 build() {
   msg "Connecting to gnome.org GIT server...."

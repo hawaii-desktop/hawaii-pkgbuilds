@@ -8,7 +8,7 @@ arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
 license=('GPL')
 depends=('qt5-qtsvg-git')
-makedepends=('git' 'cmake' 'vibe-git')
+makedepends=('git' 'cmake' 'hawaii-vibe-git')
 source=()
 md5sums=()
 

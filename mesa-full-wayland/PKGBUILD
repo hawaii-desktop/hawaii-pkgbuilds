@@ -9,7 +9,7 @@ pkgdesc="Full Mesa 3D graphics library with all its components, built from the g
 arch=(i686 x86_64)
 url="http://mesa3d.org/"
 license=('LGPL')
-depends=('libdrm>=2.4.34' 'dri2proto>=2.3' 'glproto>=1.4.12' 'libxxf86vm' 'libxdamage' 'expat>=2.0.1' 'llvm' 'wayland')
+depends=('libdrm-git' 'dri2proto>=2.3' 'glproto>=1.4.12' 'libxxf86vm' 'libxdamage' 'expat>=2.0.1' 'llvm' 'wayland')
 makedepends=('git' 'pkgconfig' 'imake' 'python2' 'python2-lxml')
 optdepends=('libtxc_dxtn: S3TC support'
 'mesa-demos: glxinfo and glxgears')
@@ -55,7 +55,9 @@ build() {
 		--enable-openvg \
 		--enable-glx-tls \
 		--enable-texture-float \
-#		--enable-r600-llvm-compiler \
+		--enable-gbm \
+		--enable-dri
+#		--enable-r600-llvm-compiler
 
 	make
 }

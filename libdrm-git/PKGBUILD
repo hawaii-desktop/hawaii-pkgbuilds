@@ -10,7 +10,7 @@ arch=('i686' 'x86_64')
 license=('MIT')
 depends=('libpciaccess')
 provides=('libdrm=2.4.39')
-makedepends=('cairo' 'udev' 'valgrind')
+makedepends=('git' 'cairo' 'systemd-tools' 'valgrind')
 options=('!libtool')
 url="http://dri.freedesktop.org/"
 conflicts=('libdrm')

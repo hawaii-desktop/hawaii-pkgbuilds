@@ -3,7 +3,7 @@
 # Based on qt5-qtbase-git from Sergio Correia <sergio.correia@uece.net>
 
 pkgname=qt5-qtbase-for-hawaii-git
-pkgver=20121107
+pkgver=20121111
 pkgrel=1
 pkgdesc="Qt 5: qtbase module"
 arch=('i686' 'x86_64')

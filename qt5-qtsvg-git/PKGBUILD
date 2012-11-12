@@ -1,7 +1,7 @@
 # Maintainer: Anselmo L. S. Melo <anselmolsm@gmail.com>
 
 pkgname=qt5-qtsvg-git
-pkgver=20121107
+pkgver=20121111
 pkgrel=1
 pkgdesc="Qt 5: qtsvg module"
 groups=('qt5' 'qt5-addons')

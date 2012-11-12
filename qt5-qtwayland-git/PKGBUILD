@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=qt5-qtwayland-git
-pkgver=20121105
+pkgver=20121111
 pkgrel=1
 pkgdesc="Qt 5: qtwayland module"
 arch=('i686' 'x86_64')

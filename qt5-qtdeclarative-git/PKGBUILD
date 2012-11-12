@@ -2,7 +2,7 @@
 # Contributor: Anselmo L. S. Melo <anselmolsm@gmail.com>
 
 pkgname=qt5-qtdeclarative-git
-pkgver=20121107
+pkgver=20121112
 pkgrel=1
 pkgdesc="Qt 5: qtdeclarative module (QtQuick 2, QML)"
 arch=('i686' 'x86_64')

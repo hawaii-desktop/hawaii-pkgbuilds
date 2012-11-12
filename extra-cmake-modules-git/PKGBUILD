@@ -1,7 +1,7 @@
 # Maintainer: Martin Sandsmark <sandsmark@iskrembilen.com>
 
 pkgname=extra-cmake-modules-git
-pkgver=20121025
+pkgver=20121111
 pkgrel=1
 pkgdesc='Extra CMake modules'
 arch=('i686' 'x86_64')

@@ -7,7 +7,7 @@
 # Contributor: heinz from #qt-creator
 
 pkgname=qtcreator-for-qt5-git
-pkgver=20121028
+pkgver=201211111
 pkgrel=1
 pkgdesc="Qt Creator is a new cross-platform integrated development environment (IDE) tailored to the needs of Qt developers."
 arch=('i686' 'x86_64')

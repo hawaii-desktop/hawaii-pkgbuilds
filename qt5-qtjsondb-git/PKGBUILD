@@ -2,7 +2,7 @@
 # Contributor: Anselmo L. S. Melo <anselmolsm@gmail.com>
 
 pkgname=qt5-qtjsondb-git
-pkgver=20121107
+pkgver=20121111
 pkgrel=1
 pkgdesc="Qt 5: qtjsondb module"
 groups=('qt5' 'qt5-addons')
@@ -20,7 +20,7 @@ _gitname=qt5-qtjsondb
 
 build() {
 	if [ ! -d "${_gitname}" ]; then
-		git clone ${_gitroot} ${_gitname} && cd ${_gitname}
+		git clone --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
 	else
 		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
 	fi

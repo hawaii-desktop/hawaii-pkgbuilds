@@ -1,7 +1,7 @@
 # Maintainer: Sergio Correia <sergio.correia@uece.net>
 
 pkgname=qt5-qtimageformats-git
-pkgver=20121107
+pkgver=20121111
 pkgrel=1
 pkgdesc="Qt 5: qtimageformats module"
 arch=('i686' 'x86_64')
@@ -15,7 +15,7 @@ _gitname=qt5-qtimageformats
 
 build() {
 	if [ ! -d "${_gitname}" ]; then
-		git clone ${_gitroot} ${_gitname} && cd ${_gitname}
+		git clone --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
 	else
 		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
 	fi

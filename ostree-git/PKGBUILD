@@ -1,0 +1,59 @@
+# Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+
+pkgname='ostree-git'
+pkgver=20121117
+pkgrel=1
+url="http://git.gnome.org/browse/ostree/tree/README.md"
+pkgdesc='The GNOME OS build tool'
+arch=('i686' 'x86_64')
+license=('GPL' 'LGPL')
+provides=('ostree')
+makedepends=('git' 'python2' 'pkg-config' 'gnome-common' 'intltool' 'gtk-doc')
+depends=('libarchive' 'linux-user-chroot')
+_gitroot="git://git.gnome.org/ostree"
+_gitname="ostree"
+
+build() {
+  cd "$srcdir"
+
+  msg "Connecting to the ostree git repository..."
+  if [ -d "$srcdir/$_gitname" ] ; then
+    cd $_gitname && git pull origin
+    msg "The local files are updated."
+  else
+    git clone $_gitroot
+  fi
+
+  cd "$srcdir/$_gitname"
+  git submodule init
+  git submodule update
+  msg "GIT checkout done or server timeout"
+
+  msg2 "Downloading embedded dependencies..."
+  make -C embedded-dependencies -f Makefile.bootstrap embedded-deps-download
+  sed -i 's|/usr/bin/env python|/usr/bin/python2|' embedded-dependencies/libsoup/libsoup/tld-parser.py
+
+  msg2 "Configuring..."
+  export PYTHON=/usr/bin/python2
+  ./autogen.sh --prefix=/usr \
+    --with-soup-gnome \
+    --with-libarchive \
+    --disable-documentation \
+    --enable-embedded-dependencies
+  msg2 "Compiling..."
+  make
+
+  # Manually build a static binary of ostree-switch-root
+  ${CC:-gcc} -static -o ostree-init src/switchroot/ostree-switch-root.c
+}
+
+package() {
+  cd "$srcdir/$_gitname"
+
+  msg2 "Packaging..."
+  make install DESTDIR="$pkgdir"
+
+  mkdir "${pkgdir}/ostree"
+  cp ostree-init "${pkgdir}/ostree"
+  chmod 755 "${pkgdir}/ostree/ostree-init"
+}

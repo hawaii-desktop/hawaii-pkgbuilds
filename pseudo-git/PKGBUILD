@@ -1,0 +1,36 @@
+# Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+
+pkgname='pseudo-git'
+pkgver='20121117'
+pkgrel='1'
+pkgdesc='an analogue to sudo'
+url='http://yoctoproject.org/projects/pseudo'
+arch=('i686' 'x86_64')
+license='GPL'
+depends=('glibc')
+makedepends=('git' 'python2' 'sqlite')
+
+_gitroot="git://github.com/wrpseudo/pseudo.git"
+_gitname=pseudo
+
+build () {
+	if [ ! -d "${_gitname}" ]; then
+		git clone --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
+	else
+		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
+	fi
+
+	msg "GIT checkout done."
+
+	sed -i '1s/python$/python2/' makewrappers
+	sed -i '1s/python$/python2/' maketables
+
+	PYTHON=python2 ./configure --prefix=/usr
+	make
+}
+
+package() {
+	cd "${_gitname}"
+
+	make DESTDIR="${pkgdir}" install
+}

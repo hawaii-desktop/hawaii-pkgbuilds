@@ -2,7 +2,7 @@
 # Contributor: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=mesa-full-wayland
-pkgver=20121105
+pkgver=20121117
 _realver=9.1
 pkgrel=1
 pkgdesc="Full Mesa 3D graphics library with all its components, built from the git master branch. Identical to mesa-full, except it adds Wayland support."
@@ -43,7 +43,7 @@ build() {
 	# If you live in the US, you should delete --enable-texture-float \ line.
 
 	./autogen.sh --prefix=/usr --with-dri-driverdir=/usr/lib/xorg/modules/dri \
-		--with-dri-drivers=i915,i965,nouveau,radeon,r200 \
+		--with-dri-drivers=i915,i965,r200,radeon,swrast \
 		--with-gallium-drivers=r300,r600,nouveau,svga,swrast \
 		--with-egl-platforms=drm,x11,wayland \
 		--enable-gallium-llvm \
@@ -56,6 +56,8 @@ build() {
 		--enable-glx-tls \
 		--enable-texture-float \
 		--enable-gbm \
+		--enable-shared-glapi \
+		--enable-shared-dricore \
 		--enable-dri
 #		--enable-r600-llvm-compiler
 

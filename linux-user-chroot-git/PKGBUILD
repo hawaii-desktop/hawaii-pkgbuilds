@@ -1,0 +1,36 @@
+# Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+
+pkgname='linux-user-chroot-git'
+pkgver='20121117'
+pkgrel='1'
+pkgdesc='setuid helper for making bind mounts and chrooting'
+url='http://git.gnome.org/browse/linux-user-chroot/tree/README'
+arch=('i686' 'x86_64')
+license='GPL'
+depends=('glibc')
+makedepends=('git' 'libxslt')
+provides=('linux-user-chroot')
+conflicts=('linux-user-chroot')
+
+_gitroot="git://git.gnome.org/linux-user-chroot.git"
+_gitname=linux-user-chroot
+
+build () {
+	if [ ! -d "${_gitname}" ]; then
+		git clone ${_gitroot} ${_gitname} && cd ${_gitname}
+	else
+		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
+	fi
+
+	msg "GIT checkout done."
+
+	./autogen --prefix=/usr --enable-newnet-helper
+	make
+}
+
+package() {
+	cd "${_gitname}"
+
+	make DESTDIR="${pkgdir}" install
+	chmod +s "${pkgdir}/usr/bin"/linux-user-chroot{,-newnet}
+}

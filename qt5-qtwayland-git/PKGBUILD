@@ -1,8 +1,8 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=qt5-qtwayland-git
-pkgver=20121111
-pkgrel=1
+pkgver=20121124
+pkgrel=2
 pkgdesc="Qt 5: qtwayland module"
 arch=('i686' 'x86_64')
 url="https://qt.gitorious.org/qt/qtwayland"
@@ -19,6 +19,8 @@ build() {
 	else
 		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
 	fi
+
+	git fetch https://codereview.qt-project.org/p/qt/qtwayland refs/changes/78/39878/2 && git checkout FETCH_HEAD
 
 	msg "GIT checkout done."
 

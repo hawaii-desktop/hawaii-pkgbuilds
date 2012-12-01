@@ -1,13 +1,13 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=hawaii-vibe-git
-pkgver=20121130
-pkgrel=1
+pkgver=20121201
+pkgrel=2
 pkgdesc="Hawaii: Vibe libraries"
 arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
 license=('LGPL')
-depends=('kde-solid-for-hawaii-git' 'qt5-qttools-git')
+depends=('kde-solid-for-hawaii-git' 'qt5-qttools-git' 'cantarell-fonts')
 makedepends=('git' 'cmake' 'qt5-qtdeclarative-git')
 source=()
 md5sums=()

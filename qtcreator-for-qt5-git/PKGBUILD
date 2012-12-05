@@ -7,7 +7,7 @@
 # Contributor: heinz from #qt-creator
 
 pkgname=qtcreator-for-qt5-git
-pkgver=201211111
+pkgver=20121205
 pkgrel=1
 pkgdesc="Qt Creator is a new cross-platform integrated development environment (IDE) tailored to the needs of Qt developers."
 arch=('i686' 'x86_64')
@@ -19,7 +19,7 @@ optdepends=('gdb: for the debugger')
 provides=('qtcreator')
 conflicts=('qtcreator')
 source=('qtcreator.desktop')
-md5sums=('cec76e79b49a0ef2f897cbd83764c131')
+md5sums=('d58f0f889edbd0662d95536205463c25')
 
 _gitroot="git://gitorious.org/qt-creator/qt-creator.git"
 _gitname="qt-creator"

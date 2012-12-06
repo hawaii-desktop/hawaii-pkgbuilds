@@ -13,4 +13,11 @@ Packages could probably be removed from AUR and this repository:
 Packages that fails to build:
 
  * gtk3-git
- * qt5-qt3d-git
+
+Packages that need to be built:
+
+ * qt5-qtlocation-git
+ * qt5-qtwebkit-git
+
+Take a look at here for interesting packages:
+  http://pkgbuild.com/~lcarlier/mesa-git/

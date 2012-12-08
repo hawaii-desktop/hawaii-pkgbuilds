@@ -1,13 +1,13 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=qt5-qtwayland-git
-pkgver=20121130
+pkgver=20121205
 pkgrel=1
 pkgdesc="Qt 5: qtwayland module"
 arch=('i686' 'x86_64')
 url="https://qt.gitorious.org/qt/qtwayland"
 license=('LGPL')
-depends=('qt5-qtbase-git' 'qt5-qtdeclarative-git' 'libxcomposite' 'libxkbcommon' 'wayland')
+depends=('qt5-qtbase-git' 'qt5-qtdeclarative-git' 'libxcomposite' 'libxkbcommon' 'wayland-git')
 makedepends=('gcc' 'git')
 
 _gitroot="git://gitorious.org/qt/qtwayland.git"
@@ -20,7 +20,8 @@ build() {
 		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
 	fi
 
-	git fetch https://codereview.qt-project.org/p/qt/qtwayland refs/changes/78/39878/2 && git checkout FETCH_HEAD
+	git fetch https://codereview.qt-project.org/p/qt/qtwayland refs/changes/78/39878/3 && git format-patch -1 --stdout FETCH_HEAD | patch -p1
+	git fetch https://codereview.qt-project.org/p/qt/qtwayland refs/changes/18/42018/1 && git format-patch -1 --stdout FETCH_HEAD | patch -p1
 
 	msg "GIT checkout done."
 

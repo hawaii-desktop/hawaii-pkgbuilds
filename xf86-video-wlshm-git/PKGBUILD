@@ -1,0 +1,47 @@
+# Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+
+pkgname=xf86-video-wlshm-git
+pkgver=20121209
+pkgrel=1
+pkgdesc="Open Source driver for XWayland"
+arch=('i686' 'x86_64')
+url="http://wayland.freedesktop.org/"
+license=('BSD')
+depends=('systemd-tools' 'wayland-git')
+makedepends=('git' 'xorg-server-devel-wayland-git' 'X-ABI-VIDEODRV_VERSION=13' 'xproto' 'fontsproto' 'randrproto' 'renderproto' 'videoproto' 'xf86dgaproto')
+conflicts=('xorg-server<1.13.0' 'X-ABI-VIDEODRV_VERSION<13' 'X-ABI-VIDEODRV_VERSION>=14')
+groups=('xorg-drivers' 'xorg')
+options=('!libtool')
+
+_gitroot="git://git.collabora.com/git/user/daniels/xf86-video-wlshm"
+_gitname="xf86-video-wlshm"
+
+build() {
+  msg "Connecting to git.freedesktop.org GIT server...."
+
+  if [ -d $srcdir/$_gitname ] ; then
+    cd $_gitname && git pull origin master
+      msg "The local files are updated."
+  else
+      git clone $_gitroot
+  fi
+
+  cd $_gitname && git checkout $_githash || exit $?
+
+  msg "Creating build directory..."
+  rm -rf ${srcdir}/$_gitname-build
+  cp -r ${srcdir}/$_gitname ${srcdir}/$_gitname-build
+
+  msg "Starting build..."
+  cd ${srcdir}/$_gitname-build
+
+  ./autogen.sh --prefix=/usr
+  make
+}
+
+package() {
+  cd ${srcdir}/$_gitname-build
+  make DESTDIR="$pkgdir" install
+
+  install -m644 -D COPYING "${pkgdir}/usr/share/licenses/xf86-video-wlshm-git/LICENSE"
+}

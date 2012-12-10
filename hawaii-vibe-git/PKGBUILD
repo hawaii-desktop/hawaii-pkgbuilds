@@ -1,8 +1,8 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=hawaii-vibe-git
-pkgver=20121201
-pkgrel=2
+pkgver=20121210
+pkgrel=1
 pkgdesc="Hawaii: Vibe libraries"
 arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
@@ -42,7 +42,7 @@ package() {
 	cat >$pkgdir/etc/profile.d/hawaii.sh <<EOF
 export PATH=/opt/qt5/bin:/opt/hawaiide/bin:\$PATH
 export QT_PLUGIN_PATH=/opt/hawaiide/plugins:\$QT_PLUGIN_PATH
-export QML2_IMPORT_PATH=/opt/hawaiide/imports:\$QML2_IMPORT_PATH
+export QML2_IMPORT_PATH=/opt/hawaiide/qml:\$QML2_IMPORT_PATH
 export XDG_DATA_DIRS=\$XDG_DATA_DIRS:/opt/hawaiide/share/
 export LD_LIBRARY_PATH=/opt/qt5/lib:/opt/hawaiide/lib64:\$LD_LIBRARY_PATH
 EOF

@@ -3,14 +3,14 @@
 #	Andreas Radke
 
 pkgname=libdrm-git
-pkgver=20121205
+pkgver=20121209
 pkgrel=1
 pkgdesc="Userspace interface to kernel DRM services"
 arch=('i686' 'x86_64')
 license=('MIT')
 depends=('libpciaccess')
-provides=('libdrm=2.4.39')
-makedepends=('git' 'cairo' 'systemd-tools' 'valgrind')
+provides=('libdrm=2.4.40')
+makedepends=('git' 'systemd-tools' 'valgrind')
 options=('!libtool')
 url="http://dri.freedesktop.org/"
 conflicts=('libdrm')

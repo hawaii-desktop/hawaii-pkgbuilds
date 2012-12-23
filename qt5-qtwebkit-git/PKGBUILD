@@ -1,15 +1,15 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=qt5-qtwebkit-git
-pkgver=20121101
+pkgver=20121209
 pkgrel=1
 pkgdesc="Qt 5: qtwebkit module"
 groups=('qt5' 'qt5-addons')
 arch=('i686' 'x86_64')
 url="https://gitorious.org/qtwebkit/qt5-module"
 license=('LGPL')
-depends=('qt5-qtbase-git' 'qt5-qtdeclarative-git' 'qt5-qtlocation-git' 'qt5-qtsensors-git')
-makedepends=('git' 'perl' 'gperf' 'fontconfig' 'libxml2' 'libxslt' 'ruby' 'systemd-tools')
+depends=('python2' 'libwebp' 'qt5-qtdeclarative-git' 'qt5-qtlocation-git' 'qt5-qtsensors-git')
+makedepends=('git' 'perl' 'python2' 'gperf' 'fontconfig' 'libxml2' 'libxslt' 'ruby')
 options=('!libtool')
 source=()
 md5sums=()
@@ -26,7 +26,7 @@ build() {
 
 	msg "GIT checkout done."
 
-	Tools/Scripts/build-webkit --qt --qmake=/opt/qt5/bin/qmake --install-libs=/opt/qt5 --release
+	env PYTHON=python2 Tools/Scripts/build-webkit --qt --qmake=/opt/qt5/bin/qmake --install-libs=/opt/qt5 --release
 }
 
 package() {

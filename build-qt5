@@ -1,0 +1,23 @@
+#!/bin/sh
+
+date=$(date +"%Y%m%d")
+packages="qt5-qtbase-for-hawaii-git qt5-qtjsbackend-git qt5-qtxmlpatterns-git qt5-qtdeclarative-git qt5-qtsvg-git qt5-qtimageformats-git qt5-qtgraphicaleffects-git qt5-qtjsondb-git qt5-qttools-git qt5-qtwayland-git qt5-qtmultimedia-git qt5-qtpim-git qt5-qtconnectivity-git qt5-qt3d-git qt5-qtlocation-git qt5-qtsensors-git qt5-qtscript-git qt5-qtquick1-git qtcreator-for-qt5-git"
+
+for pkg in $packages; do
+	pushd $pkg
+
+	file=${pkg}-${date}-1-x86_64.pkg.tar.xz
+
+	[ ! -f $file ] && ../build
+
+	if [ ! -f $file ]; then
+		echo "$file doesn't exist!"
+		exit 1
+	fi
+
+	cp $file ~/chroot/root/repo
+	cd ~/chroot/root/repo
+	repo-add hawaii.db.tar.gz $file
+
+	popd
+done

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# https://wiki.archlinux.org/index.php/DeveloperWiki:Building_in_a_Clean_Chroot
+
+CHROOT=$HOME/chroot
+sudo makechrootpkg -r $CHROOT -cu

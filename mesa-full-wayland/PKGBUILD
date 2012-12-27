@@ -2,7 +2,7 @@
 # Contributor: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=mesa-full-wayland
-pkgver=20121205
+pkgver=20121227
 _realver=9.1
 pkgrel=1
 pkgdesc="Full Mesa 3D graphics library with all its components, built from the git master branch. Identical to mesa-full, except it adds Wayland support."
@@ -15,6 +15,8 @@ optdepends=('libtxc_dxtn: S3TC support'
 'mesa-demos: glxinfo and glxgears')
 provides=("mesa=${_realver}" "libgl=${_realver}" "libglapi=${_realver}" "libgles=${_realver}" "libegl=${_realver}" "ati-dri=${_realver}" "intel-dri=${_realver}" "nouveau-dri=${_realver}", "khrplatform-devel=${_realver}" "libgbm=${_realver}")
 conflicts=('mesa' 'libgl' 'libglapi' 'libgles' 'libegl' 'ati-dri' 'intel-dri' 'nouveau-dri' 'mach64-dri' 'mga-dri' 'r128-dri' 'savage-dri' 'tdfx-dri' 'unichrome-dri', 'khrplatform-devel' 'libgbm')
+source=('fix-shm-roundtrip.patch')
+md5sums=('77af34e011e612b26d8808feb0ac4833')
 
 _gitroot="git://anongit.freedesktop.org/git/mesa/mesa"
 _gitname="mesa"
@@ -37,6 +39,8 @@ build() {
 	msg "Starting build..."
 	cd $_gitname-build
 
+	patch -Np1 -i ${srcdir}/fix-shm-roundtrip.patch
+
 	# Classic r300, r600 & swrast are disabled - their Gallium versions are better.
 	# Classic nouveau is for different hardware than Gallium nouveau, so both are enabled.
 
@@ -46,7 +50,8 @@ build() {
 	./autogen.sh --prefix=/usr --with-dri-driverdir=/usr/lib/xorg/modules/dri \
 		--with-dri-drivers=i915,i965,r200,radeon,swrast \
 		--with-gallium-drivers=r300,r600,nouveau,svga,swrast \
-		--with-egl-platforms=drm,x11,wayland \
+		--with-egl-platforms=drm,x11,fbdev,wayland \
+		--with-state-trackers=egl \
 		--enable-gallium-llvm \
 		--enable-gallium-egl \
 		--enable-gallium-gbm \
@@ -60,7 +65,9 @@ build() {
 		--enable-shared-dricore \
 		--enable-dri \
 		--enable-glx \
-		--enable-xa
+		--enable-glx-tls \
+		--enable-xa \
+		--with-x
 #		--enable-r600-llvm-compiler
 
 	make

@@ -8,7 +8,6 @@ Packages that fails to build:
 
 Packages that need to be built:
 
- * qt5-qtlocation-git
  * qt5-qtwebkit-git
 
 Take a look at here for interesting packages:

@@ -1,14 +1,14 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=qt5-qtwebkit-git
-pkgver=20121209
+pkgver=20121227
 pkgrel=1
 pkgdesc="Qt 5: qtwebkit module"
 groups=('qt5' 'qt5-addons')
 arch=('i686' 'x86_64')
 url="https://gitorious.org/qtwebkit/qt5-module"
 license=('LGPL')
-depends=('python2' 'libwebp' 'qt5-qtdeclarative-git' 'qt5-qtlocation-git' 'qt5-qtsensors-git')
+depends=('libwebp' 'qt5-qtdeclarative-git' 'qt5-qtlocation-git' 'qt5-qtsensors-git')
 makedepends=('git' 'perl' 'python2' 'gperf' 'fontconfig' 'libxml2' 'libxslt' 'ruby')
 options=('!libtool')
 source=()
@@ -18,15 +18,24 @@ _gitroot="git://gitorious.org/qtwebkit/qt5-module.git"
 _gitname=qt5-qtwebkit
 
 build() {
-	if [ ! -d "${_gitname}" ]; then
-		git clone ${_gitroot} ${_gitname} && cd ${_gitname}
-	else
-		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
-	fi
+	rm -rf "${_gitname}"
+	git clone --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
 
 	msg "GIT checkout done."
 
-	env PYTHON=python2 Tools/Scripts/build-webkit --qt --qmake=/opt/qt5/bin/qmake --install-libs=/opt/qt5 --release
+	for file in $(find ToolsScripts); do
+		sed -e 's@env python@env python2@g' -i $file || true
+	done
+	find . -type f -name "*.py" | xargs sed -e 's@env python@env python2@g' -i || true
+	#sed -e 's,python $(JavaScriptCore)/disassembler/udis86/itab.py,python2 $(JavaScriptCore)/disassembler/udis86/itab.py,g' -i Source/JavaScriptCore/DerivedSources.make
+#	for i in Source/WTF/WTF.vcproj/WTFGenerated.make Source/WebKit2/DerivedSources.make Source/JavaScriptCore/DerivedSources.make Source/WebCore/DerivedSources.make; do
+#		sed -e 's,python ,python2 ,g' -i $i
+#	done
+	find . -type f -name "*.pri" | xargs sed -e 's@python @python2 @g' -i || true
+
+#	export PYTHON=python2
+#	alias python='/usr/bin/python2'
+	Tools/Scripts/build-webkit --qt --qmake=/opt/qt5/bin/qmake --install-libs=/opt/qt5 --release
 }
 
 package() {

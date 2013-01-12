@@ -7,10 +7,11 @@ pkgdesc='A library that allows developers to access PolicyKit API with a nice Qt
 arch=('i686' 'x86_64')
 url='https://projects.kde.org/projects/kdesupport/polkit-qt-1'
 license=('LGPL')
-depends=('polkit' 'qt5-qtbase-git')
-makedepends=('cmake')
+depends=('polkit' 'qt5-qtbase-for-hawaii-git')
+makedepends=('git' 'cmake' 'extra-cmake-modules-git' 'qt5-qtsvg-git')
 
-_gitroot="git://anongit.kde.org/polkit-qt-1"
+#_gitroot="git://anongit.kde.org/polkit-qt-1"
+_gitroot="git://github.com/hawaii-desktop/polkit-qt-1.git"
 _gitname=polkit-qt-1
 
 build() {

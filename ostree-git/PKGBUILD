@@ -1,15 +1,16 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname='ostree-git'
-pkgver=20121228
+pkgver=20130112
 pkgrel=1
 url="http://git.gnome.org/browse/ostree/tree/README.md"
 pkgdesc='The GNOME OS build tool'
 arch=('i686' 'x86_64')
 license=('GPL' 'LGPL')
 provides=('ostree')
-makedepends=('git' 'python2' 'pkg-config' 'gnome-common' 'intltool' 'gtk-doc')
+makedepends=('git' 'python2' 'pkg-config' 'gnome-common' 'intltool' 'gtk-doc' 'automake')
 depends=('libarchive' 'linux-user-chroot-git')
+
 _gitroot="git://git.gnome.org/ostree"
 _gitname="ostree"
 

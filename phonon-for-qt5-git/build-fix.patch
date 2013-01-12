@@ -1,0 +1,12 @@
+diff --git a/cmake/FindPhononInternal.cmake b/cmake/FindPhononInternal.cmake
+index b4f708f..ca00e2b 100644
+--- a/cmake/FindPhononInternal.cmake
++++ b/cmake/FindPhononInternal.cmake
+@@ -344,6 +344,7 @@ if (CMAKE_COMPILER_IS_GNUCXX)
+       file(WRITE "${_source_file}" "${_source}")
+       set(_include_dirs "-DINCLUDE_DIRECTORIES:STRING=${Qt5Core_INCLUDE_DIRS}")
+ 
++      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
+       try_compile(_compile_result ${CMAKE_BINARY_DIR} ${_source_file} CMAKE_FLAGS "${_include_dirs}" OUTPUT_VARIABLE _compile_output_var)
+ 
+       if(NOT _compile_result)

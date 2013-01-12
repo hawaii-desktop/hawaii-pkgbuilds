@@ -1,0 +1,38 @@
+# Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+
+pkgname=polkit-qt-for-hawaii-git
+pkgver=20121231
+pkgrel=1
+pkgdesc='A library that allows developers to access PolicyKit API with a nice Qt-style API'
+arch=('i686' 'x86_64')
+url='https://projects.kde.org/projects/kdesupport/polkit-qt-1'
+license=('LGPL')
+depends=('polkit' 'qt5-qtbase-git')
+makedepends=('cmake')
+
+_gitroot="git://anongit.kde.org/polkit-qt-1"
+_gitname=polkit-qt-1
+
+build() {
+	if [ ! -d "${_gitname}" ]; then
+		git clone --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
+	else
+		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
+	fi
+
+	msg "GIT checkout done."
+
+	export PATH=/opt/qt5/bin:$PATH
+
+	mkdir build
+	cd build
+	cmake -DCMAKE_INSTALL_PREFIX=/opt/hawaiide -DCMAKE_BUILD_TYPE=Release ..
+	make
+}
+
+package() {
+	export PATH=/opt/qt5/bin:$PATH
+
+	cd "${_gitname}/build"
+	make DESTDIR="${pkgdir}" install
+}

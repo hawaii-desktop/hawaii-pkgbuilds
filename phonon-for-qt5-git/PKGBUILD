@@ -1,0 +1,63 @@
+# Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+
+pkgname=phonon-for-qt5-git
+pkgver=20130112
+pkgrel=1
+pkgdesc='The multimedia framework for KDE5'
+arch=('i686' 'x86_64')
+url='http://phonon.kde.org'
+license=('LGPL')
+depends=('qt5-qtbase-git' 'libpulse')
+optdepends=('pulseaudio: PulseAudio support')
+makedepends=('cmake' 'extra-cmake-modules-git' 'pulseaudio' 'git' 'qt5-qtsvg-git' 'qt5-qtdeclarative-git' 'qt5-qttools-git' 'qt5-qtscript-git' 'qt5-qtquick1-git')
+#qt5-qtwebkit-git libqzeitgeist
+conflicts=('phonon' 'phonon-git')
+provides=('phonon' 'phonon-git')
+options=('!strip')
+source=('build-fix.patch')
+md5sums=('28e1e5ef3d4945ebaaf2fb36413be0a1')
+
+_gitroot='git://anongit.kde.org/phonon.git'
+_gitname='phonon'
+_gitbranch='phonon4qt5'
+#_gitbranch='five'
+
+build() {
+    cd ${srcdir}
+
+    msg "Connecting to phonon GIT server...."
+    if [ -d ${srcdir}/${_gitname} ] ; then
+        cd ${srcdir}/${_gitname} && git pull origin
+        msg "The local files are updated."
+    else
+        git clone -b ${_gitbranch} ${_gitroot} ${_gitname}
+        msg "GIT checkout done "
+    fi
+
+    if [ -d ${srcdir}/build ]; then
+        rm ${srcdir}/build/* -rf
+    else
+        mkdir ${srcdir}/build/
+    fi
+
+    export PATH=/opt/qt5/bin:$PATH
+
+    cd ${srcdir}/${_gitname}
+    patch -Np1 -i ${srcdir}/build-fix.patch
+
+    cd ${srcdir}/build
+    msg "Starting make..."
+    cmake  \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_SKIP_RPATH=ON \
+            -DCMAKE_INSTALL_PREFIX=/usr \
+            -DCMAKE_{SHARED,MODULE,EXE}_LINKER_FLAGS='-Wl,--no-undefined -Wl,--as-needed' \
+            ../${_gitname}
+
+    make || return 1
+}
+
+package() {
+    cd ${srcdir}/build
+    make DESTDIR=${pkgdir} install || return 1
+}

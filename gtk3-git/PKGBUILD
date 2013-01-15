@@ -1,9 +1,9 @@
 # Maintainer: RKA KriK <rka_krik@mail.ru>
 
 pkgname=gtk3-git
-pkgver=20121128
+pkgver=20130115
 pkgrel=1
-_realver=3.6.2
+_realver=3.6.4
 pkgdesc="The GTK+ Toolkit (v3.6.x, unstable, with wayland support)"
 arch=('i686' 'x86_64')
 url="http://www.gtk.org/"
@@ -22,7 +22,7 @@ sha256sums=('3f2fd1ac4e0a59381e443b7c14d937b434c515e02d06c7c4b3999fb24406b784')
 
 _gitroot="git://git.gnome.org/gtk+"
 _gitname="gtk+"
-_githash="3.6.2"
+_githash="3.6.4"
 
 build() {
   msg "Connecting to gnome.org GIT server...."

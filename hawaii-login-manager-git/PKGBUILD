@@ -1,19 +1,20 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=hawaii-login-manager-git
-pkgver=20121211
+pkgver=20130119
 pkgrel=1
 pkgdesc="Hawaii: Login Manager"
 arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
 license=('GPL')
-depends=('hawaii-fluid-git' 'systemd')
+depends=('hawaii-fluid-git' 'systemd' 'polkit-qt-for-hawaii-git' 'qt-accountsservice-addon-git')
 makedepends=('git' 'cmake')
 source=()
 md5sums=()
 
 _gitroot="git://github.com/hawaii-desktop/login-manager.git"
 _gitname=login-manager
+_gitrev=63ee9349234ab582a73cbcdbbb2154362b403abb
 
 build() {
 	if [ ! -d "${_gitname}" ]; then
@@ -21,6 +22,8 @@ build() {
 	else
 		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
 	fi
+
+	git checkout ${_gitrev}
 
 	msg "GIT checkout done."
 

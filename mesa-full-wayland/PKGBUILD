@@ -47,6 +47,7 @@ build() {
 	# --enable-texture-float is not passed to configure, see
 	# http://cgit.freedesktop.org/mesa/mesa/tree/docs/patents.txt
 
+	PYTHON=python2 \
 	./autogen.sh --prefix=/usr --with-dri-driverdir=/usr/lib/xorg/modules/dri \
 		--with-dri-drivers=i915,i965,r200,radeon,swrast \
 		--with-gallium-drivers=r300,r600,nouveau,svga,swrast \

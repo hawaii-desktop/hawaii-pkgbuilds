@@ -3,7 +3,7 @@
 # Based on qt5-qtbase-git from Sergio Correia <sergio.correia@uece.net>
 
 pkgname=qt5-qtbase-for-hawaii-git
-pkgver=20121111
+pkgver=20130123
 pkgrel=1
 pkgdesc="Qt 5: qtbase module"
 arch=('i686' 'x86_64')
@@ -18,10 +18,11 @@ makedepends=('git' 'gcc')
 
 _gitroot="git://gitorious.org/qt/qtbase.git"
 _gitname=qt5-qtbase
+_gitbranch=dev
 
 build() {
 	if [ ! -d "${_gitname}" ]; then
-		git clone --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
+		git clone -b ${_gitbranch} --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
 	else
 		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
 	fi

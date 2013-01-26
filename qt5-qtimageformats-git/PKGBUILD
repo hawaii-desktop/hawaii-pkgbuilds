@@ -1,7 +1,7 @@
 # Maintainer: Sergio Correia <sergio.correia@uece.net>
 
 pkgname=qt5-qtimageformats-git
-pkgver=20121111
+pkgver=20130123
 pkgrel=1
 pkgdesc="Qt 5: qtimageformats module"
 arch=('i686' 'x86_64')
@@ -12,10 +12,11 @@ makedepends=('gcc' 'git' 'qt5-qtbase-git')
 
 _gitroot="git://gitorious.org/qt/qtimageformats.git"
 _gitname=qt5-qtimageformats
+_gitbranch=dev
 
 build() {
 	if [ ! -d "${_gitname}" ]; then
-		git clone --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
+		git clone -b ${_gitbranch} --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
 	else
 		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
 	fi

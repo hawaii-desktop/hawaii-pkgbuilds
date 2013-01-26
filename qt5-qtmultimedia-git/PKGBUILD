@@ -3,7 +3,7 @@
 # TODO: gst/interfaces/photography.h not found, also might need openal
 
 pkgname=qt5-qtmultimedia-git
-pkgver=20121111
+pkgver=20130123
 pkgrel=1
 pkgdesc="Qt 5: qtmultimedia module"
 groups=('qt5' 'qt5-addons')
@@ -18,10 +18,11 @@ md5sums=()
 
 _gitroot="git://gitorious.org/qt/qtmultimedia.git"
 _gitname=qt5-qtmultimedia
+_gitbranch=dev
 
 build() {
 	if [ ! -d "${_gitname}" ]; then
-		git clone --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
+		git clone -b ${_gitbranch} --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
 	else
 		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
 	fi

@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=qt5-qtwayland-git
-pkgver=20130107
+pkgver=20130123
 pkgrel=1
 pkgdesc="Qt 5: qtwayland module"
 arch=('i686' 'x86_64')
@@ -12,10 +12,11 @@ makedepends=('gcc' 'git')
 
 _gitroot="git://gitorious.org/qt/qtwayland.git"
 _gitname=qt5-qtwayland
+_gitbranch=master
 
 build() {
 	if [ ! -d "${_gitname}" ]; then
-		git clone ${_gitroot} ${_gitname} && cd ${_gitname}
+		git clone -b ${_gitbranch} --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
 	else
 		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
 	fi

@@ -1,7 +1,7 @@
 # Maintainer: Anselmo L. S. Melo <anselmolsm@gmail.com>
 
 pkgname=qt5-qtsvg-git
-pkgver=20121111
+pkgver=20130123
 pkgrel=1
 pkgdesc="Qt 5: qtsvg module"
 groups=('qt5' 'qt5-addons')
@@ -16,10 +16,11 @@ md5sums=()
 
 _gitroot="git://gitorious.org/qt/qtsvg.git"
 _gitname=qt5-qtsvg
+_gitbranch=dev
 
 build() {
 	if [ ! -d "${_gitname}" ]; then
-		git clone --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
+		git clone -b ${_gitbranch} --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
 	else
 		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
 	fi

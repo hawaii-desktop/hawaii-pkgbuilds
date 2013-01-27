@@ -6,7 +6,9 @@ Packages that need to be uploaded to AUR:
 Packages that fails to build:
 
  * gtk3-git
+ * qt5-qtlocation-git
  * qt5-qtwebkit-git
+ * qt5-qtpim-git
  * phonon-for-qt5-git
 
 Packages that need to be built:

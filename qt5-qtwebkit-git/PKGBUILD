@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=qt5-qtwebkit-git
-pkgver=20121227
+pkgver=20130123
 pkgrel=1
 pkgdesc="Qt 5: qtwebkit module"
 groups=('qt5' 'qt5-addons')
@@ -16,10 +16,11 @@ md5sums=()
 
 _gitroot="git://gitorious.org/qtwebkit/qt5-module.git"
 _gitname=qt5-qtwebkit
+_gitbranch=master
 
 build() {
 	rm -rf "${_gitname}"
-	git clone --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
+	git clone -b ${_gitbranch} --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
 
 	msg "GIT checkout done."
 

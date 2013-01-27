@@ -3,7 +3,7 @@
 # Contributor: Anselmo L. S. Melo <anselmolsm@gmail.com>
 
 pkgname=qt5-qtquick1-git
-pkgver=20121111
+pkgver=20130123
 pkgrel=1
 pkgdesc="Qt 5: qtquick1 module (QtQuick 1, QML)"
 arch=('i686' 'x86_64')
@@ -16,10 +16,11 @@ md5sums=()
 
 _gitroot="git://gitorious.org/qt/qtquick1.git"
 _gitname=qt5-qtquick1
+_gitbranch=dev
 
 build() {
 	if [ ! -d "${_gitname}" ]; then
-		git clone --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
+		git clone -b ${_gitbranch} --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
 	else
 		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
 	fi

@@ -1,6 +1,6 @@
-= List of packages =
+# List of packages
 
-== Mesa and Wayland ==
+## Mesa and Wayland
 
 * wayland
 * mesa-full-wayland
@@ -8,7 +8,7 @@
 * cairo-gl
 * weston
 
-== Qt 5 ==
+## Qt 5
 
 * qt5-qtbase-for-hawaii-git
 * qt5-qtjsbackend-git
@@ -31,15 +31,15 @@
 * qt-accountsservice-addon-git
 * polkit-qt-for-hawaii-git
 
-== QtCreator for Qt 5 ==
+## QtCreator for Qt 5
 
 * qtcreator-for-qt5-git
 
-== GTK+ 3 with Wayland ==
+## GTK+ 3 with Wayland
 
 * gtk3-git
 
-== Hawaii ==
+## Hawaii
 
 * extra-cmake-modules-git
 * kde-solid-for-hawaii-git

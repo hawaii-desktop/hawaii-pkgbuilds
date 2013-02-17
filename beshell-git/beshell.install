@@ -1,9 +1,0 @@
-post_install() {
-  echo -e "  Please see http://sourceforge.net/p/be-shell/wiki/Installation/\n  on how to replace plasma with BE::shell.\n  The necessary files can be found in /usr/share/beshell/examples/.\n"
-  echo -e "  Install kdebase-runtime to be able to eject devices from the media tray."
-}
-
-post_remove() {
-  echo -e "  Don't forget to deactivate the autostart-files for plasma-desktop\n  to fix your KDE desktop."
-}
-

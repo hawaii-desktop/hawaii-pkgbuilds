@@ -9,7 +9,7 @@ url="http://wayland.freedesktop.org"
 provides=("weston=1.0.0")
 conflicts=('weston')
 license=('MIT')
-depends=('libxkbcommon' 'wayland-git' 'mesa-full-wayland' 'cairo-gl' 'poppler-glib' 'mtdev' 'libxcursor' 'glu' 'ttf-dejavu')
+depends=('libxkbcommon' 'wayland-git' 'mesa-full' 'cairo-gl' 'poppler-glib' 'mtdev' 'libxcursor' 'glu' 'ttf-dejavu')
 makedepends=('git')
 options=(!libtool)
 

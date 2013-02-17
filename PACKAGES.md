@@ -3,7 +3,7 @@
 ## Mesa and Wayland
 
 * wayland
-* mesa-full-wayland
+* mesa-full
 * libxkbcommon
 * cairo-gl
 * weston

@@ -1,15 +1,15 @@
 # Maintainer: Joel Teichroeb <joel@teichroeb.net>
 
 pkgname=weston
-pkgver=1.0.0
-pkgrel=3
+pkgver=1.0.4
+pkgrel=1
 pkgdesc="A modern display server."
 arch=(i686 x86_64)
 url="http://wayland.freedesktop.org"
 license=('MIT')
 depends=('libxkbcommon' 'wayland' 'mesa-full-wayland' 'cairo-gl' 'poppler-glib' 'mtdev' 'libxcursor' 'glu' 'ttf-dejavu')
 source=(http://wayland.freedesktop.org/releases/${pkgname}-${pkgver}.tar.xz)
-sha1sums=(b179dff28403d05e2a4f1a1846772bb83b36b51a)
+sha1sums=(6f51fe78151ba2854f6cf6a41244c34f39c1d6de)
 options=(!libtool)
 
 build() {

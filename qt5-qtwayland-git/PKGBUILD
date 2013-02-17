@@ -7,7 +7,7 @@ pkgdesc="Qt 5: qtwayland module"
 arch=('i686' 'x86_64')
 url="https://qt.gitorious.org/qt/qtwayland"
 license=('LGPL')
-depends=('qt5-qtbase-git' 'qt5-qtdeclarative-git' 'libxcomposite' 'libxkbcommon' 'wayland-git')
+depends=('qt5-qtbase-git' 'qt5-qtdeclarative-git' 'libxcomposite' 'libxkbcommon' 'wayland')
 makedepends=('gcc' 'git')
 
 _gitroot="git://gitorious.org/qt/qtwayland.git"

@@ -50,7 +50,7 @@ build() {
 		--enable-gallium-llvm \
 		--enable-egl \
 		--enable-gallium-egl \
-		--with-egl-platforms=drm,x11,wayland \
+		--with-egl-platforms=drm,x11,wayland,fbdev \
 		--enable-gallium-gbm \
 		--enable-gles1 \
 		--enable-gles2 \

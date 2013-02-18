@@ -43,8 +43,8 @@
 * hawaii-icon-themes-git
 * hawaii-wallpapers-git
 * ttf-raleway-font-family
-* hawaii-fluid-git
 * hawaii-fluid-themes-git
+* hawaii-fluid-git
 * hawaii-greenisland-git
 * hawaii-login-manager-git
 * hawaii-archiver-git

@@ -23,7 +23,7 @@ build() {
 
 	msg "GIT checkout done."
 
-	/opt/qt5/bin/qmake
+	/opt/qt5/bin/qmake CONFIG+=wayland-compositor
 	make
 }
 

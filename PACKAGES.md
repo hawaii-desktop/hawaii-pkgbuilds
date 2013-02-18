@@ -2,12 +2,7 @@
 
 ## Mesa and Wayland
 
-* wayland
-* llvm-amdgpu-git
-* mesa-full
 * libxkbcommon
-* cairo-gl
-* weston
 
 ## Qt 5
 

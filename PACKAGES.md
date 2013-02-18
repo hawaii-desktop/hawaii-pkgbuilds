@@ -13,14 +13,14 @@
 * qt5-qtsvg-git
 * qt5-qtimageformats-git
 * qt5-qtgraphicaleffects-git
-* qt5-qtjsondb-git (ignore, don't compile)
+* qt5-qtjsondb-git
 * qt5-qttools-git
 * qt5-qtwayland-git
 * qt5-qtmultimedia-git
-* qt5-qtpim-git
-* qt5-qtconnectivity-git (ignore, don't compile)
-* qt5-qt3d-git (ignore, don't compile)
-* qt5-qtlocation-git (ignore, don't compile)
+* qt5-qtpim-git (ignore, doesn't compile)
+* qt5-qtconnectivity-git
+* qt5-qt3d-git
+* qt5-qtlocation-git
 * qt5-qtsensors-git
 * qt5-qtscript-git
 * qt5-qtquick1-git

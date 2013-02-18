@@ -39,7 +39,6 @@
 
 * extra-cmake-modules-git
 * kde-solid-for-hawaii-git
-* hawaii-archiver-git
 * hawaii-vibe-git
 * hawaii-icon-themes-git
 * hawaii-wallpapers-git
@@ -48,6 +47,7 @@
 * hawaii-fluid-themes-git
 * hawaii-greenisland-git
 * hawaii-login-manager-git
+* hawaii-archiver-git
 * hawaii-eyesight-git
 * hawaii-swordfish-git
 * hawaii-system-preferences-git

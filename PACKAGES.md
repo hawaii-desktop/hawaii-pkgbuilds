@@ -53,3 +53,8 @@
 * hawaii-system-preferences-git
 * hawaii-terminal-git
 * hawaii-meta-git
+
+## Applications
+
+* communi-for-qt5-git
+* communi-desktop-for-qt5-git

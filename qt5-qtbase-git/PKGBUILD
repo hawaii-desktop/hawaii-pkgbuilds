@@ -1,0 +1,56 @@
+# Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+
+# Based on qt5-qtbase-git from Sergio Correia <sergio.correia@uece.net>
+
+pkgname=qt5-qtbase-git
+pkgver=20130226
+pkgrel=1
+pkgdesc="Qt 5: qtbase module"
+arch=('i686' 'x86_64')
+url="https://qt.gitorious.org/qt/qtbase"
+license=('LGPL')
+depends=('pcre' 'libpng' 'libjpeg' 'dbus-core' 'cups' 'sqlite' 'libxcb'
+         'xcb-proto' 'xcb-util' 'xcb-util-image' 'xcb-util-keysyms'
+         'xcb-util-renderutil' 'xcb-util-wm' 'libxext' 'libxrender'
+         'icu' 'systemd-tools' 'mesa')
+provides=('qt5-qtbase-for-hawaii-git')
+conflicts=('qt5-qtbase-for-hawaii-git')
+source=()
+md5sums=()
+makedepends=('git' 'gcc')
+
+_gitroot="git://gitorious.org/qt/qtbase.git"
+_gitname=qt5-qtbase
+_gitbranch=dev
+
+build() {
+	if [ ! -d "${_gitname}" ]; then
+		git clone -b ${_gitbranch} --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
+	else
+		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
+	fi
+
+	msg "GIT checkout done."
+
+	./configure -prefix /usr \
+		-libexecdir /usr/libexec/qt5 \
+		-plugindir /usr/lib/qt5/plugins \
+		-importdir /usr/lib/qt5/imports \
+		-qmldir /usr/lib/qt5/qml \
+		-archdatadir /usr/lib/qt5 \
+		-datadir /usr/share/qt5 \
+		-docdir /usr/share/doc/qt5 \
+		-translationdir /usr/share/qt5/translations \
+		-sysconfdir /etc/xdg \
+		-examplesdir /usr/share/qt5/examples \
+		-testsdir /usr/share/qt5/tests \
+		-opensource -confirm-license -nomake tests -nomake examples -release -opengl es2 \
+		-icon -eglfs -kms
+	make
+}
+
+package() {
+	cd "${_gitname}"
+
+	make INSTALL_ROOT="${pkgdir}" install
+}

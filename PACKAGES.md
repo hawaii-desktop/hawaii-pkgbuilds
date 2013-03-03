@@ -6,7 +6,7 @@
 
 ## Qt 5
 
-* qt5-qtbase-for-hawaii-git
+* qt5-qtbase-git
 * qt5-qtjsbackend-git
 * qt5-qtxmlpatterns-git
 * qt5-qtdeclarative-git
@@ -26,6 +26,7 @@
 * qt5-qtquick1-git
 * qt-accountsservice-addon-git
 * polkit-qt-for-hawaii-git
+* qt5-qtdesktopcomponents-git
 
 ## QtCreator for Qt 5
 

@@ -1,13 +1,13 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
-pkgname=kde-solid-for-hawaii-git
-pkgver=20121130
+pkgname=kde-solid-git
+pkgver=20130226
 pkgrel=1
 pkgdesc="Hawaii: Solid from KDE"
 arch=('i686' 'x86_64')
 url="http://www.kde.org"
 license=('LGPL')
-depends=('qt5-qtbase-for-hawaii-git' 'udisks')
+depends=('qt5-qtbase-git' 'udisks')
 makedepends=('extra-cmake-modules-git' 'git' 'qt5-qtsvg-git')
 provides=('kde-solid-git')
 conflicts=('kde-solid-git')

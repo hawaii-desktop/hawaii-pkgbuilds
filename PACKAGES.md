@@ -38,7 +38,7 @@
 ## Hawaii
 
 * extra-cmake-modules-git
-* kde-solid-for-hawaii-git
+* kde-solid-git
 * hawaii-vibe-git
 * hawaii-icon-themes-git
 * hawaii-wallpapers-git

@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=wayland-git
-pkgver=20121205
+pkgver=20130303
 pkgrel=1
 pkgdesc="A modern display server."
 arch=(i686 x86_64)

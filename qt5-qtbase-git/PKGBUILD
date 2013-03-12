@@ -13,8 +13,8 @@ depends=('pcre' 'libpng' 'libjpeg' 'dbus-core' 'cups' 'sqlite' 'libxcb'
          'xcb-proto' 'xcb-util' 'xcb-util-image' 'xcb-util-keysyms'
          'xcb-util-renderutil' 'xcb-util-wm' 'libxext' 'libxrender'
          'icu' 'systemd-tools' 'mesa')
-provides=('qt5-qtbase-for-hawaii-git')
-conflicts=('qt5-qtbase-for-hawaii-git')
+provides=('qt5-qtbase-for-hawaii-git' 'qt5-base')
+conflicts=('qt5-qtbase-for-hawaii-git' 'qt5-base')
 source=()
 md5sums=()
 makedepends=('git' 'gcc')
@@ -32,20 +32,23 @@ build() {
 
 	msg "GIT checkout done."
 
-	./configure -prefix /usr \
-		-libexecdir /usr/libexec/qt5 \
-		-plugindir /usr/lib/qt5/plugins \
-		-importdir /usr/lib/qt5/imports \
-		-qmldir /usr/lib/qt5/qml \
-		-archdatadir /usr/lib/qt5 \
-		-datadir /usr/share/qt5 \
-		-docdir /usr/share/doc/qt5 \
-		-translationdir /usr/share/qt5/translations \
+	./configure -confirm-license -opensource \
+		-prefix /usr \
+		-docdir /usr/share/doc/qt \
+		-headerdir /usr/include/qt5 \
+		-archdatadir /usr/lib/qt \
+		-datadir /usr/share/qt \
 		-sysconfdir /etc/xdg \
-		-examplesdir /usr/share/qt5/examples \
-		-testsdir /usr/share/qt5/tests \
-		-opensource -confirm-license -nomake tests -nomake examples -release -opengl es2 \
-		-icon -eglfs -kms
+		-examplesdir /usr/share/doc/qt/examples \
+		-system-sqlite \
+		-openssl-linked \
+		-nomake docs \
+		-nomake examples \
+		-nomake tests \
+		-no-rpath \
+		-optimized-qmake \
+		-dbus-linked \
+		-reduce-relocations
 	make
 }
 

@@ -41,8 +41,6 @@ build() {
         mkdir ${srcdir}/build/
     fi
 
-    export PATH=/opt/qt5/bin:$PATH
-
     # Build
     cd ${srcdir}/build
     msg "Starting make..."

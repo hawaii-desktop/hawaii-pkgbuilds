@@ -19,7 +19,7 @@ optdepends=('gdb: for the debugger')
 provides=('qtcreator')
 conflicts=('qtcreator')
 source=('qtcreator.desktop')
-md5sums=('d58f0f889edbd0662d95536205463c25')
+md5sums=('164356c75a347f5755ce743ceac0d334')
 
 _gitroot="git://gitorious.org/qt-creator/qt-creator.git"
 _gitname="qt-creator"
@@ -49,19 +49,15 @@ build() {
     mkdir -p share/doc/qtcreator
     touch share/doc/qtcreator/qtcreator.qch
 
-    export PATH=/opt/qt5/bin:$PATH
-
     # to enable the qml designer you need to add QT_PRIVATE_HEADERS=/path/to/your/qt/source/include to the qmake command
-    /opt/qt5/bin/qmake ${srcdir}/${_gitname}/qtcreator.pro
+    qmake ${srcdir}/${_gitname}/qtcreator.pro
     make
 }
 
 package() {
     cd "${srcdir}/build"
 
-    export PATH=/opt/qt5/bin:$PATH
-
-    make INSTALL_ROOT="${pkgdir}/opt/qt5" install
+    make INSTALL_ROOT="${pkgdir}/usr" install
     install -Dm644 ${srcdir}/qtcreator.desktop ${pkgdir}/usr/share/applications/qtcreator.desktop || return 1
     install -Dm644 ${srcdir}/$_gitname/LGPL_EXCEPTION.TXT ${pkgdir}/usr/share/licenses/qtcreator/LGPL_EXCEPTION.TXT || return 1
 }

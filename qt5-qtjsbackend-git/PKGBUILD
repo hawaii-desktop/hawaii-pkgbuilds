@@ -2,7 +2,7 @@
 # Contributor: Anselmo L. S. Melo <anselmolsm@gmail.com>
 
 pkgname=qt5-qtjsbackend-git
-pkgver=20130123
+pkgver=20130313
 pkgrel=1
 pkgdesc="Qt 5: qtjsbackend module (includes QtV8)"
 arch=('i686' 'x86_64')
@@ -10,6 +10,8 @@ url="https://qt.gitorious.org/qt/qtjsbackend"
 license=('LGPL')
 depends=('python')
 makedepends=('gcc' 'git' 'qt5-qtbase-git')
+provides=('qt5-jsbackend')
+conflicts=('qt5-jsbackend')
 source=()
 md5sums=()
 
@@ -26,7 +28,7 @@ build() {
 
 	msg "GIT checkout done."
 
-	/opt/qt5/bin/qmake
+	qmake
 	make
 }
 

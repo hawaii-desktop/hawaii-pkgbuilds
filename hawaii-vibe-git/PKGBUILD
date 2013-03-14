@@ -24,8 +24,6 @@ build() {
 
 	msg "GIT checkout done."
 
-	export PATH=/opt/qt5/bin:$PATH
-
 	mkdir build
 	cd build
 	cmake -DCMAKE_INSTALL_PREFIX=/opt/hawaiide -DCMAKE_BUILD_TYPE=Release ..
@@ -33,19 +31,17 @@ build() {
 }
 
 package() {
-	export PATH=/opt/qt5/bin:$PATH
-
 	cd "${_gitname}/build"
 	make DESTDIR="${pkgdir}" install
 
 	mkdir -p $pkgdir/etc/profile.d
 	cat >$pkgdir/etc/profile.d/hawaii.sh <<EOF
-export PATH=/opt/qt5/bin:/opt/hawaiide/bin:\$PATH
+export PATH=/opt/hawaiide/bin:\$PATH
 export QT_MESSAGE_PATTERN='%{appname}(%{pid})/%{category} %{function}: %{message}'
 export QT_PLUGIN_PATH=/opt/hawaiide/plugins:\$QT_PLUGIN_PATH
 export QML2_IMPORT_PATH=/opt/hawaiide/qml:\$QML2_IMPORT_PATH
 export XDG_DATA_DIRS=\$XDG_DATA_DIRS:/opt/hawaiide/share/
-export LD_LIBRARY_PATH=/opt/qt5/lib:/opt/hawaiide/lib64:\$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/opt/hawaiide/lib64:\$LD_LIBRARY_PATH
 EOF
 	chmod 755 $pkgdir/etc/profile.d/hawaii.sh
 }

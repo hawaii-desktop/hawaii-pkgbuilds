@@ -9,6 +9,8 @@ arch=('i686' 'x86_64')
 url="https://qt.gitorious.org/qt/qtsensors"
 license=('LGPL')
 depends=('qt5-qtbase-git')
+provides=('qt5-sensors')
+conflicts=('qt5-sensors')
 makedepends=('git')
 options=('!libtool')
 source=()
@@ -27,7 +29,7 @@ build() {
 
 	msg "GIT checkout done."
 
-	/opt/qt5/bin/qmake
+	qmake
 	make
 }
 

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
-Exec=/opt/qt5/bin/qtcreator
+Exec=qtcreator
 Name=Qt Creator
 GenericName=C++ IDE
 X-KDE-StartupNotify=true

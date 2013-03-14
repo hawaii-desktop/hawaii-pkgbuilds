@@ -12,6 +12,8 @@ url="https://qt.gitorious.org/qt/qtmultimedia"
 license=('LGPL')
 depends=('qt5-qtbase-git' 'qt5-qtxmlpatterns-git' 'qt5-qtdeclarative-git' 'qt5-qtjsbackend-git' 'gstreamer0.10' 'gstreamer0.10-base' 'pulseaudio' 'libpulse')
 makedepends=('git')
+provides=('qt5-multimedia')
+conflicts=('qt5-multimedia')
 options=('!libtool')
 source=()
 md5sums=()
@@ -29,7 +31,7 @@ build() {
 
 	msg "GIT checkout done."
 
-	/opt/qt5/bin/qmake
+	qmake
 	make
 }
 

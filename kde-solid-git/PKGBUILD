@@ -29,8 +29,6 @@ build() {
 
 	msg "GIT checkout done."
 
-	export PATH=/opt/qt5/bin:$PATH
-
 	mkdir build
 	cd build
 	cmake -DCMAKE_INSTALL_PREFIX=/opt/hawaiide -DCMAKE_BUILD_TYPE=Release ..
@@ -38,8 +36,6 @@ build() {
 }
 
 package() {
-	export PATH=/opt/qt5/bin:$PATH
-
 	cd "${_gitname}/build"
 	make DESTDIR="${pkgdir}" install
 }

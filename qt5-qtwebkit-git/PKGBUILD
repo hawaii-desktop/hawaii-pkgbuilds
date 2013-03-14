@@ -36,7 +36,7 @@ build() {
 
 #	export PYTHON=python2
 #	alias python='/usr/bin/python2'
-	Tools/Scripts/build-webkit --qt --qmake=/opt/qt5/bin/qmake --install-libs=/opt/qt5 --release
+	Tools/Scripts/build-webkit --qt --qmake=qmake --install-libs=/opt/qt5 --release
 }
 
 package() {

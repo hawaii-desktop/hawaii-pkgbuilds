@@ -11,6 +11,8 @@ url="https://qt.gitorious.org/qt/qtxmlpatterns"
 license=('LGPL')
 depends=('qt5-qtbase-git')
 makedepends=('git')
+provides=('qt5-xmlpatterns')
+conflicts=('qt5-xmlpatterns')
 options=('!libtool')
 source=()
 md5sums=()
@@ -28,12 +30,12 @@ build() {
 
 	msg "GIT checkout done."
 
-	/opt/qt5/bin/qmake
+	qmake
 	make
 
 	# It seems the tools subdir doesn't get built
 	cd tools
-	/opt/qt5/bin/qmake
+	qmake
 	make
 }
 

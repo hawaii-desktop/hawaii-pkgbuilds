@@ -11,6 +11,8 @@ url="https://qt.gitorious.org/qt/qtjsondb"
 license=('LGPL')
 depends=('libedit' 'qt5-qtbase-git' 'qt5-qtdeclarative-git')
 makedepends=('git')
+provides=('qt5-jsondb')
+conflicts=('qt5-jsondb')
 options=('!libtool')
 source=()
 md5sums=()
@@ -28,7 +30,7 @@ build() {
 
 	msg "GIT checkout done."
 
-	/opt/qt5/bin/qmake
+	qmake
 	make
 }
 

@@ -40,8 +40,6 @@ build() {
         mkdir ${srcdir}/build/
     fi
 
-    export PATH=/opt/qt5/bin:$PATH
-
     cd ${srcdir}/${_gitname}
     patch -Np1 -i ${srcdir}/build-fix.patch
 

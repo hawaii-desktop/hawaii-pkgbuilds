@@ -10,6 +10,8 @@ arch=('i686' 'x86_64')
 url="https://qt.gitorious.org/qt/qtquick1"
 license=('LGPL')
 depends=('qt5-qtbase-git' 'qt5-qtscript-git')
+provides=('qt5-quick1')
+conflicts=('qt5-quick1')
 makedepends=('gcc' 'git')
 source=()
 md5sums=()
@@ -27,7 +29,7 @@ build() {
 
 	msg "GIT checkout done."
 
-	/opt/qt5/bin/qmake
+	qmake
 	make
 }
 

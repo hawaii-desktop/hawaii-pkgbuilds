@@ -1,7 +1,7 @@
 #!/bin/sh
 
 date=$(date +"%Y%m%d")
-packages="qt5-qtbase-git qt5-qtjsbackend-git qt5-qtxmlpatterns-git qt5-qtdeclarative-git qt5-qtsvg-git qt5-qtimageformats-git qt5-qtgraphicaleffects-git qt5-qtjsondb-git qt5-qttools-git qt5-qtwayland-git qt5-qtmultimedia-git qt5-qtconnectivity-git qt5-qt3d-git qt5-qtlocation-git qt5-qtsensors-git qt5-qtscript-git qt5-qtquick1-git qtcreator-for-qt5-git polkit-for-hawaii-git"
+packages="qt5-qtbase-git qt5-qtjsbackend-git qt5-qtxmlpatterns-git qt5-qtdeclarative-git qt5-qtsvg-git qt5-qtimageformats-git qt5-qtgraphicaleffects-git qt5-qtjsondb-git qt5-qttools-git qt5-qtwayland-git qt5-qtmultimedia-git qt5-qtconnectivity-git qt5-qt3d-git qt5-qtlocation-git qt5-qtsensors-git qt5-qtscript-git qt5-qtquick1-git qtcreator-for-qt5-git polkit-qt5-git"
 
 for pkg in $packages; do
 	file=${pkg}-${date}-1-x86_64.pkg.tar.xz

@@ -10,6 +10,8 @@ url="https://qt.gitorious.org/qt/qtsvg"
 license=('LGPL')
 depends=('qt5-qtbase-git')
 makedepends=('git')
+provides=('qt5-svg')
+conflicts=('qt5-svg')
 options=('!libtool')
 source=()
 md5sums=()
@@ -27,7 +29,7 @@ build() {
 
 	msg "GIT checkout done."
 
-	/opt/qt5/bin/qmake
+	qmake
 	make
 }
 

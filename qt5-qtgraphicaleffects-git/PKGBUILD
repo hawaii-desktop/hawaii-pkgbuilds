@@ -9,6 +9,8 @@ url="https://qt.gitorious.org/qt/qtgraphicaleffects"
 license=('LGPL')
 depends=('qt5-qtdeclarative-git')
 makedepends=('gcc' 'git')
+provides=('qt5-graphicaleffects')
+conflicts=('qt5-graphicaleffects')
 source=()
 md5sums=()
 
@@ -25,7 +27,7 @@ build() {
 
 	msg "GIT checkout done."
 
-	/opt/qt5/bin/qmake
+	qmake
 	make
 }
 

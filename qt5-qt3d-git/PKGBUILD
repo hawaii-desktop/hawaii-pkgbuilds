@@ -10,6 +10,8 @@ url="https://qt.gitorious.org/qt/qt3d"
 license=('LGPL')
 depends=('qt5-qtbase-git' 'qt5-qtdeclarative-git')
 makedepends=('git')
+provides=('qt5-3d')
+conflicts=('qt5-3d')
 options=('!libtool')
 source=()
 md5sums=()
@@ -27,7 +29,7 @@ build() {
 
 	msg "GIT checkout done."
 
-	/opt/qt5/bin/qmake
+	qmake
 	make
 }
 

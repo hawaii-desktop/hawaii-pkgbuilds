@@ -9,6 +9,8 @@ url="https://qt.gitorious.org/qt/qtimageformats"
 license=('LGPL')
 depends=('libtiff' 'libmng')
 makedepends=('gcc' 'git' 'qt5-qtbase-git')
+provides=('qt5-imageformats')
+conflicts=('qt5-imageformats')
 
 _gitroot="git://gitorious.org/qt/qtimageformats.git"
 _gitname=qt5-qtimageformats
@@ -23,7 +25,7 @@ build() {
 
 	msg "GIT checkout done."
 
-	/opt/qt5/bin/qmake
+	qmake
 	make
 }
 

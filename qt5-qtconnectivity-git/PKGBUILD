@@ -10,6 +10,8 @@ url="https://qt.gitorious.org/qt/qtconnectivity"
 license=('LGPL')
 depends=('qt5-qtbase-git' 'qt5-qtdeclarative-git' 'bluez')
 makedepends=('git')
+provides=('qt5-connectivity')
+conflicts=('qt5-connectivity')
 options=('!libtool')
 source=()
 md5sums=()
@@ -27,7 +29,7 @@ build() {
 
 	msg "GIT checkout done."
 
-	/opt/qt5/bin/qmake
+	qmake
 	make
 }
 

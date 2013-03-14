@@ -10,6 +10,8 @@ url="https://qt.gitorious.org/qt/qtlocation"
 license=('LGPL')
 depends=('qt5-qtbase-git' 'qt5-qtjsbackend-git' 'qt5-qtdeclarative-git' 'qt5-qt3d-git' 'qt5-qtjsondb-git')
 makedepends=('git')
+provides=('qt5-location')
+conflicts=('qt5-location')
 options=('!libtool')
 source=()
 md5sums=()
@@ -27,7 +29,7 @@ build() {
 
 	msg "GIT checkout done."
 
-	/opt/qt5/bin/qmake
+	qmake
 	make
 }
 

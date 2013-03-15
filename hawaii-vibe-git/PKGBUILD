@@ -26,7 +26,11 @@ build() {
 
 	mkdir build
 	cd build
-	cmake -DCMAKE_INSTALL_PREFIX=/opt/hawaiide -DCMAKE_BUILD_TYPE=Release ..
+	cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+		-DCMAKE_INSTALL_DATADIR=/usr/share/hawaii \
+		-DCMAKE_INSTALL_PLUGINSDIR=/usr/lib/hawaii/plugins \
+		-DCMAKE_INSTALL_QMLDIR=/usr/lib/hawaii/qml \
+		-DCMAKE_BUILD_TYPE=Release ..
 	make
 }
 
@@ -36,12 +40,10 @@ package() {
 
 	mkdir -p $pkgdir/etc/profile.d
 	cat >$pkgdir/etc/profile.d/hawaii.sh <<EOF
-export PATH=/opt/hawaiide/bin:\$PATH
 export QT_MESSAGE_PATTERN='%{appname}(%{pid})/%{category} %{function}: %{message}'
-export QT_PLUGIN_PATH=/opt/hawaiide/plugins:\$QT_PLUGIN_PATH
-export QML2_IMPORT_PATH=/opt/hawaiide/qml:\$QML2_IMPORT_PATH
-export XDG_DATA_DIRS=\$XDG_DATA_DIRS:/opt/hawaiide/share/
-export LD_LIBRARY_PATH=/opt/hawaiide/lib64:\$LD_LIBRARY_PATH
+export QT_PLUGIN_PATH=/usr/lib/hawaii/plugins:\$QT_PLUGIN_PATH
+export QML2_IMPORT_PATH=/usr/lib/hawaii/qml:\$QML2_IMPORT_PATH
+export XDG_DATA_DIRS=/usr/share/hawaii:\$XDG_DATA_DIRS
 EOF
 	chmod 755 $pkgdir/etc/profile.d/hawaii.sh
 }

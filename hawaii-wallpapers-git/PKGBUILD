@@ -25,7 +25,10 @@ build() {
 
 	mkdir build
 	cd build
-	cmake -DCMAKE_INSTALL_PREFIX=/opt/hawaiide ..
+	cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+		-DCMAKE_INSTALL_PLUGINSDIR=/usr/lib/hawaii/plugins \
+		-DCMAKE_INSTALL_QMLDIR=/usr/lib/hawaii/qml \
+		-DCMAKE_BUILD_TYPE=Release ..
 	make
 }
 

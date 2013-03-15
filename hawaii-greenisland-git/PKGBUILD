@@ -8,7 +8,7 @@ arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
 license=('GPL', 'LGPL')
 depends=('hawaii-fluid-git' 'hawaii-icon-themes-git' 'hawaii-wallpapers-git' 'qt5-qtdeclarative-git' 'qt5-qtgraphicaleffects-git' 'qt5-qtwayland-git'
-         'accountsservice' 'polkit-qt-for-hawaii-git' 'qt-accountsservice-addon-git')
+         'accountsservice' 'polkit-qt5-git' 'qt-accountsservice-addon-git')
 makedepends=('git' 'cmake')
 source=()
 md5sums=()
@@ -27,7 +27,10 @@ build() {
 
 	mkdir build
 	cd build
-	cmake -DCMAKE_INSTALL_PREFIX=/opt/hawaiide -DCMAKE_BUILD_TYPE=Release ..
+	cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+		-DCMAKE_INSTALL_PLUGINSDIR=/usr/lib/hawaii/plugins \
+		-DCMAKE_INSTALL_QMLDIR=/usr/lib/hawaii/qml \
+		-DCMAKE_BUILD_TYPE=Release ..
 	make
 }
 

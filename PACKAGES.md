@@ -24,9 +24,9 @@
 * qt5-qtsensors-git
 * qt5-qtscript-git
 * qt5-qtquick1-git
-* qt-accountsservice-addon-git
-* polkit-qt-for-hawaii-git
 * qt5-qtdesktopcomponents-git
+* qt-accountsservice-addon-git
+* polkit-qt5-git
 
 ## QtCreator for Qt 5
 
@@ -47,7 +47,6 @@
 * hawaii-fluid-themes-git
 * hawaii-fluid-git
 * hawaii-greenisland-git
-* hawaii-login-manager-git
 * hawaii-archiver-git
 * hawaii-eyesight-git
 * hawaii-swordfish-git
@@ -57,5 +56,6 @@
 
 ## Applications
 
-* communi-for-qt5-git
-* communi-desktop-for-qt5-git
+* sddm-qt5-git
+* communi-git
+* communi-desktop-git

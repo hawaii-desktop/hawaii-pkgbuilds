@@ -3,7 +3,7 @@
 # Based on qt5-qtbase-git from Sergio Correia <sergio.correia@uece.net>
 
 pkgname=qt5-qtbase-git
-pkgver=20130226
+pkgver=20130315
 pkgrel=1
 pkgdesc="Qt 5: qtbase module"
 arch=('i686' 'x86_64')
@@ -19,9 +19,11 @@ source=()
 md5sums=()
 makedepends=('git' 'gcc')
 
-_gitroot="git://gitorious.org/qt/qtbase.git"
+#_gitroot="git://gitorious.org/qt/qtbase.git"
+_gitroot="git://github.com/plfiorini/qtwayland.git"
 _gitname=qt5-qtbase
-_gitbranch=dev
+#_gitbranch=dev
+_gitbranch=hawaii
 
 build() {
 	if [ ! -d "${_gitname}" ]; then

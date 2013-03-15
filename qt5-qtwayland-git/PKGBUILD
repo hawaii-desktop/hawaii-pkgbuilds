@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=qt5-qtwayland-git
-pkgver=20130123
+pkgver=20130315
 pkgrel=1
 pkgdesc="Qt 5: qtwayland module"
 arch=('i686' 'x86_64')
@@ -12,9 +12,11 @@ provides=('qt5-wayland')
 conflicts=('qt5-wayland')
 makedepends=('gcc' 'git')
 
-_gitroot="git://gitorious.org/qt/qtwayland.git"
+#_gitroot="git://gitorious.org/qt/qtwayland.git"
+_gitroot="git://github.com/plfiorini/qtwayland.git"
 _gitname=qt5-qtwayland
-_gitbranch=master
+#_gitbranch=master
+_gitbranch=hawaii
 
 build() {
 	if [ ! -d "${_gitname}" ]; then

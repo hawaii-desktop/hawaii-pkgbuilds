@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=qt5-qtwebkit-git
-pkgver=20130123
+pkgver=20130322
 pkgrel=1
 pkgdesc="Qt 5: qtwebkit module"
 groups=('qt5' 'qt5-addons')
@@ -14,13 +14,17 @@ options=('!libtool')
 source=()
 md5sums=()
 
-_gitroot="git://gitorious.org/qtwebkit/qt5-module.git"
+#_gitroot="git://gitorious.org/qtwebkit/qt5-module.git"
+_gitroot="git://gitorious.org/qt/qtwebkit.git"
 _gitname=qt5-qtwebkit
-_gitbranch=master
+_gitbranch=dev
 
 build() {
-	rm -rf "${_gitname}"
-	git clone -b ${_gitbranch} --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
+	if [ ! -d "${_gitname}" ]; then
+		git clone -b ${_gitbranch} --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
+	else
+		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
+	fi
 
 	msg "GIT checkout done."
 
@@ -34,13 +38,16 @@ build() {
 #	done
 	find . -type f -name "*.pri" | xargs sed -e 's@python @python2 @g' -i || true
 
-#	export PYTHON=python2
 #	alias python='/usr/bin/python2'
-	Tools/Scripts/build-webkit --qt --qmake=qmake --install-libs=/opt/qt5 --release
+#	Tools/Scripts/build-webkit --qt --qmake=qmake --install-libs=/usr --release
+
+	export PYTHON=python2
+	qmake
 }
 
 package() {
 	cd "${_gitname}"
 
-	make INSTALL_ROOT="${pkgdir}" -C WebKitBuild/Release install
+	#make INSTALL_ROOT="${pkgdir}" -C WebKitBuild/Release install
+	make INSTALL_ROOT="${pkgdir}" install
 }

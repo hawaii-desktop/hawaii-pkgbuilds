@@ -8,8 +8,8 @@ groups=('qt5' 'qt5-addons')
 arch=('i686' 'x86_64')
 url="https://gitorious.org/qtwebkit/qt5-module"
 license=('LGPL')
-depends=('libwebp' 'qt5-qtdeclarative-git' 'qt5-qtlocation-git' 'qt5-qtsensors-git')
-makedepends=('git' 'perl' 'python2' 'gperf' 'fontconfig' 'libxml2' 'libxslt' 'ruby')
+depends=('sqlite' 'libwebp' 'gstreamer0.10' 'gstreamer0.10-base' 'qt5-qtdeclarative-git' 'qt5-qtlocation-git' 'qt5-qtsensors-git')
+makedepends=('git' 'perl' 'python2' 'gperf' 'flex' 'bison' 'fontconfig' 'libxml2' 'libxslt' 'ruby')
 options=('!libtool')
 source=()
 md5sums=()
@@ -28,26 +28,22 @@ build() {
 
 	msg "GIT checkout done."
 
-	for file in $(find ToolsScripts); do
-		sed -e 's@env python@env python2@g' -i $file || true
-	done
-	find . -type f -name "*.py" | xargs sed -e 's@env python@env python2@g' -i || true
-	#sed -e 's,python $(JavaScriptCore)/disassembler/udis86/itab.py,python2 $(JavaScriptCore)/disassembler/udis86/itab.py,g' -i Source/JavaScriptCore/DerivedSources.make
-#	for i in Source/WTF/WTF.vcproj/WTFGenerated.make Source/WebKit2/DerivedSources.make Source/JavaScriptCore/DerivedSources.make Source/WebCore/DerivedSources.make; do
-#		sed -e 's,python ,python2 ,g' -i $i
-#	done
-	find . -type f -name "*.pri" | xargs sed -e 's@python @python2 @g' -i || true
-
-#	alias python='/usr/bin/python2'
-#	Tools/Scripts/build-webkit --qt --qmake=qmake --install-libs=/usr --release
+	sed -i -e "s|#![ ]*/usr/bin/python$|#!/usr/bin/python2|" \
+		-e "s|#![ ]*/usr/bin/env python$|#!/usr/bin/env python2|" \
+		$(find . -name '*.py')
+	sed -i -e "s|#![ ]*/usr/bin/python$|#!/usr/bin/python2|" \
+		-e "s|#![ ]*/usr/bin/env python$|#!/usr/bin/env python2|" \
+		-e "s|python |python2 |" \
+		$(find . -name '*.pr?') $(find . -name '*.make')
+	sed -i -e "s|setWindowFlags|setFlags|" $(find Tools/MiniBrowser -name '*.cpp')
 
 	export PYTHON=python2
-	qmake
+	#qmake CONFIG+=use_system_icu
+	Tools/Scripts/build-webkit --qt --qmake=qmake --qmakearg="CONFIG+=use_system_icu" --release
 }
 
 package() {
 	cd "${_gitname}"
-
-	#make INSTALL_ROOT="${pkgdir}" -C WebKitBuild/Release install
-	make INSTALL_ROOT="${pkgdir}" install
+	make INSTALL_ROOT="${pkgdir}" -C WebKitBuild/Release install
+	#make INSTALL_ROOT="${pkgdir}" install
 }

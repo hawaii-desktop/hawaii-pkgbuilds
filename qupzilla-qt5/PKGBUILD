@@ -12,6 +12,7 @@ url="http://www.qupzilla.com/"
 license=('GPL3')
 depends=('qt5-qtwebkit-git' 'qt5-qtscript-git' 'hunspell' 'desktop-file-utils')
 optdepends=('bash-completion: bash completion support')
+makedepends=('qt5-qttools-git')
 provides=("$_name")
 conflicts=("$_name")
 install="$_name.install"
@@ -23,6 +24,9 @@ build() {
 
   # enable webgl support
   export USE_WEBGL=true
+
+  # enable Wayland support
+  export NO_X11=true
 
   qmake QUPZILLA_PREFIX=/usr/
   make

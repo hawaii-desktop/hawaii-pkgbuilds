@@ -13,9 +13,9 @@ depends=('libxkbcommon' 'wayland-git' 'mesa' 'cairo' 'poppler-glib' 'mtdev' 'lib
 makedepends=('git')
 options=(!libtool)
 
-_gitroot="git://anongit.freedesktop.org/wayland/weston"
+#_gitroot="git://anongit.freedesktop.org/wayland/weston"
+_gitroot="git://github.com/plfiorini/weston.git"
 _gitname="weston"
-#_githash="4b681a7fd4bee01c4d3385e69ee47ed3856c2229"
 
 build() {
 	msg "Connecting to git.freedesktop.org GIT server...."

@@ -14,9 +14,9 @@ depends=('libffi')
 makedepends=('git' 'expat')
 options=(!libtool)
 
-_gitroot="git://anongit.freedesktop.org/wayland/wayland"
+#_gitroot="git://anongit.freedesktop.org/wayland/wayland"
+_gitroot="git://github.com/plfiorini/wayland.git"
 _gitname="wayland"
-#_githash="4b681a7fd4bee01c4d3385e69ee47ed3856c2229"
 
 build() {
 	msg "Connecting to git.freedesktop.org GIT server...."

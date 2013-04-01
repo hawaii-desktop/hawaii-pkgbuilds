@@ -1,8 +1,9 @@
 # List of packages
 
-## Mesa and Wayland
+## Mesa, Wayland and Weston
 
-* libxkbcommon
+* wayland-git
+* weston-git
 
 ## Qt 5
 
@@ -24,7 +25,7 @@
 * qt5-qtsensors-git
 * qt5-qtscript-git
 * qt5-qtquick1-git
-* qt5-qtdesktopcomponents-git
+* qt5-qtquickcontrols-git
 * qt-accountsservice-addon-git
 * polkit-qt5-git
 
@@ -47,6 +48,8 @@
 * hawaii-fluid-themes-git
 * hawaii-fluid-git
 * hawaii-greenisland-git
+* hawaii-shell-git
+* hawaii-shell-weston-plugins-git
 * hawaii-archiver-git
 * hawaii-eyesight-git
 * hawaii-swordfish-git

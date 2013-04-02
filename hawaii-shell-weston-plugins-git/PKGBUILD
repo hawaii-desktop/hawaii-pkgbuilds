@@ -1,0 +1,36 @@
+# Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+
+pkgname=hawaii-shell-weston-plugins-git
+pkgver=20130401
+pkgrel=1
+pkgdesc="Hawaii Shell plugins for Weston"
+arch=('i686' 'x86_64')
+url="http://www.maui-project.org"
+license=('GPL', 'LGPL')
+depends=('weston-git' 'hawaii-shell-git')
+makedepends=('git' 'cmake')
+source=()
+md5sums=()
+
+_gitroot="git://github.com/hawaii-desktop/shell-weston-plugins.git"
+_gitname=shell-weston-plugins
+
+build() {
+	if [ ! -d "${_gitname}" ]; then
+		git clone ${_gitroot} ${_gitname} && cd ${_gitname}
+	else
+		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
+	fi
+
+	msg "GIT checkout done."
+
+	mkdir build
+	cd build
+	../autogen.sh --prefix=/usr
+	make
+}
+
+package() {
+	cd "${_gitname}/build"
+	make DESTDIR="${pkgdir}" install
+}

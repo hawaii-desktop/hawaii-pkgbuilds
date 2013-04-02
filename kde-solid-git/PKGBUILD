@@ -7,10 +7,9 @@ pkgdesc="Hawaii: Solid from KDE"
 arch=('i686' 'x86_64')
 url="http://www.kde.org"
 license=('LGPL')
-depends=('qt5-qtbase-git' 'udisks')
-makedepends=('extra-cmake-modules-git' 'git' 'qt5-qtsvg-git')
+depends=('qt5-base-git' 'udisks')
+makedepends=('extra-cmake-modules-git' 'git' 'qt5-svg-git')
 replaces=('kde-solid-for-hawaii-git')
-conflicts=('kdelibs')
 source=()
 md5sums=()
 
@@ -31,7 +30,9 @@ build() {
 
 	mkdir build
 	cd build
-	cmake -DCMAKE_INSTALL_PREFIX=/usr -DLIB_INSTALL_DIR=/usr/lib -DCMAKE_BUILD_TYPE=Release ..
+	cmake -DCMAKE_INSTALL_PREFIX=/opt/hawaii \
+		-DLIB_INSTALL_DIR=/opt/hawaii/lib \
+		-DCMAKE_BUILD_TYPE=Release ..
 	make
 }
 

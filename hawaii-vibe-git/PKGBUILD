@@ -7,8 +7,8 @@ pkgdesc="Hawaii: Vibe libraries"
 arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
 license=('LGPL')
-depends=('kde-solid-git' 'qt5-qttools-git' 'cantarell-fonts')
-makedepends=('git' 'cmake' 'qt5-qtdeclarative-git')
+depends=('kde-solid-git' 'qt5-tools-git' 'cantarell-fonts')
+makedepends=('git' 'cmake' 'qt5-declarative-git')
 source=()
 md5sums=()
 
@@ -23,6 +23,8 @@ build() {
 	fi
 
 	msg "GIT checkout done."
+
+	export PKG_CONFIG_PATH=/opt/hawaiide/lib/pkgconfig
 
 	mkdir build
 	cd build
@@ -44,6 +46,8 @@ export QT_MESSAGE_PATTERN='%{appname}(%{pid})/%{category} %{function}: %{message
 export QT_PLUGIN_PATH=/usr/lib/hawaii/plugins:\$QT_PLUGIN_PATH
 export QML2_IMPORT_PATH=/usr/lib/hawaii/qml:\$QML2_IMPORT_PATH
 export XDG_DATA_DIRS=/usr/share/hawaii:\$XDG_DATA_DIRS
+export LD_LIBRARY_PATH=/opt/hawaiide/lib:$LD_LIBRARY_PATH
+export PKG_CONFIG_PATH=/opt/hawaiide/lib/pkgconfig:$PKG_CONFIG_PATH
 EOF
 	chmod 755 $pkgdir/etc/profile.d/hawaii.sh
 }

@@ -7,31 +7,31 @@
 
 ## Qt 5
 
-* qt5-qtbase-git
-* qt5-qtjsbackend-git
-* qt5-qtxmlpatterns-git
-* qt5-qtdeclarative-git
-* qt5-qtsvg-git
-* qt5-qtimageformats-git
-* qt5-qtgraphicaleffects-git
-* qt5-qtjsondb-git
-* qt5-qttools-git
-* qt5-qtwayland-git
-* qt5-qtmultimedia-git
-* qt5-qtpim-git (ignore, doesn't compile)
-* qt5-qtconnectivity-git
-* qt5-qt3d-git
-* qt5-qtlocation-git
-* qt5-qtsensors-git
-* qt5-qtscript-git
-* qt5-qtquick1-git
-* qt5-qtquickcontrols-git
+* qt5-base-git
+* qt5-jsbackend-git
+* qt5-xmlpatterns-git
+* qt5-declarative-git
+* qt5-svg-git
+* qt5-imageformats-git
+* qt5-graphicaleffects-git
+* qt5-jsondb-git
+* qt5-tools-git
+* qt5-wayland-git
+* qt5-multimedia-git
+* qt5-pim-git (ignore, doesn't compile)
+* qt5-connectivity-git
+* qt5-3d-git
+* qt5-location-git
+* qt5-sensors-git
+* qt5-script-git
+* qt5-quick1-git
+* qt5-quickcontrols-git
 * qt-accountsservice-addon-git
 * polkit-qt5-git
 
 ## QtCreator for Qt 5
 
-* qtcreator-for-qt5-git
+* qtcreator-git
 
 ## GTK+ 3 with Wayland
 

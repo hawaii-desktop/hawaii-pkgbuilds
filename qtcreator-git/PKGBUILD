@@ -1,0 +1,64 @@
+# Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+# Contributor: delor <bartekpiech@gmail com>
+# Contributor: Lukas Jirkovsky <l.jirkovsky@gmail.com>
+# Contributor: Dan Vratil <progdan@progdansoft.com>
+# Contributor: thotypous <matiasΘarchlinux-br·org>
+# Contributor: Imanol Celaya <ornitorrincos@archlinux-es.org>
+# Contributor: heinz from #qt-creator
+
+pkgname=qtcreator-git
+pkgver=20130402
+pkgrel=1
+pkgdesc="Lightweight, cross-platform integrated development environment"
+arch=('i686' 'x86_64')
+url="http://qt-project.org"
+license=('LGPL')
+depends=('qt5-base-git' 'qt5-script-git' 'qt5-quick1-git' 'qt5-tools-git' 'qt5-xmlpatterns-git')
+makedepends=('git' 'gdb')
+optdepends=('gdb: for the debugger')
+replaces=('qtcreator-for-qt5-git')
+provides=('qtcreator')
+conflicts=('qtcreator')
+source=('qtcreator.desktop')
+md5sums=('164356c75a347f5755ce743ceac0d334')
+
+_gitroot="git://gitorious.org/qt-creator/qt-creator.git"
+_gitname="qt-creator"
+
+build() {
+    msg "Connecting to GIT server"
+
+    if [ -d ${srcdir}/$_gitname ] ; then
+        cd ${srcdir}/$_gitname && git pull origin || return 1
+        msg "The local files are updated."
+    else
+        git clone $_gitroot $_gitname || return 1
+    fi
+
+    msg "GIT checkout done or server timeout"
+
+    cd "${srcdir}/${_gitname}" || return 1
+
+    msg "Starting make in quiet mode"
+
+    if [ -d ${srcdir}/build ]; then
+        cd ${srcdir}/build
+    else
+        mkdir ${srcdir}/build
+        cd ${srcdir}/build
+    fi
+    mkdir -p share/doc/qtcreator
+    touch share/doc/qtcreator/qtcreator.qch
+
+    # to enable the qml designer you need to add QT_PRIVATE_HEADERS=/path/to/your/qt/source/include to the qmake command
+    qmake ${srcdir}/${_gitname}/qtcreator.pro
+    make
+}
+
+package() {
+    cd "${srcdir}/build"
+
+    make INSTALL_ROOT="${pkgdir}/usr" install
+    install -Dm644 ${srcdir}/qtcreator.desktop ${pkgdir}/usr/share/applications/qtcreator.desktop || return 1
+    install -Dm644 ${srcdir}/$_gitname/LGPL_EXCEPTION.TXT ${pkgdir}/usr/share/licenses/qtcreator/LGPL_EXCEPTION.TXT || return 1
+}

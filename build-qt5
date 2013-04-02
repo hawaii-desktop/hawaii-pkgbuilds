@@ -1,14 +1,20 @@
 #!/bin/sh
 
 date=$(date +"%Y%m%d")
-packages="qt5-qtbase-git qt5-qtjsbackend-git qt5-qtxmlpatterns-git qt5-qtdeclarative-git qt5-qtquickcontrols-git qt5-qtsvg-git qt5-qtimageformats-git qt5-qtgraphicaleffects-git qt5-qtjsondb-git qt5-qttools-git qt5-qtwayland-git qt5-qtmultimedia-git qt5-qtconnectivity-git qt5-qt3d-git qt5-qtlocation-git qt5-qtsensors-git qt5-qtscript-git qt5-qtquick1-git qtcreator-for-qt5-git polkit-qt5-git"
+packages="qt5-base-git qt5-jsbackend-git qt5-xmlpatterns-git qt5-declarative-git qt5-quickcontrols-git qt5-svg-git qt5-imageformats-git qt5-graphicaleffects-git qt5-jsondb-git qt5-wayland-git qt5-multimedia-git qt5-connectivity-git qt5-3d-git qt5-location-git qt5-sensors-git qt5-webkit-git qt5-tools-git qt5-script-git qt5-quick1-git qtcreator-git polkit-qt5-git"
 
 for pkg in $packages; do
-	file=${pkg}-${date}-1-x86_64.pkg.tar.xz
+	file=${pkg}-*-x86_64.pkg.tar.xz
 
 	[ -f ~/chroot/root/repo/${file} ] && continue
+	[ $pkg == "qt5-imageformats-git" ] && continue
+	[ $pkg == "qt5-webkit-git" ] && continue
 
 	pushd $pkg
+
+	if [ $? -ne 0 ]; then
+		exit $?
+	fi
 
 	echo "===> ${pkg}"
 

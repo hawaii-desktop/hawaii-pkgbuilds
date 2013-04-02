@@ -24,6 +24,8 @@ build() {
 
 	msg "GIT checkout done."
 
+	export PKG_CONFIG_PATH=/opt/hawaiide/lib/pkgconfig
+
 	mkdir build
 	cd build
 	cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib \

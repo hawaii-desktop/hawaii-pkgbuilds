@@ -1,7 +1,9 @@
-# Maintainer: Martin Sandsmark <sandsmark@iskrembilen.com>
+# Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+
+# Based on extra-cmake-modules-git by Martin Sandsmark <sandsmark@iskrembilen.com>
 
 pkgname=extra-cmake-modules-git
-pkgver=20121130
+pkgver=20130402
 pkgrel=1
 pkgdesc='Extra CMake modules'
 arch=('i686' 'x86_64')
@@ -10,9 +12,11 @@ license=('LGPL')
 depends=('cmake')
 makedepends=('pkgconfig' 'cmake' 'git')
 source=()
+options=(!strip)
+
 _gitroot='git://anongit.kde.org/extra-cmake-modules.git'
 _gitname='extra-cmake-modules'
-options=(!strip)
+_gitbranch='a667c2d45d041f2dc365a7ca82a27355aed0b1cc'
 
 build() {
     cd ${srcdir}
@@ -20,9 +24,11 @@ build() {
     msg "Connecting to extra-cmake-modules GIT server...."
     if [ -d ${srcdir}/${_gitname} ] ; then
         cd ${srcdir}/${_gitname} && git pull origin
+        [ $_gitbranch != "" ] && cd ${srcdir}/${_gitname} && git checkout $_gitbranch
         msg "The local files are updated."
     else
         git clone ${_gitroot} ${_gitname}
+        [ $_gitbranch != "" ] && cd ${_gitname} && git checkout $_gitbranch
         msg "GIT checkout done "
     fi
 

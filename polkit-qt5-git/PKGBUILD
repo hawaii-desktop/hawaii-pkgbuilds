@@ -26,8 +26,8 @@ build() {
 
 	mkdir build
 	cd build
-	cmake -DCMAKE_INSTALL_PREFIX=/opt/hawaii \
-		-DLIB_INSTALL_DIR=/opt/hawaii/lib \
+	cmake -DCMAKE_INSTALL_PREFIX=/opt/hawaiide \
+		-DLIB_INSTALL_DIR=/opt/hawaiide/lib \
 		-DCMAKE_BUILD_TYPE=Release ..
 	make
 }

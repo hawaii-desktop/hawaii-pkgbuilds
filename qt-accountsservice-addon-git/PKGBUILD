@@ -1,13 +1,13 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=qt-accountsservice-addon-git
-pkgver=20130119
+pkgver=20130402
 pkgrel=1
 pkgdesc="Qt AccountsService add-on"
 arch=('i686' 'x86_64')
 url="https://github.com/hawaii-desktop/qt-accountsservice-addon"
 license=('LGPL')
-depends=('qt5-qtbase-git' 'qt5-qtdeclarative-git')
+depends=('qt5-base-git' 'qt5-declarative-git')
 makedepends=('gcc' 'git')
 source=()
 md5sums=()

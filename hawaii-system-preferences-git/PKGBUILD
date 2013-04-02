@@ -24,6 +24,7 @@ build() {
 
 	msg "GIT checkout done."
 
+	export PATH=/opt/hawaiide/bin:$PATH
 	export PKG_CONFIG_PATH=/opt/hawaiide/lib/pkgconfig
 
 	mkdir build

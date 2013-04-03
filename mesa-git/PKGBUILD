@@ -22,7 +22,7 @@ arch=('i686' 'x86_64')
 #_llvm=$(pacman -Qq | egrep --max-count=1 'llvm-amdgpu-git|llvm-amdgpu-svn|llvm-r600-svn' || echo llvm-amdgpu-snapshot)
 _llvm=
 makedepends=('python2' 'libxml2' 'libx11' 'glproto' 'libdrm' 'dri2proto' 'libxxf86vm' 'libxdamage'
-             'libvdpau' 'wayland' "$_llvm" 'git')
+             'libvdpau' 'wayland-git' "$_llvm" 'git')
 url="http://mesa3d.sourceforge.net"
 license=('custom')
 options=('!libtool')

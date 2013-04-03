@@ -58,7 +58,7 @@ build () {
     --enable-gallium-llvm \
     --enable-egl \
     --enable-gallium-egl \
-    --with-egl-platforms=x11,drm,wayland \
+    --with-egl-platforms=x11,drm,wayland,fbdev \
     --enable-shared-glapi \
     --enable-gbm \
     --enable-glx-tls \

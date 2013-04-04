@@ -2,22 +2,22 @@
 # Maintainer: speps <speps at aur dot archlinux dot org>
 
 _name=qupzilla
-_commit=953ca72 #
+_commit=faeba013bc
 pkgname=$_name-qt5
-pkgver=1.4.1_git20130326
+pkgver=1.4.1_git20130404
 pkgrel=1
 pkgdesc="Cross-platform QtWebKit browser. Qt5 version."
 arch=(i686 x86_64)
 url="http://www.qupzilla.com/"
 license=('GPL3')
-depends=('qt5-qtwebkit-git' 'qt5-qtscript-git' 'hunspell' 'desktop-file-utils')
+depends=('qt5-webkit-git' 'qt5-script-git' 'hunspell' 'desktop-file-utils')
 optdepends=('bash-completion: bash completion support')
-makedepends=('qt5-qttools-git')
+makedepends=('qt5-tools-git')
 provides=("$_name")
 conflicts=("$_name")
 install="$_name.install"
 source=("$_name-$pkgver.tar.gz::https://github.com/QupZilla/$_name/tarball/$_commit")
-md5sums=('1b1b94a53a422436975b19f9ca05f006')
+md5sums=('22f1fb63f34fed36c607360f4852541a')
 
 build() {
   cd "$srcdir/QupZilla-$_name-"*

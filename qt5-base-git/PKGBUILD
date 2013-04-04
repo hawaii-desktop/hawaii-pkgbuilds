@@ -36,6 +36,8 @@ build() {
 
 	msg "GIT checkout done."
 
+	sed -i "s|-O2|${CXXFLAGS}|" mkspecs/common/{g++,gcc}-base.conf
+
 	./configure -confirm-license -opensource \
 		-prefix /usr \
 		-docdir /usr/share/doc/qt \

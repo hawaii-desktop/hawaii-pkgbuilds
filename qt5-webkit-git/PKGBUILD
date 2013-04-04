@@ -40,6 +40,8 @@ build() {
 		$(find . -name '*.pr?') $(find . -name '*.make')
 	sed -i -e "s|setWindowFlags|setFlags|" $(find Tools/MiniBrowser -name '*.cpp')
 
+	sed -i -e "s|-Werror|-Wno-error|" Tools/qmake/mkspecs/features/unix/default_post.prf
+
 	export PYTHON=python2
 	#qmake CONFIG+=use_system_icu
 	Tools/Scripts/build-webkit --qt --qmake=qmake --qmakearg="CONFIG+=use_system_icu" --release

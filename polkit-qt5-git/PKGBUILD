@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=polkit-qt5-git
-pkgver=20130402
+pkgver=20130407
 pkgrel=1
 pkgdesc='A library that allows developers to access PolicyKit API with a nice Qt-style API'
 arch=('i686' 'x86_64')
@@ -27,7 +27,7 @@ build() {
 	mkdir build
 	cd build
 	cmake -DCMAKE_INSTALL_PREFIX=/opt/hawaiide \
-		-DLIB_INSTALL_DIR=/opt/hawaiide/lib \
+		-DLIB_INSTALL_DIR=lib \
 		-DCMAKE_BUILD_TYPE=Release ..
 	make
 }

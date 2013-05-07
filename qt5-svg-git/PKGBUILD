@@ -3,7 +3,7 @@
 # Based on qt5-qtsvg-git from Anselmo L. S. Melo <anselmolsm@gmail.com>
 
 pkgname=qt5-svg-git
-pkgver=20130402
+pkgver=20130507
 pkgrel=1
 pkgdesc="A cross-platform application and UI framework (QtSvg)"
 groups=('qt' 'qt5')
@@ -21,7 +21,7 @@ md5sums=()
 
 _gitroot="git://gitorious.org/qt/qtsvg.git"
 _gitname=qt5-qtsvg
-_gitbranch=dev
+_gitbranch=stable
 
 build() {
 	if [ ! -d "${_gitname}" ]; then

@@ -3,7 +3,7 @@
 # Based on qt5-qtbase-git from Sergio Correia <sergio.correia@uece.net>
 
 pkgname=qt5-base-git
-pkgver=20130402
+pkgver=20130507
 pkgrel=1
 pkgdesc="A cross-platform application and UI framework"
 groups=('qt' 'qt5')
@@ -21,11 +21,9 @@ source=()
 md5sums=()
 makedepends=('git' 'gcc')
 
-#_gitroot="git://gitorious.org/qt/qtbase.git"
-_gitroot="git://github.com/plfiorini/qtbase.git"
+_gitroot="git://gitorious.org/qt/qtbase.git"
 _gitname=qt5-qtbase
-#_gitbranch=dev
-_gitbranch=hawaii
+_gitbranch=stable
 
 build() {
 	if [ ! -d "${_gitname}" ]; then

@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=qt5-wayland-git
-pkgver=20130402
+pkgver=20130507
 pkgrel=1
 pkgdesc="A cross-platform application and UI framework (QtCompositor, Wayland QPA plugins)"
 groups=('qt' 'qt5')
@@ -18,7 +18,7 @@ makedepends=('gcc' 'git')
 _gitroot="git://github.com/plfiorini/qtwayland.git"
 _gitname=qt5-qtwayland
 #_gitbranch=master
-_gitbranch=hawaii
+_gitbranch=hawaii-stable
 
 build() {
 	if [ ! -d "${_gitname}" ]; then

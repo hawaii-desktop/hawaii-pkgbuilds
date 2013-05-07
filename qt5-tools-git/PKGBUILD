@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=qt5-tools-git
-pkgver=20130402
+pkgver=20130507
 pkgrel=1
 pkgdesc="A cross-platform application and UI framework (Development Tools, QtHelp)"
 groups=('qt' 'qt5')
@@ -20,7 +20,7 @@ md5sums=()
 
 _gitroot="git://gitorious.org/qt/qttools.git"
 _gitname=qt5-qttools
-_gitbranch=dev
+_gitbranch=stable
 
 build() {
 	if [ ! -d "${_gitname}" ]; then

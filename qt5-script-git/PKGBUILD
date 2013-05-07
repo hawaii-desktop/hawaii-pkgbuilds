@@ -3,7 +3,7 @@
 # Based on qt5-qtscript-git from Sergio Correia <sergio.correia@uece.net>
 
 pkgname=qt5-script-git
-pkgver=20130402
+pkgver=20130507
 pkgrel=1
 pkgdesc="A cross-platform application and UI framework (QtScript)"
 groups=('qt' 'qt5')
@@ -21,7 +21,7 @@ md5sums=()
 
 _gitroot="git://gitorious.org/qt/qtscript.git"
 _gitname=qt5-qtscript
-_gitbranch=dev
+_gitbranch=stable
 
 build() {
 	if [ ! -d "${_gitname}" ]; then

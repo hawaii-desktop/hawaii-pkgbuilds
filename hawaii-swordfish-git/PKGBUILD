@@ -14,6 +14,7 @@ md5sums=()
 
 _gitroot="git://github.com/hawaii-desktop/swordfish.git"
 _gitname=swordfish
+_gitbranch=gio
 
 build() {
 	if [ ! -d "${_gitname}" ]; then
@@ -22,11 +23,19 @@ build() {
 		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
 	fi
 
+	git checkout $_gitbranch
+
 	msg "GIT checkout done."
+
+	export PATH=/opt/hawaiide/bin:$PATH
+	export PKG_CONFIG_PATH=/opt/hawaiide/lib/pkgconfig
 
 	mkdir build
 	cd build
-	cmake -DCMAKE_INSTALL_PREFIX=/opt/hawaiide -DCMAKE_BUILD_TYPE=Release ..
+	cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+		-DCMAKE_INSTALL_PLUGINSDIR=/usr/lib/hawaii/plugins \
+		-DCMAKE_INSTALL_QMLDIR=/usr/lib/hawaii/qml \
+		-DCMAKE_BUILD_TYPE=Release ..
 	make
 }
 

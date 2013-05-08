@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=hawaii-fluid-themes-git
-pkgver=20121130
+pkgver=20130508
 pkgrel=1
 pkgdesc="Hawaii: Fluid themes"
 arch=('i686' 'x86_64')

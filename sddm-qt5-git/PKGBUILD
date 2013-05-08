@@ -1,5 +1,5 @@
 pkgname=sddm-qt5-git
-pkgver=20130407
+pkgver=20130508
 pkgrel=1
 pkgdesc="QML based X11 display manager"
 arch=('i686' 'x86_64')

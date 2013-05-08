@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=kde-solid-git
-pkgver=20130226
+pkgver=20130508
 pkgrel=1
 pkgdesc="Hawaii: Solid from KDE"
 arch=('i686' 'x86_64')

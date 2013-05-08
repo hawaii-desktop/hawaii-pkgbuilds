@@ -6,8 +6,6 @@ for pkg in $packages; do
 	file=${pkg}-*-x86_64.pkg.tar.xz
 
 	[ -f ~/chroot/root/repo/${file} ] && continue
-	[ $pkg == "qt5-imageformats-git" ] && continue
-	[ $pkg == "qt5-webkit-git" ] && continue
 
 	pushd $pkg
 

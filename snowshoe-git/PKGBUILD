@@ -1,13 +1,13 @@
 # Maintainer: Jesse Jaara <gmail.com: jesse.jaara>
 
 pkgname=snowshoe-git
-pkgver=20130112
+pkgver=20130515
 pkgrel=1
 pkgdesc="QT5 & WebKit2 based broswer, with differend interfaces for PC/tablet/mobile"
 arch=('i686' 'x86_64')
 url="http://snowshoe.openbossa.org/"
 license=('LGPL2.1')
-depends=('qt5-qtdeclarative-git' 'qt5-qtwebkit-git')
+depends=('qt5-declarative-git' 'qt5-webkit-git')
 makedepends=('git')
 
 _gitroot=git://github.com/snowshoe/snowshoe.git

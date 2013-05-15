@@ -21,6 +21,8 @@ build() {
 		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
 	fi
 
+	git submodule update --init
+
 	msg "GIT checkout done."
 
 	qmake

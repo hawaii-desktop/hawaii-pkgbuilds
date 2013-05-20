@@ -1,14 +1,14 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=kde-solid-git
-pkgver=20130508
+pkgver=20130519
 pkgrel=1
 pkgdesc="Hawaii: Solid from KDE"
 arch=('i686' 'x86_64')
 url="http://www.kde.org"
 license=('LGPL')
-depends=('qt5-base-git' 'udisks')
-makedepends=('extra-cmake-modules-git' 'git' 'qt5-svg-git')
+depends=('qt5-base-git' 'udisks2')
+makedepends=('cmake-unstable' 'extra-cmake-modules-git' 'git' 'qt5-svg-git')
 replaces=('kde-solid-for-hawaii-git')
 source=()
 md5sums=()
@@ -32,7 +32,8 @@ build() {
 	cd build
 	cmake -DCMAKE_INSTALL_PREFIX=/opt/hawaiide \
 		-DLIB_INSTALL_DIR=/opt/hawaiide/lib \
-		-DCMAKE_BUILD_TYPE=Release ..
+		-DCMAKE_BUILD_TYPE=Release .. \
+		-DWITH_SOLID_UDISKS2=ON
 	make
 }
 

@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=hawaii-swordfish-git
-pkgver=20130519
+pkgver=20130520
 pkgrel=1
 pkgdesc="Hawaii: File manager"
 arch=('i686' 'x86_64')
@@ -42,4 +42,7 @@ build() {
 package() {
 	cd "${_gitname}/build"
 	make DESTDIR="${pkgdir}" install
+
+	# Remove D-Bus service which conflicts with nautilus
+	rm -f $pkgdir/usr/share/dbus-1/services/org.freedesktop.FileManager1.service
 }

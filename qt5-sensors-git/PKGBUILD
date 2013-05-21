@@ -3,7 +3,7 @@
 # Based on qt5-qtsensors-git from Sergio Correia <sergio.correia@uece.net>
 
 pkgname=qt5-sensors-git
-pkgver=20130507
+pkgver=20130521
 pkgrel=1
 pkgdesc="A cross-platform application and UI framework (QtSensors)"
 groups=('qt' 'qt5')

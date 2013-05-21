@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=polkit-qt5-git
-pkgver=20130519
+pkgver=20130521
 pkgrel=1
 pkgdesc='A library that allows developers to access PolicyKit API with a nice Qt-style API'
 arch=('i686' 'x86_64')

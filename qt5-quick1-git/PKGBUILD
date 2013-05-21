@@ -3,7 +3,7 @@
 # Based on qt5-qtquick1-git from Sergio Correia <sergio.correia@uece.net>
 
 pkgname=qt5-quick1-git
-pkgver=20130507
+pkgver=20130521
 pkgrel=1
 pkgdesc="A cross-platform application and UI framework (QtDeclarative)"
 groups=('qt' 'qt5')

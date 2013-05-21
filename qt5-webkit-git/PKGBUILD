@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=qt5-webkit-git
-pkgver=20130507
+pkgver=20130521
 pkgrel=1
 pkgdesc="A cross-platform application and UI framework (QtWebKit)"
 groups=('qt' 'qt5')

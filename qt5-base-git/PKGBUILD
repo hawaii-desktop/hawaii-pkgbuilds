@@ -3,7 +3,7 @@
 # Based on qt5-qtbase-git from Sergio Correia <sergio.correia@uece.net>
 
 pkgname=qt5-base-git
-pkgver=20130507
+pkgver=20130521
 pkgrel=1
 pkgdesc="A cross-platform application and UI framework"
 groups=('qt' 'qt5')
@@ -52,6 +52,7 @@ build() {
 		-no-rpath \
 		-optimized-qmake \
 		-dbus-linked \
+		-opengl es2 \
 		-reduce-relocations
 	make
 }

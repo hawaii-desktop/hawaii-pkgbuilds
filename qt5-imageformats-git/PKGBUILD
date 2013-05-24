@@ -3,7 +3,7 @@
 # Based on qt5-qtimageformats-git from Sergio Correia <sergio.correia@uece.net>
 
 pkgname=qt5-imageformats-git
-pkgver=20130521
+pkgver=20130524
 pkgrel=1
 pkgdesc="A cross-platform application and UI framework (Image plugins)"
 groups=('qt' 'qt5')

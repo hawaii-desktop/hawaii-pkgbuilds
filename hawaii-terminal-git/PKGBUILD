@@ -1,14 +1,14 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=hawaii-terminal-git
-pkgver=20130524
+pkgver=20130527
 pkgrel=1
 pkgdesc="Hawaii: Terminal"
 arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
 license=('GPL')
-depends=('hawaii-vibe-git')
-makedepends=('git' 'cmake')
+depends=('qt5-declarative-git' 'qt5-quickcontrols-git')
+makedepends=('git' 'cmake' 'hawaii-vibe-git')
 source=()
 md5sums=()
 
@@ -21,6 +21,8 @@ build() {
 	else
 		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
 	fi
+
+	git submodule update --init
 
 	msg "GIT checkout done."
 

@@ -3,7 +3,7 @@
 # Based on qt5-qtjsbackend-git by Sergio Correia <sergio.correia@uece.net>
 
 pkgname=qt5-jsbackend-git
-pkgver=20130524
+pkgver=20130618
 pkgrel=1
 pkgdesc="A cross-platform application and UI framework (QtV8)"
 groups=('qt' 'qt5')

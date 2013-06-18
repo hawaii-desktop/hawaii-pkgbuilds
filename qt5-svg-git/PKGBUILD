@@ -3,7 +3,7 @@
 # Based on qt5-qtsvg-git from Anselmo L. S. Melo <anselmolsm@gmail.com>
 
 pkgname=qt5-svg-git
-pkgver=20130524
+pkgver=20130618
 pkgrel=1
 pkgdesc="A cross-platform application and UI framework (QtSvg)"
 groups=('qt' 'qt5')

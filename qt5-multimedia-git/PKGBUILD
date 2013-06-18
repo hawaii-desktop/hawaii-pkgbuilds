@@ -3,7 +3,7 @@
 # TODO: gst/interfaces/photography.h not found, also might need openal
 
 pkgname=qt5-multimedia-git
-pkgver=20130524
+pkgver=20130618
 pkgrel=1
 pkgdesc="A cross-platform application and UI framework (QtMultimedia)"
 groups=('qt' 'qt5')

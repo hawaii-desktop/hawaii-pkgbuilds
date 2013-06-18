@@ -3,7 +3,7 @@
 # Based on qt5-qtscript-git from Sergio Correia <sergio.correia@uece.net>
 
 pkgname=qt5-script-git
-pkgver=20130524
+pkgver=20130618
 pkgrel=1
 pkgdesc="A cross-platform application and UI framework (QtScript)"
 groups=('qt' 'qt5')

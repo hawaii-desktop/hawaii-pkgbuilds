@@ -1,9 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
-# Based on qt5-qtbase-git from Sergio Correia <sergio.correia@uece.net>
-
 pkgname=qt5-base-git
-pkgver=20130618
+pkgver=0.0.0
 pkgrel=1
 pkgdesc="A cross-platform application and UI framework"
 groups=('qt' 'qt5')
@@ -17,22 +15,20 @@ depends=('pcre' 'libpng' 'libjpeg' 'dbus-core' 'cups' 'sqlite' 'libxcb'
 replaces=('qt5-qtbase-for-hawaii-git' 'qt5-qtbase-git')
 conflicts=('qt5-base')
 provides=('qt5-base')
-source=()
-md5sums=()
 makedepends=('git' 'gcc')
-
 _gitroot="git://gitorious.org/qt/qtbase.git"
-_gitname=qt5-qtbase
+_gitname="qt5-base"
 _gitbranch=stable
+source=(${_gitname}::${_gitroot}#branch=${_gitbranch})
+md5sums=('SKIP')
+
+pkgver() {
+	cd ${srcdir}/${_gitname}
+	echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
+}
 
 build() {
-	if [ ! -d "${_gitname}" ]; then
-		git clone -b ${_gitbranch} --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
-	else
-		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
-	fi
-
-	msg "GIT checkout done."
+	cd ${srcdir}/${_gitname}
 
 	sed -i "s|-O2|${CXXFLAGS}|" mkspecs/common/{g++,gcc}-base.conf
 	sed -i "/^QMAKE_LFLAGS_RPATH/s| -Wl,-rpath,||g" mkspecs/common/gcc-base-unix.conf
@@ -49,7 +45,6 @@ build() {
 		-examplesdir /usr/share/doc/qt/examples \
 		-system-sqlite \
 		-openssl-linked \
-		-nomake docs \
 		-nomake examples \
 		-nomake tests \
 		-no-rpath \
@@ -61,7 +56,7 @@ build() {
 }
 
 package() {
-	cd "${_gitname}"
+	cd ${srcdir}/${_gitname}
 
 	make INSTALL_ROOT="${pkgdir}" install
 

@@ -3,7 +3,7 @@
 # Based on extra-cmake-modules-git by Martin Sandsmark <sandsmark@iskrembilen.com>
 
 pkgname=extra-cmake-modules-git
-pkgver=20130508
+pkgver=0.0.0
 pkgrel=1
 pkgdesc='Extra CMake modules'
 arch=('i686' 'x86_64')
@@ -11,43 +11,31 @@ url='http://quickgit.kde.org/index.php?p=extra-cmake-modules.git&a=summary'
 license=('LGPL')
 depends=('cmake')
 makedepends=('pkgconfig' 'cmake' 'git')
-source=()
 options=(!strip)
-
 _gitroot='git://anongit.kde.org/extra-cmake-modules.git'
 _gitname='extra-cmake-modules'
-_gitbranch='a667c2d45d041f2dc365a7ca82a27355aed0b1cc'
+#_gitbranch='a667c2d45d041f2dc365a7ca82a27355aed0b1cc'
+_gitbranch='master'
+source=(${_gitname}::${_gitroot}#branch=${_gitbranch})
+md5sums=('SKIP')
+
+pkgver() {
+	cd ${srcdir}/${_gitname}
+	echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
+}
 
 build() {
-    cd ${srcdir}
+	cd ${srcdir}/${_gitname}
 
-    msg "Connecting to extra-cmake-modules GIT server...."
-    if [ -d ${srcdir}/${_gitname} ] ; then
-        cd ${srcdir}/${_gitname} && git pull origin
-        [ $_gitbranch != "" ] && cd ${srcdir}/${_gitname} && git checkout $_gitbranch
-        msg "The local files are updated."
-    else
-        git clone ${_gitroot} ${_gitname}
-        [ $_gitbranch != "" ] && cd ${_gitname} && git checkout $_gitbranch
-        msg "GIT checkout done "
-    fi
+	rm -rf build
+	mkdir build
+	cd build
 
-    if [ -d ${srcdir}/build ]; then
-        rm ${srcdir}/build/* -rf
-    else
-        mkdir ${srcdir}/build/
-    fi
-
-    cd ${srcdir}/build
-    msg "Starting make..."
-    cmake  \
-            -DCMAKE_INSTALL_PREFIX=/usr \
-            ../${_gitname}
-
-    make || return 1
+	cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+	make || return 1
 }
 
 package() {
-    cd ${srcdir}/build
-    make DESTDIR=${pkgdir} install || return 1
+	cd ${srcdir}/${_gitname}/build
+	make DESTDIR=${pkgdir} install || return 1
 }

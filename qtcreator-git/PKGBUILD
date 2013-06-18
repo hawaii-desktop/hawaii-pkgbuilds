@@ -7,7 +7,7 @@
 # Contributor: heinz from #qt-creator
 
 pkgname=qtcreator-git
-pkgver=20130618
+pkgver=0.0.0
 pkgrel=1
 pkgdesc="Lightweight, cross-platform integrated development environment"
 arch=('i686' 'x86_64')
@@ -19,28 +19,20 @@ optdepends=('gdb: for the debugger')
 replaces=('qtcreator-for-qt5-git')
 provides=('qtcreator')
 conflicts=('qtcreator')
-source=('qtcreator.desktop')
-md5sums=('164356c75a347f5755ce743ceac0d334')
-
 _gitroot="git://gitorious.org/qt-creator/qt-creator.git"
 _gitname="qt-creator"
+_gitbranch="master"
+source=(${_gitname}::${_gitroot}#branch=${_gitbranch}
+        'qtcreator.desktop')
+md5sums=('SKIP'
+         '164356c75a347f5755ce743ceac0d334')
+
+pkgver() {
+	cd ${srcdir}/${_gitname}
+	echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
+}
 
 build() {
-    msg "Connecting to GIT server"
-
-    if [ -d ${srcdir}/$_gitname ] ; then
-        cd ${srcdir}/$_gitname && git pull origin || return 1
-        msg "The local files are updated."
-    else
-        git clone $_gitroot $_gitname || return 1
-    fi
-
-    msg "GIT checkout done or server timeout"
-
-    cd "${srcdir}/${_gitname}" || return 1
-
-    msg "Starting make in quiet mode"
-
     if [ -d ${srcdir}/build ]; then
         cd ${srcdir}/build
     else

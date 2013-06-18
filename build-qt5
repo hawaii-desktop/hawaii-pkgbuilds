@@ -6,6 +6,7 @@ for pkg in $packages; do
 	file=${pkg}-*-x86_64.pkg.tar.xz
 
 	[ -f ~/chroot/root/repo/${file} ] && continue
+	[ "$pkg" = "qt5-jsondb-git" ] && continue
 
 	pushd $pkg
 

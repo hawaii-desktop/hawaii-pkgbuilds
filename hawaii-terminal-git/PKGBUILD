@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=hawaii-terminal-git
-pkgver=0.0.0
+pkgver=51.8b8337f
 pkgrel=1
 pkgdesc="Hawaii: Terminal"
 arch=('i686' 'x86_64')
@@ -23,6 +23,8 @@ pkgver() {
 
 build() {
 	cd ${srcdir}/${_gitname}
+
+	git submodule update --init
 
 	export PATH=/opt/hawaiide/bin:$PATH
 	export PKG_CONFIG_PATH=/opt/hawaiide/lib/pkgconfig

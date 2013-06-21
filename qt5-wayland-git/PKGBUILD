@@ -28,8 +28,8 @@ pkgver() {
 
 build() {
 	cd ${srcdir}/${_gitname}
-	qmake CONFIG+=wayland-compositor
-	#qmake
+	#qmake CONFIG+=wayland-compositor
+	qmake
 	make
 }
 

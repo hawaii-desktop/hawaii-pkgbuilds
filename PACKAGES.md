@@ -45,7 +45,6 @@
 * hawaii-icon-themes-git
 * hawaii-wallpapers-git
 * ttf-raleway-font-family
-* hawaii-fluid-themes-git
 * hawaii-fluid-git
 * hawaii-greenisland-git
 * hawaii-shell-git

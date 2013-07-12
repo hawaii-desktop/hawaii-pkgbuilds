@@ -1,32 +1,29 @@
-# $Id: PKGBUILD 76491 2012-09-19 13:21:07Z speps $
 # Maintainer: speps <speps at aur dot archlinux dot org>
 
 _name=qupzilla
-_commit=faeba013bc
 pkgname=$_name-qt5
-pkgver=1.4.1_git20130404
-pkgrel=2
+pkgver=1.4.3
+pkgrel=1
 pkgdesc="Cross-platform QtWebKit browser. Qt5 version."
 arch=(i686 x86_64)
 url="http://www.qupzilla.com/"
 license=('GPL3')
-depends=('qt5-webkit-git' 'qt5-script-git' 'hunspell' 'desktop-file-utils')
+depends=('qt5-webkit' 'qt5-script' 'hunspell' 'desktop-file-utils')
 optdepends=('bash-completion: bash completion support')
-makedepends=('qt5-tools-git')
 provides=("$_name")
 conflicts=("$_name")
 install="$_name.install"
-source=("$_name-$pkgver.tar.gz::https://github.com/QupZilla/$_name/tarball/$_commit")
-md5sums=('22f1fb63f34fed36c607360f4852541a')
+source=("$_name-$pkgver.tar.gz::https://github.com/QupZilla/$_name/tarball/v$pkgver")
+md5sums=('20187fcce11dbba876e1ee7dc5e32583')
 
 build() {
   cd "$srcdir/QupZilla-$_name-"*
 
-  # enable webgl support
-  export USE_WEBGL=true
-
   # enable Wayland support
   export NO_X11=true
+
+  # enable webgl support
+  export USE_WEBGL=true
 
   qmake QUPZILLA_PREFIX=/usr/
   make
@@ -40,3 +37,5 @@ package() {
   install -Dm644 linux/completion/zsh_completion.sh \
     "$pkgdir/usr/share/zsh/site-functions/_$_name"
 }
+
+# vim:set ts=2 sw=2 et:

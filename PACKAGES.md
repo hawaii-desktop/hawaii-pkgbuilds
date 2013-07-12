@@ -1,46 +1,35 @@
 # List of packages
 
-## Mesa, Wayland and Weston
-
-* wayland-git
-* weston-git
-
 ## Qt 5
 
-* qt5-base-git
-* qt5-jsbackend-git
-* qt5-xmlpatterns-git
-* qt5-declarative-git
-* qt5-svg-git
-* qt5-imageformats-git
-* qt5-graphicaleffects-git
-* qt5-jsondb-git
-* qt5-tools-git
-* qt5-wayland-git
-* qt5-multimedia-git
-* qt5-pim-git (ignore, doesn't compile)
-* qt5-connectivity-git
-* qt5-3d-git
-* qt5-location-git
-* qt5-sensors-git
-* qt5-script-git
-* qt5-quick1-git
-* qt5-quickcontrols-git
-* qt-accountsservice-addon-git
-* polkit-qt5-git
+* qtbase-git
+* qtjsbackend-git
+* qtxmlpatterns-git
+* qtdeclarative-git
+* qtquickcontrols-git
+* qtsvg-git
+* qtimageformats-git
+* qtgraphicaleffects-git
+* qtwayland-git
+* qtmultimedia-git
+* qtwebkit-git
+* qttools-git
+* qtscript-git
+* qtquick1-git
 
 ## QtCreator for Qt 5
 
 * qtcreator-git
 
-## GTK+ 3 with Wayland
+## KDE
 
-* gtk3-git
+* kf5-polkit-qt-git
+* kf5-kdelibs-git
 
 ## Hawaii
 
+* qt-accountsservice-addon-git
 * extra-cmake-modules-git
-* kde-solid-git
 * hawaii-vibe-git
 * hawaii-icon-themes-git
 * hawaii-wallpapers-git

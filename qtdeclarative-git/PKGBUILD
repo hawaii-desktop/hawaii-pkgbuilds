@@ -1,0 +1,32 @@
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+
+pkgname=qtdeclarative-git
+pkgver=v5.1.0.beta1.89.g7e73dc0
+pkgrel=1
+pkgdesc="A cross-platform application and UI framework (QtQml, QtQuick)"
+arch=('i686' 'x86_64')
+url="http://qt-project.org/"
+license=('GPL3' 'LGPL')
+depends=('qtjsbackend-git' 'qtxmlpatterns-git' 'mesa')
+makedepends=('git' 'gdb')
+options=('!libtool' 'debug')
+source=(git://gitorious.org/qt/qtdeclarative.git#branch=dev)
+md5sums=('SKIP')
+
+pkgver() {
+  cd qtdeclarative
+  git describe --always | sed 's|-|.|g'
+}
+
+build() {
+  export LD_LIBRARY_PATH=/opt/qt-git/lib
+
+  cd qtdeclarative
+  /opt/qt-git/bin/qmake
+  make
+}
+
+package() {
+  cd qtdeclarative
+  make INSTALL_ROOT="${pkgdir}" install
+}

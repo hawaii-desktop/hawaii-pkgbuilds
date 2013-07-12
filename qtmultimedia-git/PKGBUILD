@@ -1,0 +1,30 @@
+# Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+
+pkgname=qtmultimedia-git
+pkgver=v5.1.0.beta1.3.g30fd950
+pkgrel=1
+pkgdesc="A cross-platform application and UI framework (QtMultimedia)"
+arch=('i686' 'x86_64')
+url="http://qt-project.org/"
+license=('GPL3' 'LGPL')
+depends=('qtdeclarative-git' 'gstreamer0.10' 'gstreamer0.10-base' 'pulseaudio' 'libpulse')
+makedepends=('git')
+options=('!libtool' 'debug')
+source=(git://gitorious.org/qt/qtmultimedia.git#branch=dev)
+md5sums=('SKIP')
+
+pkgver() {
+  cd qtmultimedia
+  git describe --always | sed 's|-|.|g'
+}
+
+build() {
+  cd qtmultimedia
+  /opt/qt-git/bin/qmake
+  make
+}
+
+package() {
+  cd qtmultimedia
+  make INSTALL_ROOT="${pkgdir}" install
+}

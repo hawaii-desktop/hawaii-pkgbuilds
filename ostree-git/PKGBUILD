@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname='ostree-git'
-pkgver=20130508
+pkgver=0.0.0
 pkgrel=1
 url="http://git.gnome.org/browse/ostree/tree/README.md"
 pkgdesc='The GNOME OS build tool'
@@ -13,22 +13,18 @@ depends=('libarchive' 'linux-user-chroot-git')
 
 _gitroot="git://git.gnome.org/ostree"
 _gitname="ostree"
+source=(${_gitname}::${_gitroot})
+md5sums=('SKIP')
+
+pkgver() {
+  cd ${srcdir}/${_gitname}
+  echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
+}
 
 build() {
-  cd "$srcdir"
+  cd ${srcdir}/${_gitname}
 
-  msg "Connecting to the ostree git repository..."
-  if [ -d "$srcdir/$_gitname" ] ; then
-    cd $_gitname && git pull origin
-    msg "The local files are updated."
-  else
-    git clone $_gitroot
-  fi
-
-  cd "$srcdir/$_gitname"
-  git submodule init
-  git submodule update
-  msg "GIT checkout done or server timeout"
+  git submodule update --init
 
   msg2 "Downloading embedded dependencies..."
   make -C embedded-dependencies -f Makefile.bootstrap embedded-deps-download
@@ -37,18 +33,10 @@ build() {
   msg2 "Configuring..."
   export PYTHON=/usr/bin/python2
   ./autogen.sh --prefix=/usr \
-    --with-soup-gnome \
-    --with-libarchive \
     --disable-documentation \
-    --enable-libarchive \
-    --enable-embedded-dependencies \
-    --enable-kernel-updates \
-    --enable-grub2-hook
+    --with-soup-gnome
   msg2 "Compiling..."
   make
-
-  # Manually build a static binary of ostree-switch-root
-  ${CC:-gcc} -static -o ostree-init src/switchroot/ostree-switch-root.c
 }
 
 package() {
@@ -58,6 +46,4 @@ package() {
   make install DESTDIR="$pkgdir"
 
   mkdir "${pkgdir}/ostree"
-  cp ostree-init "${pkgdir}/ostree"
-  chmod 755 "${pkgdir}/ostree/ostree-init"
 }

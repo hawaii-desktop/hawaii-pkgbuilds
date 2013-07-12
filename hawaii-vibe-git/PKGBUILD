@@ -7,8 +7,8 @@ pkgdesc="Hawaii: Vibe libraries"
 arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
 license=('LGPL')
-depends=('kde-solid-git' 'qt5-tools-git' 'cantarell-fonts')
-makedepends=('git' 'cmake' 'qt5-declarative-git')
+depends=('kf5-kdelibs-git' 'qttools-git' 'cantarell-fonts')
+makedepends=('git' 'cmake' 'qtdeclarative-git')
 
 _gitroot="git://github.com/hawaii-desktop/vibe.git"
 _gitbranch=master
@@ -24,31 +24,21 @@ pkgver() {
 build() {
 	cd ${srcdir}/${_gitname}
 
-	export PATH=/opt/hawaiide/bin:$PATH
-	export PKG_CONFIG_PATH=/opt/hawaiide/lib/pkgconfig
+	export PKG_CONFIG_PATH=/opt/kf5/lib/pkgconfig:/opt/qt-git/lib/pkgconfig
+	export LD_LIBRARY_PATH=/opt/kf5/lib:/opt/qt-git/lib
+	export QT_SELECT=git
 
 	mkdir build
 	cd build
-	cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib \
-		-DCMAKE_INSTALL_DATADIR=/usr/share/hawaii \
-		-DCMAKE_INSTALL_PLUGINSDIR=/usr/lib/hawaii/plugins \
-		-DCMAKE_INSTALL_QMLDIR=/usr/lib/hawaii/qml \
-		-DCMAKE_BUILD_TYPE=Release ..
+	cmake .. \
+		-DCMAKE_PREFIX_PATH=/opt/qt-git/lib/cmake \
+		-DCMAKE_BUILD_TYPE=RelWithDebInfo \
+		-DCMAKE_INSTALL_PREFIX=/opt/hawaii-git \
+		-DCMAKE_INSTALL_LIBDIR=lib
 	make
 }
 
 package() {
 	cd ${srcdir}/${_gitname}/build
 	make DESTDIR="${pkgdir}" install
-
-	mkdir -p $pkgdir/etc/profile.d
-	cat >$pkgdir/etc/profile.d/hawaii.sh <<EOF
-export QT_MESSAGE_PATTERN='%{appname}(%{pid})/%{category} %{function}: %{message}'
-export QT_PLUGIN_PATH=/usr/lib/hawaii/plugins:\$QT_PLUGIN_PATH
-export QML2_IMPORT_PATH=/usr/lib/hawaii/qml:\$QML2_IMPORT_PATH
-export XDG_DATA_DIRS=/usr/share/hawaii:\$XDG_DATA_DIRS
-export LD_LIBRARY_PATH=/opt/hawaiide/lib:$LD_LIBRARY_PATH
-export PKG_CONFIG_PATH=/opt/hawaiide/lib/pkgconfig:$PKG_CONFIG_PATH
-EOF
-	chmod 755 $pkgdir/etc/profile.d/hawaii.sh
 }

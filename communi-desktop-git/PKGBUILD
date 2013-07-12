@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=communi-desktop-git
-pkgver=20130524
+pkgver=0.0.0
 pkgrel=1
 pkgdesc="Communi for desktop"
 arch=('i686' 'x86_64')
@@ -13,24 +13,22 @@ makedepends=('gcc' 'git')
 _gitroot="git://github.com/communi/communi-desktop.git"
 _gitname=communi-desktop
 _gitbranch=master
+source=(${_gitname}::${_gitroot}#branch=${_gitbranch})
+md5sums=('SKIP')
+
+pkgver() {
+	cd ${srcdir}/${_gitname}
+	git describe --always | sed 's|-|.|g'
+}
 
 build() {
-	if [ ! -d "${_gitname}" ]; then
-		git clone -b ${_gitbranch} --depth 1 ${_gitroot} ${_gitname} && cd ${_gitname}
-	else
-		cd ${_gitname} && git reset --hard && git pull origin && git clean -dfx
-	fi
-
-	git submodule update --init
-
-	msg "GIT checkout done."
+	cd ${srcdir}/${_gitname}
 
 	qmake
 	make
 }
 
 package() {
-	cd "${_gitname}"
-
+	cd ${srcdir}/${_gitname}
 	make INSTALL_ROOT="${pkgdir}" install
 }

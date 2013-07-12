@@ -19,6 +19,8 @@ qtcreator-git/qt-creator/
 extra-cmake-modules-git/extra-cmake-modules/
 kf5-polkit-qt-git/polkit-qt-1/
 kf5-kdelibs-git/kdelibs/
+kf5-attica-git/attica/
+kf5-libdbusmenu-qt-bzr/libdbusmenu-qt/
 linux-user-chroot-git/linux-user-chroot/
 ostree-git/ostree/
 hawaii-vibe-git/vibe/

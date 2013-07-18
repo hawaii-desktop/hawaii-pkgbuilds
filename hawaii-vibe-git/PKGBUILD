@@ -26,14 +26,12 @@ prepare() {
 }
 
 build() {
-	cd ${srcdir}/${_gitname}
-
-	export PKG_CONFIG_PATH=/opt/kf5/lib/pkgconfig:/opt/qt-git/lib/pkgconfig
-	export LD_LIBRARY_PATH=/opt/kf5/lib:/opt/qt-git/lib
+	export PKG_CONFIG_PATH=/opt/kf5/lib/pkgconfig:/opt/hawaii-git/lib/pkgconfig:/opt/qt-git/lib/pkgconfig
+	export LD_LIBRARY_PATH=/opt/kf5/lib:/opt/hawaii-git/lib:/opt/qt-git/lib
 	export QT_SELECT=git
 
 	cd build
-	cmake .. \
+	cmake ../${_gitname} \
 		-DCMAKE_PREFIX_PATH=/opt/qt-git/lib/cmake \
 		-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 		-DCMAKE_INSTALL_PREFIX=/opt/hawaii-git \
@@ -42,6 +40,6 @@ build() {
 }
 
 package() {
-	cd ${srcdir}/${_gitname}/build
+	cd build
 	make DESTDIR="${pkgdir}" install
 }

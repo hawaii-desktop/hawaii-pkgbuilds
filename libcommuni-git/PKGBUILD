@@ -1,6 +1,6 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
-pkgname=communi-git
+pkgname=libcommuni-git
 pkgver=0.0.0
 pkgrel=1
 pkgdesc="A cross-platform IRC framework written with Qt"
@@ -9,25 +9,27 @@ url="https://github.com/communi/communi"
 license=('LGPL2.1')
 depends=('qt5-base')
 makedepends=('gcc' 'git')
-source=('git://github.com/communi/communi.git')
+conflicts=('libcommuni')
+provides=('libcommuni')
+source=('git://github.com/communi/libcommuni.git')
 md5sums=('SKIP')
 
 pkgver() {
-	cd communi
-	git describe --always | sed 's|-|.|g'
+	cd libcommuni
+	echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
 }
 
 build() {
-	cd communi
+	cd libcommuni
 
 	./configure \
-		-prefix /opt/communi-git \
-		-headerdir /opt/communi-git/include \
-		-featuredir /opt/communi-git/lib/qt/mkspecs/features
+		-prefix /usr \
+		-headerdir /usr/include \
+		-featuredir /usr/lib/qt/mkspecs/features
 	make
 }
 
 package() {
-	cd communi
+	cd libcommuni
 	make INSTALL_ROOT="${pkgdir}" install
 }

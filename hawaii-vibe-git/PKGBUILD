@@ -7,7 +7,7 @@ pkgdesc="Hawaii: Vibe libraries"
 arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
 license=('LGPL')
-depends=('kf5-kdelibs-git' 'qttools-git' 'cantarell-fonts')
+depends=('kde-solid-git' 'qttools-git' 'cantarell-fonts')
 makedepends=('git' 'cmake' 'qtdeclarative-git')
 
 _gitroot="git://github.com/hawaii-desktop/vibe.git"
@@ -21,6 +21,10 @@ pkgver() {
 	echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
 }
 
+prepare() {
+	mkdir -p build
+}
+
 build() {
 	cd ${srcdir}/${_gitname}
 
@@ -28,7 +32,6 @@ build() {
 	export LD_LIBRARY_PATH=/opt/kf5/lib:/opt/qt-git/lib
 	export QT_SELECT=git
 
-	mkdir build
 	cd build
 	cmake .. \
 		-DCMAKE_PREFIX_PATH=/opt/qt-git/lib/cmake \

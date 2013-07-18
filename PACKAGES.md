@@ -48,5 +48,5 @@
 ## Applications
 
 * sddm-qt5-git
-* communi-git
+* libcommuni-git
 * communi-desktop-git

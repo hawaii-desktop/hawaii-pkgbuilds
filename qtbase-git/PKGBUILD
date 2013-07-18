@@ -11,7 +11,7 @@ depends=('dbus' 'xcb-util-keysyms' 'xcb-util-wm' 'xcb-util-image'
          'libxext' 'inputproto' 'libgl' 'libxkbcommon' 'systemd'
          'libpng' 'sqlite' 'fontconfig' 'icu' 'libxrender')
 makedepends=('git' 'gdb' 'mesa-libgl' 'postgresql-libs' 'libmariadbclient'
-             'unixodbc' 'libfbclient')
+             'unixodbc' 'libfbclient' 'cups')
 optdepends=('qtchooser: set the default Qt toolkit'
             'postgresql-libs: PostgreSQL driver'
             'libmariadbclient: MariaDB driver'

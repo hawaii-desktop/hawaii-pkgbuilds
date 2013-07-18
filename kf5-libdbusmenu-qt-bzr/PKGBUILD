@@ -1,7 +1,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kf5-libdbusmenu-qt-bzr
-pkgver=245
+pkgver=247
 pkgrel=1
 pkgdesc="A library that provides a Qt implementation of the DBusMenu spec"
 arch=('i686' 'x86_64')

@@ -7,7 +7,9 @@ pkgdesc="Communi for desktop"
 arch=('i686' 'x86_64')
 url="https://github.com/communi/communi-desktop"
 license=('LGPL2.1')
-depends=('communi-git')
+conflicts=('communi-desktop')
+replaces=('communi-desktop')
+depends=('libcommuni-git')
 makedepends=('gcc' 'git')
 
 _gitroot="git://github.com/communi/communi-desktop.git"
@@ -17,18 +19,23 @@ source=(${_gitname}::${_gitroot}#branch=${_gitbranch})
 md5sums=('SKIP')
 
 pkgver() {
-	cd ${srcdir}/${_gitname}
-	git describe --always | sed 's|-|.|g'
+	cd ${_gitname}
+	echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
+}
+
+prepare() {
+	cd ${_gitname}
+	git submodule update --init
 }
 
 build() {
-	cd ${srcdir}/${_gitname}
+	cd ${_gitname}
 
 	qmake
 	make
 }
 
 package() {
-	cd ${srcdir}/${_gitname}
+	cd ${_gitname}
 	make INSTALL_ROOT="${pkgdir}" install
 }

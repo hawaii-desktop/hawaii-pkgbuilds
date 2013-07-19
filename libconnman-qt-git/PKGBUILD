@@ -1,0 +1,36 @@
+# Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+
+pkgname=libconnman-qt-git
+pkgver=0.4.3.137.gae6204d
+pkgrel=1
+pkgdesc="Qt bindings for ConnMan"
+arch=('i686' 'x86_64')
+url="https://github.com/nemomobile/libconnman-qt/"
+license=('LGPL')
+depends=('connman' 'qt5-base' 'qt5-declarative')
+makedepends=('git')
+options=('debug')
+source=('git://github.com/nemomobile/libconnman-qt.git')
+md5sums=('SKIP')
+
+pkgver() {
+  cd libconnman-qt
+  git describe --always | sed 's|-|.|g'
+}
+
+prepare() {
+  mkdir -p build
+}
+
+build() {
+  export QT_SELECT=5
+
+  cd build
+  qmake PREFIX=/usr ../libconnman-qt
+  make
+}
+
+package() {
+  cd build
+  make INSTALL_ROOT="$pkgdir" install
+}

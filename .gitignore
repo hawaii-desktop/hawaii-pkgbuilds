@@ -16,6 +16,7 @@ qtscript-git/qtscript/
 qtquick1-git/qtquick1/
 qtx11extras-git/qtx11extras/
 qtcreator-git/qt-creator/
+qtxdg-git/qtxdg/
 extra-cmake-modules-git/extra-cmake-modules/
 kf5-polkit-qt-git/polkit-qt-1/
 kf5-kdelibs-git/kdelibs/

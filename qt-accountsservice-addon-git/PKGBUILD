@@ -7,8 +7,8 @@ pkgdesc="Qt AccountsService add-on"
 arch=('i686' 'x86_64')
 url="https://github.com/hawaii-desktop/qt-accountsservice-addon"
 license=('LGPL')
-depends=('qt5-base-git' 'qt5-declarative-git')
-makedepends=('gcc' 'git')
+depends=('qtbase-git' 'qtdeclarative-git')
+makedepends=('gcc' 'git' 'qtchooser')
 _gitroot="git://github.com/hawaii-desktop/qt-accountsservice-addon.git"
 _gitname="qtaccountsservice"
 _gitbranch="master"
@@ -17,10 +17,14 @@ md5sums=('SKIP')
 
 pkgver() {
 	cd ${srcdir}/${_gitname}
-	echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
+	git describe --always | sed 's|-|.|g'
 }
 
 build() {
+	export PKG_CONFIG_PATH=/opt/kf5/lib/pkgconfig:/opt/qt-git/lib/pkgconfig
+	export LD_LIBRARY_PATH=/opt/kf5/lib:/opt/qt-git/lib
+	export QT_SELECT=git
+
 	cd ${srcdir}/${_gitname}
 	qmake
 	make

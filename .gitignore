@@ -29,6 +29,7 @@ kde-solid-git/solid/
 kde-libkdeqt5staging-git/libkdeqt5staging/
 kde-kcoreaddons-git/kcoreaddons/
 kde-kconfig-git/kconfig/
+wayland-git/wayland/
 linux-user-chroot-git/linux-user-chroot/
 ostree-git/ostree/
 hawaii-vibe-git/vibe/

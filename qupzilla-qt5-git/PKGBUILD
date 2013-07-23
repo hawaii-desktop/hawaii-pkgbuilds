@@ -1,23 +1,37 @@
 # Maintainer: speps <speps at aur dot archlinux dot org>
 
 _name=qupzilla
-pkgname=$_name-qt5
-pkgver=1.4.3
+pkgname=$_name-qt5-git
+pkgver=0.0.0
 pkgrel=1
 pkgdesc="Cross-platform QtWebKit browser. Qt5 version."
 arch=(i686 x86_64)
 url="http://www.qupzilla.com/"
 license=('GPL3')
-depends=('qt5-webkit' 'qt5-script' 'hunspell' 'desktop-file-utils')
+depends=('qtwebkit-git' 'qtscript-git' 'hunspell' 'desktop-file-utils')
+makedepends=('qtchooser' 'qttools-git')
 optdepends=('bash-completion: bash completion support')
 provides=("$_name")
 conflicts=("$_name")
 install="$_name.install"
-source=("$_name-$pkgver.tar.gz::https://github.com/QupZilla/$_name/tarball/v$pkgver")
-md5sums=('20187fcce11dbba876e1ee7dc5e32583')
+
+_gitroot="git://github.com/QupZilla/qupzilla.git"
+_gitbranch=master
+_gitname=qupzilla
+source=(${_gitname}::${_gitroot}#branch=${_gitbranch})
+md5sums=('SKIP')
+
+pkgver() {
+  cd ${srcdir}/${_gitname}
+  echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
+}
 
 build() {
-  cd "$srcdir/QupZilla-$_name-"*
+  cd ${srcdir}/${_gitname}
+
+  export PKG_CONFIG_PATH=/opt/qt-git/lib/pkgconfig
+  export LD_LIBRARY_PATH=/opt/qt-git/lib
+  export QT_SELECT=git
 
   # enable Wayland support
   export NO_X11=true
@@ -25,12 +39,14 @@ build() {
   # enable webgl support
   export USE_WEBGL=true
 
+  alias lrelease-qt4='lrelease'
+
   qmake QUPZILLA_PREFIX=/usr/
   make
 }
 
 package() {
-  cd "$srcdir/QupZilla-$_name-"*
+  cd ${srcdir}/${_gitname}
   make INSTALL_ROOT="$pkgdir/" install
 
   # zsh completion

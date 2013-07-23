@@ -50,3 +50,4 @@
 * sddm-qt5-git
 * libcommuni-git
 * communi-desktop-git
+* qupzilla-qt5-git

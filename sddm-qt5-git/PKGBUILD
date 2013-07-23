@@ -5,8 +5,8 @@ pkgdesc="QML based X11 display manager"
 arch=('i686' 'x86_64')
 url="http://github.com/sddm/sddm"
 license=('GPL')
-depends=('pam' 'qt5-base-git' 'qt5-declarative-git' 'libx11')
-makedepends=('cmake' 'git')
+depends=('pam' 'qtbase-git' 'qtdeclarative-git' 'libx11')
+makedepends=('cmake' 'git' 'qtchooser')
 provides=('sddm')
 replaces=('sddm')
 
@@ -22,12 +22,18 @@ pkgver() {
 }
 
 build() {
+  export PKG_CONFIG_PATH=/opt/kf5/lib/pkgconfig:/opt/qt-git/lib/pkgconfig
+  export LD_LIBRARY_PATH=/opt/kf5/lib:/opt/qt-git/lib
+  export QT5_SELECT=git
+
   cd ${srcdir}/${_gitname}
 
   mkdir -p build
   cd build
 
-  cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DUSE_QT5=true
+  cmake .. \
+	-DCMAKE_INSTALL_PREFIX=/usr -DUSE_QT5=true \
+	-DCMAKE_PREFIX_PATH=/opt/qt-git/lib/cmake
   make
 }
 

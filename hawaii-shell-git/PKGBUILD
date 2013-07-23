@@ -7,7 +7,9 @@ pkgdesc="Hawaii Shell"
 arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
 license=('GPL', 'LGPL')
-depends=('qtgraphicaleffects-git' 'hawaii-wallpapers-git' 'weston' 'accountsservice' 'kf5-polkit-qt-git' 'qt-accountsservice-addon-git')
+depends=('qttools-git' 'qtgraphicaleffects-git' 'hawaii-wallpapers-git' 'weston'
+         'accountsservice' 'kf5-polkit-qt-git' 'kde-kconfig-git'
+         'qtxdg-git' 'qt-accountsservice-addon-git')
 makedepends=('git' 'cmake')
 
 _gitroot="git://github.com/hawaii-desktop/shell.git"
@@ -33,6 +35,7 @@ build() {
 	cd build
 	cmake ../${_gitname} \
 		-DCMAKE_PREFIX_PATH=/opt/qt-git/lib/cmake \
+		-DPolkitQt-1_DIR=/opt/kf5/lib/cmake/PolkitQt-1 \
 		-DCMAKE_INSTALL_PREFIX=/opt/hawaii-git \
 		-DCMAKE_INSTALL_LIBDIR=/opt/hawaii-git/lib \
 		-DCMAKE_BUILD_TYPE=RelWithDebInfo

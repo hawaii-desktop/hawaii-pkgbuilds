@@ -27,7 +27,7 @@ prepare() {
 
 build() {
 	cd build
-	../autogen.sh --prefix=/usr
+	../autogen.sh --prefix=/opt/hawaii-git
 	make
 }
 

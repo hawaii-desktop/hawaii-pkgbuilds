@@ -39,8 +39,6 @@ build() {
   # enable webgl support
   export USE_WEBGL=true
 
-  alias lrelease-qt4='lrelease'
-
   qmake QUPZILLA_PREFIX=/usr/
   make
 }

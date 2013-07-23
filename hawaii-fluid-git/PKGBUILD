@@ -42,6 +42,6 @@ build() {
 }
 
 package() {
-	cd ${_gitname}
+	cd build
 	make DESTDIR="${pkgdir}" install
 }

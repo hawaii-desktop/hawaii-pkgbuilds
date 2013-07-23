@@ -50,6 +50,16 @@ package() {
   # zsh completion
   install -Dm644 linux/completion/zsh_completion.sh \
     "$pkgdir/usr/share/zsh/site-functions/_$_name"
+
+  # Since we are using Qt from git we create a script that
+  # sets LD_LIBRARY_PATH and runs the executable
+  mv $pkgdir/usr/bin/qupzilla $pkgdir/usr/bin/qupzilla.real
+  cat > $pkgdir/usr/bin/qupzilla <<EOF
+#!/bin/bash
+export LD_LIBRARY_PATH=/opt/qt-git/lib
+/usr/bin/qupzilla.real $@
+EOF
+  chmod 755 $pkgdir/usr/bin/qupzilla
 }
 
 # vim:set ts=2 sw=2 et:

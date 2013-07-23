@@ -10,7 +10,7 @@ license=('GPL2')
 conflicts=('communi-desktop')
 replaces=('communi-desktop')
 depends=('libcommuni-git')
-makedepends=('gcc' 'git')
+makedepends=('gcc' 'git' 'qtchooser')
 
 _gitroot="git://github.com/communi/communi-desktop.git"
 _gitname=communi-desktop
@@ -29,6 +29,10 @@ prepare() {
 }
 
 build() {
+	export PKG_CONFIG_PATH=/opt/kf5/lib/pkgconfig:/opt/qt-git/lib/pkgconfig
+	export LD_LIBRARY_PATH=/opt/kf5/lib:/opt/qt-git/lib
+	export QT_SELECT=git
+
 	cd ${_gitname}
 
 	qmake

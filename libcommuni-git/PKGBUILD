@@ -7,8 +7,8 @@ pkgdesc="A cross-platform IRC framework written with Qt"
 arch=('i686' 'x86_64')
 url="https://github.com/communi/communi"
 license=('LGPL2.1')
-depends=('qt5-base')
-makedepends=('gcc' 'git')
+depends=('qtbase-git')
+makedepends=('gcc' 'git' 'qtchooser')
 conflicts=('libcommuni')
 provides=('libcommuni')
 source=('git://github.com/communi/libcommuni.git')
@@ -20,6 +20,10 @@ pkgver() {
 }
 
 build() {
+	export PKG_CONFIG_PATH=/opt/kf5/lib/pkgconfig:/opt/qt-git/lib/pkgconfig
+	export LD_LIBRARY_PATH=/opt/kf5/lib:/opt/qt-git/lib
+	export QT_SELECT=git
+
 	cd libcommuni
 
 	./configure \

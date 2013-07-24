@@ -40,6 +40,8 @@ build() {
 		-DPolkitQt-1_DIR=/opt/kf5/lib/cmake/PolkitQt-1 \
 		-DCMAKE_INSTALL_PREFIX=/opt/hawaii-git \
 		-DCMAKE_INSTALL_LIBDIR=/opt/hawaii-git/lib \
+		-DADDITIONAL_LDLIBPATH=/opt/qt-git/lib:/opt/kf5/lib \
+		-DADDITIONAL_PATH=/opt/qt-git/bin:/opt/kf5/bin \
 		-DCMAKE_BUILD_TYPE=RelWithDebInfo
 }
 

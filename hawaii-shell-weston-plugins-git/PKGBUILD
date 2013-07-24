@@ -34,4 +34,8 @@ build() {
 package() {
 	cd build
 	make DESTDIR="${pkgdir}" install
+
+	mkdir -p $pkgdir/usr/lib/weston
+	cd $pkgdir/usr/lib/weston
+	ln -s /opt/hawaii-git/lib/weston/hawaii-desktop-shell.so
 }

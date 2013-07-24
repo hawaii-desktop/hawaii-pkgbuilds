@@ -1,13 +1,13 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=qtwayland-git
-pkgver=v5.1.0.beta1.3.g30fd950
+pkgver=0.0.0
 pkgrel=1
 pkgdesc="A cross-platform application and UI framework (QtWayland)"
 arch=('i686' 'x86_64')
 url="http://qt-project.org/"
 license=('GPL3' 'LGPL')
-depends=('qtbase-git' 'libxcomposite')
+depends=('qtbase-git' 'libxcomposite' 'wayland')
 makedepends=('git')
 options=('!libtool')
 #source=(git://gitorious.org/qt/qtwayland.git#branch=dev)

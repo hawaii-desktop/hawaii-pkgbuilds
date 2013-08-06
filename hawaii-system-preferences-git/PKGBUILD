@@ -7,7 +7,7 @@ pkgdesc="Hawaii: System preferences"
 arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
 license=('GPL')
-depends=('kf5-polkit-qt-git' 'qt-accountsservice-addon-git' 'qtxdg-git')
+depends=('kf5-polkit-qt-git' 'kde-kconfig-git' 'qt-accountsservice-addon-git' 'qtxdg-git')
 makedepends=('git' 'cmake' 'qttools-git')
 
 _gitroot="git://github.com/hawaii-desktop/system-preferences.git"

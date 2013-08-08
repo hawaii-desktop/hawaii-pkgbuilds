@@ -1,0 +1,31 @@
+# Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+
+pkgname=xf86-video-intel-xwayland-git
+pkgver=0.0.0
+pkgrel=1
+pkgdesc="X.org Intel video drivers for XWayland"
+arch=('i686' 'x86_64')
+url="http://wayland.freedesktop.org/"
+license=('MIT')
+depends=('weston' 'wayland' 'xwayland-git')
+makedepends=('randrproto' 'inputproto' 'dri2proto' 'xf86dgaproto' 'libxxf86dga')
+conflicts=('xf86-video-intel')
+provides=('xf86-video-intel')
+source=(git://anongit.freedesktop.org/xorg/driver/xf86-video-intel)
+md5sums=('SKIP')
+
+pkgver() {
+  cd xf86-video-intel
+  git describe --always | sed 's|-|.|g' 
+}
+
+build() {
+  cd xf86-video-intel
+  CFLAGS="-w" ./autogen.sh --prefix=/usr/
+  make
+}
+
+package() {
+  cd xf86-video-intel
+  make DESTDIR="${pkgdir}" install
+}

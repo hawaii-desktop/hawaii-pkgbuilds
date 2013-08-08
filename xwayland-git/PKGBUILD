@@ -1,0 +1,39 @@
+# Maintainer: Yukicanis <yukicanis@gmail.com>
+# Contributor: Michael Eckert <michael.eckert@linuxmail.org>
+# Edited by: Zachary Lund <admin@computerquip.com>
+# Edited by: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+
+pkgname=xwayland-git
+pkgver=1.12.2.116.g057bf63
+pkgrel=1
+pkgdesc="Xorg Server with Wayland Support"
+arch=('i686' 'x86_64')
+url="http://wayland.freedesktop.org/"
+license=('MIT')
+depends=('weston' 'wayland' 'xorg-util-macros' 'fontsproto' 'videoproto'\
+         'libxfont' 'glproto' 'xineramaproto')
+conflicts=('xorg-server' 'xorg-server-devel' 'xorg-server-common')
+makedepends=('git' 'xtrans' 'xf86driproto' 'xcmiscproto' 'bigreqsproto'\
+             'resourceproto' 'libxres' 'randrproto' 'fontsproto' 'videoproto'\
+             'compositeproto' 'recordproto' 'libxkbfile' 'libxfont' 'mtdev'\
+             'scrnsaverproto' 'dri2proto' 'xorg-font-util' 'inputproto')
+provides=('xorg-server')
+source=('git+git://anongit.freedesktop.org/xorg/xserver#branch=xwayland-1.12')
+md5sums=('SKIP')
+
+build() {
+  cd $srcdir/xserver
+  ./autogen.sh --prefix=/usr/
+  make
+}
+
+package() {
+  cd $srcdir/xserver
+  make DESTDIR=${pkgdir} install
+  rm ${pkgdir}/usr/lib/xorg/modules/extensions/libglx.so
+}
+
+pkgver() {
+  cd $srcdir/xserver
+  git describe --always | sed 's|xorg-server-||g' | sed 's|-|.|g'
+}

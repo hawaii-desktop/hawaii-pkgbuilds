@@ -40,4 +40,16 @@ build() {
 package() {
   cd ${srcdir}/${_gitname}/build
   make DESTDIR="${pkgdir}" install
+
+  # Since we are using Qt from git we create a script that
+  # sets LD_LIBRARY_PATH and runs the executable
+  path=/usr
+  exe=sddm-greeter
+  mv $pkgdir/$path/bin/$exe $pkgdir/$path/bin/$exe.real
+  cat > $pkgdir/$path/bin/$exe <<EOF
+#!/bin/bash
+export LD_LIBRARY_PATH=/opt/qt-git/lib
+$path/bin/$exe.real $@
+EOF
+  chmod 755 $pkgdir/$path/bin/$exe
 }

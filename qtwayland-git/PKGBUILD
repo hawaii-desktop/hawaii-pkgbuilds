@@ -11,8 +11,8 @@ depends=('qtbase-git' 'libxcomposite' 'wayland')
 makedepends=('git')
 options=('!libtool')
 #source=(git://gitorious.org/qt/qtwayland.git#branch=dev)
-#source=(git://github.com/plfiorini/qtwayland.git#branch=hawaii-stable)
-source=(git://github.com/plfiorini/qtwayland.git#branch=cherry)
+source=(git://github.com/plfiorini/qtwayland.git#branch=hawaii-stable)
+#source=(git://github.com/plfiorini/qtwayland.git#branch=cherry)
 md5sums=('SKIP')
 
 pkgver() {

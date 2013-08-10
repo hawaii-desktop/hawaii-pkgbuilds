@@ -19,7 +19,7 @@ md5sums=('SKIP')
 pkgver() {
   cd polkit-qt-1
   #git describe --always | sed 's|-|.|g' 
-  echo v0.103.0.6
+  echo v0.103.0.6.g1f3b311
 }
 
 prepare() {

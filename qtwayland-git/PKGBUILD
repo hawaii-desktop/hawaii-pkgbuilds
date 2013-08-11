@@ -1,8 +1,8 @@
-# Contributor: Andrea Scarpino <andrea@archlinux.org>
+# Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=qtwayland-git
 pkgver=0.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A cross-platform application and UI framework (QtWayland)"
 arch=('i686' 'x86_64')
 url="http://qt-project.org/"
@@ -11,13 +11,14 @@ depends=('qtbase-git' 'libxcomposite' 'wayland')
 makedepends=('git')
 options=('!libtool')
 #source=(git://gitorious.org/qt/qtwayland.git#branch=dev)
-source=(git://github.com/plfiorini/qtwayland.git#branch=hawaii-stable)
-#source=(git://github.com/plfiorini/qtwayland.git#branch=cherry)
+#source=(git://github.com/plfiorini/qtwayland.git#branch=hawaii-stable)
+source=(git://github.com/plfiorini/qtwayland.git#branch=cherry)
 md5sums=('SKIP')
 
 pkgver() {
   cd qtwayland
-  git describe --always | sed 's|-|.|g'
+  #git describe --always | sed 's|-|.|g'
+  echo v5.0.0.beta1.178.g84343d4
 }
 
 build() {

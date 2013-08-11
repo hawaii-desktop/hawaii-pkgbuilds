@@ -49,7 +49,7 @@ package() {
   cat > $pkgdir/$path/bin/$exe <<EOF
 #!/bin/bash
 export LD_LIBRARY_PATH=/opt/qt-git/lib
-$path/bin/$exe.real $@
+$path/bin/$exe.real "\$@"
 EOF
   chmod 755 $pkgdir/$path/bin/$exe
 }

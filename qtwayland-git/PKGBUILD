@@ -2,7 +2,7 @@
 
 pkgname=qtwayland-git
 pkgver=0.0.0
-pkgrel=2
+pkgrel=5
 pkgdesc="A cross-platform application and UI framework (QtWayland)"
 arch=('i686' 'x86_64')
 url="http://qt-project.org/"

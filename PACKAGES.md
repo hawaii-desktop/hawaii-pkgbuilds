@@ -37,7 +37,6 @@
 * hawaii-fluid-git
 * hawaii-greenisland-git
 * hawaii-shell-git
-* hawaii-shell-weston-plugins-git
 * hawaii-archiver-git
 * hawaii-eyesight-git
 * hawaii-swordfish-git

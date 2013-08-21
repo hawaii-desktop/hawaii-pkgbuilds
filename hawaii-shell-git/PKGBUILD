@@ -8,8 +8,9 @@ arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
 license=('GPL', 'LGPL')
 depends=('qtchooser' 'qttools-git' 'qtgraphicaleffects-git' 'qtwayland-git' 'qtsvg-git'
-         'hawaii-fluid-git' 'hawaii-wallpapers-git' 'weston'
-         'accountsservice' 'kf5-polkit-qt-git' 'kde-kconfig-git'
+         'hawaii-fluid-git' 'hawaii-wallpapers-git'
+         'weston' 'accountsservice'
+         'kf5-polkit-qt-git' 'kde-kconfig-git'
          'qtxdg-git' 'qt-accountsservice-addon-git'
          'ttf-dejavu' 'ttf-droid' 'ttf-ubuntu-font-family' 'ttf-raleway-font-family')
 makedepends=('git' 'cmake')

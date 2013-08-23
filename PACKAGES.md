@@ -23,14 +23,15 @@
 
 ## KDE
 
+* extra-cmake-modules-git
+* kde-solid-git
 * kf5-polkit-qt-git
-* kf5-kdelibs-git
 
 ## Hawaii
 
+* qtxdg-git
+* qtconfiguration-git
 * qt-accountsservice-addon-git
-* extra-cmake-modules-git
-* hawaii-vibe-git
 * hawaii-icon-themes-git
 * hawaii-wallpapers-git
 * ttf-raleway-font-family

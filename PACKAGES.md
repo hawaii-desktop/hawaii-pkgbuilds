@@ -33,6 +33,7 @@
 * qtconfiguration-git
 * qt-accountsservice-addon-git
 * hawaii-icon-themes-git
+* hawaii-widget-styles-git
 * hawaii-wallpapers-git
 * ttf-raleway-font-family
 * hawaii-fluid-git

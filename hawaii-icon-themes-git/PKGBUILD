@@ -3,11 +3,12 @@
 pkgname=hawaii-icon-themes-git
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="Hawaii: Icon themes"
+pkgdesc="Hawaii icon themes"
 arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
 license=('GPL')
 makedepends=('git' 'cmake')
+options=('debug')
 
 _gitroot="git://github.com/hawaii-desktop/icon-themes.git"
 _gitbranch=master

@@ -11,6 +11,7 @@ depends=('qtbase-git' 'qttools-git')
 optdepends=('qtsvg-git: for svg support'
             'qtimageformats-git: for mng, tga, tiff, bmp image support')
 makedepends=('git' 'cmake')
+options=('debug')
 
 _gitroot="git://github.com/hawaii-desktop/eyesight.git"
 _gitbranch=master

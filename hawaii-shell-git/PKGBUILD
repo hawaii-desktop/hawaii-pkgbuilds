@@ -13,6 +13,7 @@ depends=('qtchooser' 'qttools-git' 'qtgraphicaleffects-git' 'qtwayland-git' 'qts
          'kf5-polkit-qt-git' 'qtconfiguration-git' 'qtxdg-git' 'qt-accountsservice-addon-git'
          'ttf-dejavu' 'ttf-droid' 'ttf-ubuntu-font-family' 'ttf-raleway-font-family')
 makedepends=('git' 'cmake')
+options=('debug')
 
 _gitroot="git://github.com/hawaii-desktop/shell.git"
 _gitbranch=master

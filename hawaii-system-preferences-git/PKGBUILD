@@ -3,12 +3,13 @@
 pkgname=hawaii-system-preferences-git
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="Hawaii: System preferences"
+pkgdesc="Hawaii system preferences"
 arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
 license=('GPL')
 depends=('kf5-polkit-qt-git' 'qtconfiguration-git' 'qt-accountsservice-addon-git' 'qtxdg-git')
 makedepends=('git' 'cmake' 'qttools-git')
+options=('debug')
 
 _gitroot="git://github.com/hawaii-desktop/system-preferences.git"
 _gitbranch=master

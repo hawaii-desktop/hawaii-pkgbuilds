@@ -9,6 +9,7 @@ url="http://www.maui-project.org"
 license=('GPL')
 depends=('qtdeclarative-git' 'qtquickcontrols-git' 'qttools-git')
 makedepends=('git' 'cmake')
+options=('debug')
 
 _gitroot="git://github.com/hawaii-desktop/swordfish.git"
 _gitname=swordfish

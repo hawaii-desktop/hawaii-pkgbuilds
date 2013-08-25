@@ -3,7 +3,7 @@
 pkgname=qtconfiguration-git
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="Qt XDG"
+pkgdesc="QtConfiguration"
 arch=('i686' 'x86_64')
 url="https://github.com/hawaii-desktop/qtconfiguration"
 license=('LGPL')

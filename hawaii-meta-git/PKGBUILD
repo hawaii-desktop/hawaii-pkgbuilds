@@ -7,7 +7,7 @@ pkgdesc="Hawaii desktop environment meta package"
 arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
 license=('GPL', 'LGPL')
-depends=('hawaii-shell-weston-plugins-git'
+depends=('hawaii-shell-git'
          'hawaii-terminal-git'
          'hawaii-swordfish-git'
          'hawaii-system-preferences-git'

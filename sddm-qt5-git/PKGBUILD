@@ -1,12 +1,12 @@
 pkgname=sddm-qt5-git
 pkgver=412.4f2c54b
-pkgrel=3
+pkgrel=1
 pkgdesc="QML based X11 display manager"
 arch=('i686' 'x86_64')
 url="http://github.com/sddm/sddm"
 license=('GPL')
 depends=('pam' 'qtbase-git' 'qtdeclarative-git' 'libx11')
-makedepends=('cmake' 'git' 'qtchooser')
+makedepends=('cmake' 'git' 'qtchooser' 'qttools-git')
 provides=('sddm')
 replaces=('sddm')
 

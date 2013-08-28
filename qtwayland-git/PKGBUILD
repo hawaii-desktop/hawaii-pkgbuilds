@@ -21,8 +21,7 @@ pkgver() {
 
 build() {
   cd qtwayland
-  #/opt/qt-git/bin/qmake CONFIG+=wayland-compositor
-  /opt/qt-git/bin/qmake
+  /opt/qt-git/bin/qmake CONFIG+=wayland-compositor
   make
 }
 

@@ -8,8 +8,8 @@ arch=('i686' 'x86_64')
 url="http://qt-project.org/"
 license=('GPL3' 'LGPL')
 depends=('qtbase-git')
-makedepends=('git')
-options=('!libtool')
+makedepends=('git' 'gdb')
+options=('!libtool' 'debug')
 source=(git://gitorious.org/qt/qtsvg.git#branch=dev)
 md5sums=('SKIP')
 

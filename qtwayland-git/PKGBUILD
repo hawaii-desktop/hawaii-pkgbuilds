@@ -8,7 +8,7 @@ arch=('i686' 'x86_64')
 url="http://qt-project.org/"
 license=('GPL3' 'LGPL')
 depends=('qtbase-git' 'libxcomposite' 'wayland')
-makedepends=('git')
+makedepends=('git' 'gdb')
 options=('!libtool' 'debug')
 source=(git://gitorious.org/qt/qtwayland.git#branch=stable)
 #source=(git://github.com/plfiorini/qtwayland.git#branch=hawaii-stable)

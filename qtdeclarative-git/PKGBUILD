@@ -7,15 +7,23 @@ pkgdesc="A cross-platform application and UI framework (QtQml, QtQuick)"
 arch=('i686' 'x86_64')
 url="http://qt-project.org/"
 license=('GPL3' 'LGPL')
-depends=('qtjsbackend-git' 'qtxmlpatterns-git' 'mesa')
-makedepends=('git' 'gdb')
+depends=('qtxmlpatterns-git' 'mesa')
+makedepends=('git' 'gdb' 'python2')
+replaces=('qtjsbackend-git')
 options=('!libtool' 'debug')
-source=(git://gitorious.org/qt/qtdeclarative.git#branch=dev)
-md5sums=('SKIP')
+source=(git://gitorious.org/qt/qtdeclarative.git#branch=dev
+        'use-python2.patch')
+md5sums=('SKIP'
+         'fa6702ceaa01eacf4e02d663e3dbd6b5')
 
 pkgver() {
   cd qtdeclarative
   git describe --always | sed 's|-|.|g'
+}
+
+prepare() {
+  cd qtdeclarative
+  patch -p1 -i "${srcdir}"/use-python2.patch
 }
 
 build() {

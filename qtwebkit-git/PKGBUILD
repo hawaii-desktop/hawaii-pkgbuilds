@@ -8,7 +8,7 @@ pkgdesc="A cross-platform application and UI framework (QtWebKit)"
 arch=('i686' 'x86_64')
 url="http://qt-project.org/"
 license=('GPL3' 'LGPL')
-depends=('qtdeclarative-git' 'mesa' 'gstreamer' 'gst-plugins-base')
+depends=('qtdeclarative-git' 'mesa' 'gstreamer' 'gst-plugins-base' 'libjpeg')
 makedepends=('git' 'ruby' 'gperf' 'python2')
 options=('!libtool' 'debug')
 source=(git://gitorious.org/qt/qtwebkit.git#branch=dev

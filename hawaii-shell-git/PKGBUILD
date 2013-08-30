@@ -12,7 +12,7 @@ depends=('qtchooser' 'qttools-git' 'qtgraphicaleffects-git' 'qtwayland-git' 'qts
          'weston' 'accountsservice' 'alsa-lib'
          'kf5-polkit-qt-git' 'qtconfiguration-git' 'qtxdg-git' 'qt-accountsservice-addon-git'
          'ttf-dejavu' 'ttf-droid' 'ttf-ubuntu-font-family' 'ttf-raleway-font-family')
-makedepends=('git' 'cmake')
+makedepends=('git' 'gdb' 'cmake')
 conflicts=('hawaii-shell-weston-plugins-git')
 replaces=('hawaii-shell-weston-plugins-git')
 options=('debug')

@@ -10,13 +10,20 @@ license=('GPL3' 'LGPL')
 depends=('qtbase-git' 'libxcomposite' 'wayland')
 makedepends=('git' 'gdb')
 options=('!libtool' 'debug')
-source=(git://gitorious.org/qt/qtwayland.git#branch=stable)
+source=(git://gitorious.org/qt/qtwayland.git#branch=stable
+        qt52-support.patch)
 #source=(git://github.com/plfiorini/qtwayland.git#branch=hawaii-stable)
-md5sums=('SKIP')
+md5sums=('SKIP'
+         'cf5ac31c763b660c70cb4d70b527a89c')
 
 pkgver() {
   cd qtwayland
   git describe --always | sed 's|-|.|g'
+}
+
+prepare() {
+  cd qtwayland
+  patch -p1 -i "${srcdir}"/qt52-support.patch
 }
 
 build() {

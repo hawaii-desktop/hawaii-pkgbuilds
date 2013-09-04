@@ -39,14 +39,15 @@ build() {
   cd qtbase
   ./configure -prefix /opt/qt-git \
     -opensource -confirm-license \
-    -developer-build \
     -system-sqlite \
     -openssl-linked \
     -nomake examples \
     -nomake tests \
     -no-rpath \
-    -dbus \
+    -dbus-linked \
     -no-separate-debug-info \
+    -optimized-qmake \
+    -reduce-relocations \
     -xcb \
     -qpa xcb \
     -no-gtkstyle \

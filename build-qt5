@@ -4,6 +4,7 @@ packages="qtbase-git qtxmlpatterns-git qtdeclarative-git qtquickcontrols-git qts
 
 for pkg in $packages; do
 	file=${pkg}-v5*-x86_64.pkg.tar.xz
+	files=${pkg}-*-x86_64.pkg.tar.xz
 
 	[ -f ~/chroot/root/repo/${file} ] && continue
 
@@ -22,7 +23,7 @@ for pkg in $packages; do
 		exit 1
 	fi
 
-	cp $file ~/chroot/root/repo
+	cp $files ~/chroot/root/repo
 	cd ~/chroot/root/repo
 	repo-add hawaii.db.tar.gz $file
 

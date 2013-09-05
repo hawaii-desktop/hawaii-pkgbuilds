@@ -5,6 +5,7 @@ pkgdesc="QML based X11 display manager"
 arch=('i686' 'x86_64')
 url="http://github.com/sddm/sddm"
 license=('GPL')
+backup=('etc/sddm.conf')
 depends=('pam' 'qtbase-git' 'qtdeclarative-git' 'libx11')
 makedepends=('cmake' 'git' 'qtchooser' 'qttools-git')
 provides=('sddm')

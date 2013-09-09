@@ -10,19 +10,12 @@ license=('GPL3' 'LGPL')
 depends=('qtdeclarative-git' 'gstreamer0.10' 'gstreamer0.10-base' 'pulseaudio' 'libpulse')
 makedepends=('git')
 options=('!libtool' 'debug')
-source=(git://gitorious.org/qt/qtmultimedia.git#branch=dev
-        build-fix.patch)
-md5sums=('SKIP'
-         'fca12ca4e9c315bd0cd4928fe4be70eb')
+source=(git://gitorious.org/qt/qtmultimedia.git#branch=dev)
+md5sums=('SKIP')
 
 pkgver() {
   cd qtmultimedia
   git describe --always | sed 's|-|.|g'
-}
-
-prepare() {
-  cd qtmultimedia
-  patch -p1 -i "${srcdir}"/build-fix.patch
 }
 
 build() {

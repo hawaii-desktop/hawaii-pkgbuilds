@@ -10,15 +10,13 @@ depends=('pam' 'qtbase-git' 'qtdeclarative-git' 'libx11')
 makedepends=('cmake' 'git' 'qtchooser' 'qttools-git')
 provides=('sddm')
 replaces=('sddm')
-
-_gitroot="git://github.com/sddm/sddm.git"
-_gitbranch=master
-_gitname=sddm
-source=(${_gitname}::${_gitroot}#branch=${_gitbranch})
+source=('git://github.com/sddm/sddm.git')
 md5sums=('SKIP')
 
+_gitname=sddm
+
 pkgver() {
-  cd ${srcdir}/${_gitname}
+  cd $_gitname
   git describe --always | sed 's|-|.|g'
 }
 
@@ -27,7 +25,7 @@ build() {
   export LD_LIBRARY_PATH=/opt/kf5/lib:/opt/qt-git/lib
   export QT5_SELECT=git
 
-  cd ${srcdir}/${_gitname}
+  cd $_gitname
 
   mkdir -p build
   cd build
@@ -39,7 +37,7 @@ build() {
 }
 
 package() {
-  cd ${srcdir}/${_gitname}/build
+  cd $_gitname/build
   make DESTDIR="${pkgdir}" install
 
   # Since we are using Qt from git we create a script that

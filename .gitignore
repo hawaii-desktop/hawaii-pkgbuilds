@@ -51,3 +51,5 @@ communi-desktop-git/communi-desktop/
 libconnman-qt-git/libconnman-qt/
 sddm-qt5-git/sddm/
 qupzilla-qt5-git/qupzilla/
+xwayland-git/xserver/
+xf86-video-intel-xwayland-git/xf86-video-intel/

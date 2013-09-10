@@ -57,7 +57,7 @@ package() {
   cat > $pkgdir/usr/bin/qupzilla <<EOF
 #!/bin/bash
 export LD_LIBRARY_PATH=/opt/qt-git/lib
-/usr/bin/qupzilla.real "\$@"
+exec /usr/bin/qupzilla.real "\$@"
 EOF
   chmod 755 $pkgdir/usr/bin/qupzilla
 }

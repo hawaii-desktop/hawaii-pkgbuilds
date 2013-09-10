@@ -29,7 +29,6 @@
 
 ## Hawaii
 
-* qtxdg-git
 * qtconfiguration-git
 * qt-accountsservice-addon-git
 * hawaii-icon-themes-git

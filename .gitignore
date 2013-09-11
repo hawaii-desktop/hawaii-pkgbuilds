@@ -37,6 +37,7 @@ ostree-git/ostree/
 hawaii-fluid-git/fluid/
 hawaii-greenisland-git/greenisland/
 hawaii-shell-git/shell/
+hawaii-shell-git/libqtxdg/
 hawaii-swordfish-git/swordfish/
 hawaii-system-preferences-git/system-preferences/
 hawaii-system-preferences-git/libqtxdg/

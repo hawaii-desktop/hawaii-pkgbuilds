@@ -7,6 +7,7 @@ pkgdesc="Hawaii icon themes"
 arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
 license=('GPL')
+depends=('hicolor-icon-theme')
 makedepends=('git' 'cmake')
 options=('debug')
 

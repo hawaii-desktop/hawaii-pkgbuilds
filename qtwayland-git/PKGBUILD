@@ -11,10 +11,9 @@ depends=('qtbase-git' 'libxcomposite' 'wayland')
 makedepends=('git' 'gdb')
 options=('!libtool' 'debug')
 source=(git://gitorious.org/qt/qtwayland.git#branch=stable
-        qt52-support.patch)
-#source=(git://github.com/plfiorini/qtwayland.git#branch=hawaii-stable)
+        qt53-support.patch)
 md5sums=('SKIP'
-         'cf5ac31c763b660c70cb4d70b527a89c')
+         'c1a9fc748edb0348e70c03c4b59d8eb5')
 
 pkgver() {
   cd qtwayland
@@ -23,7 +22,7 @@ pkgver() {
 
 prepare() {
   cd qtwayland
-  patch -p1 -i "${srcdir}"/qt52-support.patch
+  patch -p1 -i "${srcdir}"/qt53-support.patch
 }
 
 build() {

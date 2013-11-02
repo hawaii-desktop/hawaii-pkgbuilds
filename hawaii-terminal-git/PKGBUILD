@@ -2,11 +2,11 @@
 
 pkgname=hawaii-terminal-git
 pkgver=0.0.0
-pkgrel=2
+pkgrel=1
 pkgdesc="The Hawaii Terminal Emulator"
 arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
-license=('GPL')
+license=('GPL2')
 depends=('qtdeclarative-git' 'qtquickcontrols-git')
 makedepends=('git' 'cmake')
 options=('debug')

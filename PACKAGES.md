@@ -24,7 +24,6 @@
 ## KDE
 
 * extra-cmake-modules-git
-* kde-solid-git
 * kf5-polkit-qt-git
 
 ## Hawaii

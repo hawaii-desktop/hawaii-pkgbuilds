@@ -9,6 +9,7 @@ url="http://www.maui-project.org"
 license=('GPL2' 'CC-BY-SA' 'LGPL2.1')
 depends=('hicolor-icon-theme')
 makedepends=('git' 'cmake')
+optdepends=('gnome-icon-theme')
 
 _gitroot="git://github.com/hawaii-desktop/icon-themes.git"
 _gitbranch=master

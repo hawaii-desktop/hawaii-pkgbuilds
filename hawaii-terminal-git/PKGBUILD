@@ -12,7 +12,7 @@ makedepends=('git' 'cmake')
 options=('debug')
 
 _gitroot="git://github.com/hawaii-desktop/terminal.git"
-_gitbranch=master
+_gitbranch=dev
 _gitname=terminal
 source=(${_gitname}::${_gitroot}#branch=${_gitbranch}
         git://github.com/jorgen/yat.git)

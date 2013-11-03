@@ -12,7 +12,7 @@ makedepends=('git' 'cmake')
 optdepends=('gnome-icon-theme')
 
 _gitroot="git://github.com/hawaii-desktop/icon-themes.git"
-_gitbranch=master
+_gitbranch=dev
 _gitname=icon-themes
 source=(${_gitname}::${_gitroot}#branch=${_gitbranch})
 md5sums=('SKIP')

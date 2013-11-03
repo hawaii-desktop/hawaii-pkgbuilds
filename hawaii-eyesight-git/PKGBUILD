@@ -13,7 +13,7 @@ optdepends=('qtsvg-git: for svg support'
 makedepends=('git' 'cmake')
 options=('debug')
 
-_gitroot="git://github.com/hawaii-desktop/eyesight.git"
+_gitroot="git://github.com/mauios/eyesight.git"
 _gitbranch=dev
 _gitname=eyesight
 source=(${_gitname}::${_gitroot}#branch=${_gitbranch})

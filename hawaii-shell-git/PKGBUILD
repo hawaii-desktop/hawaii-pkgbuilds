@@ -9,7 +9,7 @@ url="http://www.maui-project.org"
 license=('GPL', 'LGPL')
 depends=('qtchooser' 'qttools-git' 'qtgraphicaleffects-git' 'qtwayland-git' 'qtsvg-git'
          'hawaii-fluid-git' 'hawaii-wallpapers-git' 'hawaii-widget-styles-git' 'hawaii-icon-themes-git'
-         'hawaii-greenisland-git' 'weston' 'accountsservice' 'alsa-lib'
+         'weston' 'accountsservice' 'alsa-lib'
          'kf5-polkit-qt-git' 'qtconfiguration-git' 'qt-accountsservice-addon-git'
          'ttf-dejavu' 'ttf-droid' 'ttf-ubuntu-font-family' 'ttf-raleway-font-family')
 makedepends=('git' 'gdb' 'cmake')

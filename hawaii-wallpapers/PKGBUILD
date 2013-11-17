@@ -9,7 +9,7 @@ arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
 license=('GPL')
 makedepends=('git' 'cmake')
-source=('https://github.com/hawaii-desktop/wallpapers/archive/v0.2.1.tar.gz')
+source=('https://github.com/mauios/hawaii-wallpapers/archive/v0.2.1.tar.gz')
 md5sums=('67342503adb1f0db138f7ec96433f325')
 
 build() {

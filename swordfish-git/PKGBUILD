@@ -11,9 +11,9 @@ depends=('qtdeclarative-git' 'qtquickcontrols-git' 'qttools-git')
 makedepends=('git' 'cmake')
 options=('debug')
 
-_gitroot="git://github.com/hawaii-desktop/swordfish.git"
+_gitroot="git://github.com/mauios/swordfish.git"
 _gitname=swordfish
-_gitbranch=master
+_gitbranch=dev
 source=(${_gitname}::${_gitroot}#branch=${_gitbranch})
 md5sums=('SKIP')
 

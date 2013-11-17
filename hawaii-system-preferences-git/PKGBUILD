@@ -11,8 +11,8 @@ depends=('kf5-polkit-qt-git' 'qtconfiguration-git' 'qt-accountsservice-addon-git
 makedepends=('git' 'cmake' 'qttools-git')
 options=('debug')
 
-_gitroot="git://github.com/hawaii-desktop/system-preferences.git"
-_gitbranch=master
+_gitroot="git://github.com/mauios/hawaii-system-preferences.git"
+_gitbranch=dev
 _gitname=system-preferences
 source=(${_gitname}::${_gitroot}#branch=${_gitbranch}
         git://github.com/plfiorini/libqtxdg.git)

@@ -9,11 +9,11 @@ url="http://www.maui-project.org"
 license=('GPL', 'LGPL')
 depends=('hawaii-shell-git'
          'hawaii-terminal-git'
-         'hawaii-swordfish-git'
          'hawaii-system-preferences-git'
          'hawaii-wallpapers-git'
          'hawaii-icon-themes-git'
          'eyesight-git'
+         'swordfish-git'
          'xkeyboard-config')
 source=()
 md5sums=()

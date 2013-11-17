@@ -5,7 +5,7 @@ packages="qtconfiguration-git qt-accountsservice-addon-git
           hawaii-widget-styles-git hawaii-fluid-git hawaii-greenisland-git
           hawaii-shell-git hawaii-system-preferences-git
           hawaii-terminal-git hawaii-archiver-git eyesight-git
-          hawaii-swordfish-git hawaii-meta-git
+          swordfish-git hawaii-meta-git
           qtconfiguration
           hawaii-widget-styles
           hawaii-terminal eyesight"

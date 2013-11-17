@@ -4,11 +4,11 @@ packages="qtconfiguration-git qt-accountsservice-addon-git
           hawaii-wallpapers-git hawaii-icon-themes-git
           hawaii-widget-styles-git hawaii-fluid-git hawaii-greenisland-git
           hawaii-shell-git hawaii-system-preferences-git
-          hawaii-terminal-git hawaii-archiver-git hawaii-eyesight-git
+          hawaii-terminal-git hawaii-archiver-git eyesight-git
           hawaii-swordfish-git hawaii-meta-git
           qtconfiguration
           hawaii-widget-styles
-          hawaii-terminal hawaii-eyesight"
+          hawaii-terminal eyesight"
 
 srcpkgsdir=`readlink -f $(dirname $0)/srcpkgs`
 rm -rf $srcpkgsdir

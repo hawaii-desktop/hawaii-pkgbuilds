@@ -1,11 +1,10 @@
 #!/bin/sh
 
-packages="extra-cmake-modules-git kf5-polkit-qt-git qtconfiguration-git
-          qt-accountsservice-addon-git hawaii-wallpapers-git
-          hawaii-icon-themes-git hawaii-fluid-git hawaii-greenisland-git
-          hawaii-shell-git hawaii-system-preferences-git
-          hawaii-terminal-git hawaii-archiver-git eyesight-git
-          swordfish-git hawaii-meta-git sddm-qt5-git"
+packages="qtconfiguration-git qt-accountsservice-addon-git
+          hawaii-wallpapers-git hawaii-icon-themes-git hawaii-fluid-git
+          hawaii-greenisland-git hawaii-shell-git hawaii-system-preferences-git
+          hawaii-terminal-git hawaii-archiver-git hawaii-meta-git
+          eyesight-git swordfish-git"
 
 for pkg in $packages; do
 	file=${pkg}-v*-1-x86_64.pkg.tar.xz

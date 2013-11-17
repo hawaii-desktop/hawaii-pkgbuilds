@@ -10,6 +10,8 @@ packages="qtconfiguration-git qtaccountsservice-git
 for pkg in $packages; do
 	file=${pkg}-v*-1-x86_64.pkg.tar.xz
 
+	[ "${pkg}" = "hawaii-archiver-git" ] && continue
+
 	[ -f ~/chroot/root/repo/${file} ] && continue
 
 	pushd $pkg

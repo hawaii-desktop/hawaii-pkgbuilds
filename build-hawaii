@@ -2,8 +2,9 @@
 
 packages="qtconfiguration-git qtaccountsservice-git
           hawaii-wallpapers-git hawaii-icon-themes-git hawaii-fluid-git
-          hawaii-greenisland-git hawaii-shell-git hawaii-system-preferences-git
-          hawaii-terminal-git hawaii-archiver-git hawaii-meta-git
+          hawaii-greenisland-git hawaii-widget-styles-git hawaii-shell-git
+          hawaii-system-preferences-git hawaii-terminal-git
+          hawaii-archiver-git hawaii-meta-git
           eyesight-git swordfish-git"
 
 for pkg in $packages; do

@@ -6,7 +6,7 @@ pkgrel=1
 pkgdesc="Hawaii widget styles"
 arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
-license=('GPL')
+license=('LGPL')
 depends=('qtquickcontrols-git')
 makedepends=('git' 'cmake' 'qtchooser')
 

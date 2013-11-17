@@ -28,7 +28,7 @@
 ## Hawaii
 
 * qtconfiguration-git
-* qt-accountsservice-addon-git
+* qtaccountsservice-git
 * hawaii-icon-themes-git
 * hawaii-widget-styles-git
 * hawaii-wallpapers-git

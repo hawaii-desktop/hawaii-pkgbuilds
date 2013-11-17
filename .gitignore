@@ -18,7 +18,7 @@ qtx11extras-git/qtx11extras/
 qtcreator-git/qt-creator/
 qtconfiguration-git/qtconfiguration/
 qtxdg-git/qtxdg/
-qt-accountsservice-addon-git/qtaccountsservice/
+qtaccountsservice-git/qtaccountsservice/
 extra-cmake-modules-git/extra-cmake-modules/
 kf5-polkit-qt-git/polkit-qt-1/
 kf5-kdelibs-git/kdelibs/

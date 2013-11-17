@@ -1,14 +1,16 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
-pkgname=qt-accountsservice-addon-git
+pkgname=qtaccountsservice-git
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="Qt AccountsService add-on"
+pkgdesc="Qt-style API for AccountsService"
 arch=('i686' 'x86_64')
-url="https://github.com/hawaii-desktop/qt-accountsservice-addon"
+url="https://github.com/mauios/qtaccountsservice"
 license=('LGPL')
 depends=('qtbase-git' 'qtdeclarative-git')
 makedepends=('gcc' 'git' 'qtchooser')
+conflicts=('qt-accountsservice-addon-git')
+replaces=('qt-accountsservice-addon-git')
 _gitroot="git://github.com/mauios/qtaccountsservice.git"
 _gitname="qtaccountsservice"
 _gitbranch="dev"

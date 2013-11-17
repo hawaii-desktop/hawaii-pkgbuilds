@@ -1,6 +1,6 @@
 #!/bin/sh
 
-packages="qtconfiguration-git qt-accountsservice-addon-git
+packages="qtconfiguration-git qtaccountsservice-git
           hawaii-wallpapers-git hawaii-icon-themes-git hawaii-fluid-git
           hawaii-greenisland-git hawaii-shell-git hawaii-system-preferences-git
           hawaii-terminal-git hawaii-archiver-git hawaii-meta-git

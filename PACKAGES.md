@@ -3,7 +3,6 @@
 ## Qt 5
 
 * qtbase-git
-* qtjsbackend-git
 * qtxmlpatterns-git
 * qtdeclarative-git
 * qtquickcontrols-git
@@ -38,11 +37,11 @@
 * hawaii-greenisland-git
 * hawaii-shell-git
 * hawaii-archiver-git
-* hawaii-eyesight-git
-* hawaii-swordfish-git
 * hawaii-system-preferences-git
 * hawaii-terminal-git
 * hawaii-meta-git
+* eyesight-git
+* swordfish-git
 
 ## Applications
 

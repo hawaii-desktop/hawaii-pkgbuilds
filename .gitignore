@@ -1,7 +1,6 @@
 *.log
 *.pkg.tar.*
 qtbase-git/qtbase/
-qtjsbackend-git/qtjsbackend/
 qtxmlpatterns-git/qtxmlpatterns
 qtdeclarative-git/qtdeclarative/
 qtquickcontrols-git/qtquickcontrols/
@@ -17,7 +16,6 @@ qtquick1-git/qtquick1/
 qtx11extras-git/qtx11extras/
 qtcreator-git/qt-creator/
 qtconfiguration-git/qtconfiguration/
-qtxdg-git/qtxdg/
 qtaccountsservice-git/qtaccountsservice/
 extra-cmake-modules-git/extra-cmake-modules/
 kf5-polkit-qt-git/polkit-qt-1/
@@ -38,16 +36,16 @@ hawaii-fluid-git/fluid/
 hawaii-greenisland-git/greenisland/
 hawaii-shell-git/shell/
 hawaii-shell-git/libqtxdg/
-hawaii-swordfish-git/swordfish/
 hawaii-system-preferences-git/system-preferences/
 hawaii-system-preferences-git/libqtxdg/
 hawaii-terminal-git/terminal/
 hawaii-terminal-git/yat/
 hawaii-wallpapers-git/wallpapers/
 hawaii-archiver-git/archiver/
-hawaii-eyesight-git/eyesight/
 hawaii-icon-themes-git/icon-themes/
 hawaii-widget-styles-git/widget-styles/
+eyesight-git/eyesight/
+swordfish-git/swordfish/
 libcommuni-git/libcommuni/
 communi-desktop-git/communi-desktop/
 libconnman-qt-git/libconnman-qt/

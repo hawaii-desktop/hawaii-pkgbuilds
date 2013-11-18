@@ -1,6 +1,9 @@
 #!/bin/bash
 
-packages="qtbase-git qtxmlpatterns-git qtdeclarative-git qtquickcontrols-git qtsvg-git qtimageformats-git qtgraphicaleffects-git qtwayland-git qtmultimedia-git qtwebkit-git qttools-git qtscript-git qtquick1-git qtcreator-git"
+packages="qtbase-git qtxmlpatterns-git qtdeclarative-git qtquickcontrols-git
+          qtsvg-git qtimageformats-git qtgraphicaleffects-git qtwayland-git
+          qtmultimedia-git qtwebkit-git qttools-git qtscript-git
+          qtquick1-git qtcreator-git"
 
 for pkg in $packages; do
 	file=${pkg}-v5*-x86_64.pkg.tar.xz

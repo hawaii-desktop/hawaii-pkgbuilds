@@ -17,7 +17,7 @@ optdepends=('qtchooser: set the default Qt toolkit'
             'libmariadbclient: MariaDB driver'
             'unixodbc: ODBC driver'
             'libfbclient: Firebird/iBase driver')
-options=('!libtool' 'debug')
+options=('!libtool' 'staticlibs' 'debug')
 source=(git://gitorious.org/qt/qtbase.git#branch=dev
         'qtchooser.conf')
 md5sums=('SKIP'
@@ -44,13 +44,14 @@ build() {
     -nomake examples \
     -nomake tests \
     -no-rpath \
-    -dbus-linked \
+    -dbus \
     -no-separate-debug-info \
     -optimized-qmake \
     -reduce-relocations \
     -xcb \
     -qpa xcb \
     -no-gtkstyle \
+    -no-warnings-are-errors \
     -opengl es2
   make
 }

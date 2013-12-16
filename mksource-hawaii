@@ -7,6 +7,7 @@ packages="qtconfiguration-git qtaccountsservice-git
           hawaii-terminal-git hawaii-archiver-git eyesight-git
           swordfish-git hawaii-meta-git
           qtconfiguration
+          hawaii-wallpapers
           hawaii-widget-styles fluid
           hawaii-terminal eyesight"
 

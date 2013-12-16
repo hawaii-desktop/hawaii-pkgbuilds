@@ -2,7 +2,7 @@
 
 packages="qtconfiguration-git qtaccountsservice-git
           hawaii-wallpapers-git hawaii-icon-themes-git
-          hawaii-widget-styles-git hawaii-fluid-git hawaii-greenisland-git
+          hawaii-widget-styles-git fluid-git hawaii-greenisland-git
           hawaii-shell-git hawaii-system-preferences-git
           hawaii-terminal-git hawaii-archiver-git eyesight-git
           swordfish-git hawaii-meta-git

@@ -1,8 +1,8 @@
 #!/bin/sh
 
 packages="qtconfiguration-git qtaccountsservice-git
-          hawaii-wallpapers-git hawaii-icon-themes-git hawaii-fluid-git
-          hawaii-greenisland-git hawaii-widget-styles-git hawaii-shell-git
+          hawaii-wallpapers-git hawaii-icon-themes-git fluid-git
+          greenisland-git hawaii-widget-styles-git hawaii-shell-git
           hawaii-system-preferences-git hawaii-terminal-git
           hawaii-archiver-git eyesight-git swordfish-git"
 

@@ -10,7 +10,7 @@ license=('GPL3' 'LGPL')
 depends=('libtiff' 'libmng' 'qtbase-git')
 makedepends=('git')
 options=('!libtool' 'debug')
-source=(git://gitorious.org/qt/qtimageformats.git#branch=dev)
+source=(git://gitorious.org/qt/qtimageformats.git#branch=stable)
 md5sums=('SKIP')
 
 pkgver() {

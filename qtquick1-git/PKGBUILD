@@ -10,7 +10,7 @@ license=('GPL3' 'LGPL')
 depends=('qtscript-git' 'mesa')
 makedepends=('git' 'gdb')
 options=('!libtool' 'debug')
-source=(git://gitorious.org/qt/qtquick1.git#branch=dev)
+source=(git://gitorious.org/qt/qtquick1.git#branch=stable)
 md5sums=('SKIP')
 
 pkgver() {

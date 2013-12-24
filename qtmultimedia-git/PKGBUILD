@@ -10,7 +10,7 @@ license=('GPL3' 'LGPL')
 depends=('qtdeclarative-git' 'gstreamer0.10' 'gstreamer0.10-base' 'pulseaudio' 'libpulse')
 makedepends=('git')
 options=('!libtool' 'debug')
-source=(git://gitorious.org/qt/qtmultimedia.git#branch=dev)
+source=(git://gitorious.org/qt/qtmultimedia.git#branch=stable)
 md5sums=('SKIP')
 
 pkgver() {

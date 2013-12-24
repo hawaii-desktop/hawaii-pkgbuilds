@@ -10,7 +10,7 @@ license=('GPL3' 'LGPL')
 depends=('qtdeclarative-git')
 makedepends=('git')
 options=('!libtool' 'debug')
-source=(git://gitorious.org/qt/qtquickcontrols.git#branch=dev)
+source=(git://gitorious.org/qt/qtquickcontrols.git#branch=stable)
 md5sums=('SKIP')
 
 pkgver() {

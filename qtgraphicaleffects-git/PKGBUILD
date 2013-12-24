@@ -10,7 +10,7 @@ license=('GPL3' 'LGPL')
 depends=('qtdeclarative-git')
 makedepends=('git')
 options=('!libtool')
-source=(git://gitorious.org/qt/qtgraphicaleffects.git#branch=dev)
+source=(git://gitorious.org/qt/qtgraphicaleffects.git#branch=stable)
 md5sums=('SKIP')
 
 pkgver() {

@@ -18,7 +18,7 @@ optdepends=('qtchooser: set the default Qt toolkit'
             'unixodbc: ODBC driver'
             'libfbclient: Firebird/iBase driver')
 options=('!libtool' 'staticlibs' 'debug')
-source=(git://gitorious.org/qt/qtbase.git#branch=dev
+source=(git://gitorious.org/qt/qtbase.git#branch=stable
         'qtchooser.conf')
 md5sums=('SKIP'
          '386d7cdfc83c6772a5bf33a047d40784')

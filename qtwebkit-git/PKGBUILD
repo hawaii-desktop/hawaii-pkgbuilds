@@ -11,7 +11,7 @@ license=('GPL3' 'LGPL')
 depends=('qtdeclarative-git' 'mesa' 'gstreamer' 'gst-plugins-base' 'libjpeg')
 makedepends=('git' 'ruby' 'gperf' 'python2')
 options=('!libtool' 'debug')
-source=(git://gitorious.org/qt/qtwebkit.git#branch=dev
+source=(git://gitorious.org/qt/qtwebkit.git#branch=stable
         'use-python2.patch')
 md5sums=('SKIP'
          '693155751eb085ec12d578a805c9e1d9')

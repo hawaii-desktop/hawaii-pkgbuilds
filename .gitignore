@@ -32,8 +32,8 @@ wayland-git/wayland/
 weston-git/weston/
 linux-user-chroot-git/linux-user-chroot/
 ostree-git/ostree/
-hawaii-fluid-git/fluid/
-hawaii-greenisland-git/greenisland/
+fluid-git/fluid/
+greenisland-git/greenisland/
 hawaii-shell-git/hawaii-shell/
 hawaii-shell-git/libqtxdg/
 hawaii-system-preferences-git/system-preferences/

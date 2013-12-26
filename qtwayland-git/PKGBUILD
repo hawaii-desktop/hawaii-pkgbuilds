@@ -10,10 +10,8 @@ license=('GPL3' 'LGPL')
 depends=('qtbase-git' 'libxcomposite' 'wayland')
 makedepends=('git' 'gdb')
 options=('!libtool' 'debug')
-source=(git://gitorious.org/qt/qtwayland.git#branch=stable
-        qt53-support.patch)
-md5sums=('SKIP'
-         'c1a9fc748edb0348e70c03c4b59d8eb5')
+source=(git://gitorious.org/qt/qtwayland.git#branch=stable)
+md5sums=('SKIP')
 
 pkgver() {
   cd qtwayland
@@ -22,12 +20,11 @@ pkgver() {
 
 prepare() {
   cd qtwayland
-  patch -p1 -i "${srcdir}"/qt53-support.patch
 }
 
 build() {
   cd qtwayland
-  /opt/qt-git/bin/qmake CONFIG+=wayland-compositor
+  /opt/qt-git/bin/qmake
   make
 }
 

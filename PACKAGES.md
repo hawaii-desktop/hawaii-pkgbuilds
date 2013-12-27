@@ -33,7 +33,7 @@
 * hawaii-widget-styles-git
 * hawaii-wallpapers-git
 * ttf-raleway-font-family
-* hawaii-fluid-git
+* fluid-git
 * hawaii-greenisland-git
 * hawaii-shell-git
 * hawaii-archiver-git

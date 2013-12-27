@@ -47,10 +47,6 @@ package() {
   cd ${srcdir}/${_gitname}
   make INSTALL_ROOT="$pkgdir/" install
 
-  # zsh completion
-  install -Dm644 linux/completion/zsh_completion.sh \
-    "$pkgdir/usr/share/zsh/site-functions/_$_name"
-
   # Since we are using Qt from git we create a script that
   # sets LD_LIBRARY_PATH and runs the executable
   mv $pkgdir/usr/bin/qupzilla $pkgdir/usr/bin/qupzilla.real

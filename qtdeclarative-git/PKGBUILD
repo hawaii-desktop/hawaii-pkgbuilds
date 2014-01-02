@@ -11,7 +11,7 @@ depends=('qtxmlpatterns-git' 'mesa')
 makedepends=('git' 'gdb' 'python2')
 conflicts=('qtjsbackend-git')
 replaces=('qtjsbackend-git')
-options=('!libtool' 'debug')
+options=('!libtool' 'staticlibs' 'debug')
 source=(git://gitorious.org/qt/qtdeclarative.git#branch=stable
         'use-python2.patch')
 md5sums=('SKIP'

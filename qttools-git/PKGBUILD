@@ -9,7 +9,7 @@ url="http://qt-project.org/"
 license=('GPL3' 'LGPL')
 depends=('qtbase-git')
 makedepends=('git' 'gdb')
-options=('!libtool' 'debug')
+options=('!libtool' 'staticlibs' 'debug')
 source=(git://gitorious.org/qt/qttools.git#branch=stable)
 md5sums=('SKIP')
 

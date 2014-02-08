@@ -18,6 +18,7 @@ qtcreator-git/qt-creator/
 qtconfiguration-git/qtconfiguration/
 qtaccountsservice-git/qtaccountsservice/
 extra-cmake-modules-git/extra-cmake-modules/
+qt5-wayland-git/qtwayland/
 kf5-polkit-qt-git/polkit-qt-1/
 kf5-kdelibs-git/kdelibs/
 kf5-attica-git/attica/

@@ -31,4 +31,8 @@ build() {
 package() {
   cd qtwayland
   make INSTALL_ROOT="${pkgdir}" install
+
+  # Workaround to install generated private headers
+  cp ./include/QtCompositor/5.2.1/QtCompositor/private/{qwayland-server-*,*protocol*}.h \
+      ${pkgdir}/opt/qt-git/include/QtCompositor/5.2.1/QtCompositor/private/
 }

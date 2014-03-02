@@ -35,8 +35,7 @@ linux-user-chroot-git/linux-user-chroot/
 ostree-git/ostree/
 fluid-git/fluid/
 greenisland-git/greenisland/
-hawaii-shell-git/shell/
-hawaii-shell-git/libqtxdg/
+hawaii-shell-git/hawaii-shell/
 hawaii-system-preferences-git/system-preferences/
 hawaii-system-preferences-git/libqtxdg/
 hawaii-terminal-git/terminal/

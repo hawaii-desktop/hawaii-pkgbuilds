@@ -10,7 +10,8 @@ license=('MIT')
 depends=('qtbase-git' 'qtdeclarative-git')
 makedepends=('git' 'gdb' 'qtchooser')
 options=('!libtool' 'staticlibs' 'debug')
-source=(yat::git://github.com/jorgen/yat.git#branch=master)
+#source=(yat::git://github.com/jorgen/yat.git#branch=master)
+source=(yat::git://github.com/plfiorini/yat.git#branch=wip/configure)
 md5sums=('SKIP')
 
 pkgver() {
@@ -29,7 +30,7 @@ build() {
   export QT_SELECT=git
 
   cd yat
-  /opt/qt-git/bin/qmake
+  ./configure -nomake tests
   make
 }
 

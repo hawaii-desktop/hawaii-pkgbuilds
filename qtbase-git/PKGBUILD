@@ -52,7 +52,7 @@ build() {
     -qpa xcb \
     -no-gtkstyle \
     -no-warnings-are-errors \
-    -opengl es2
+    -egl
   make
 }
 

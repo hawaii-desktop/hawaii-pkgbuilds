@@ -26,10 +26,7 @@ build() {
 
 	cd libcommuni
 
-	./configure \
-		-prefix /usr \
-		-headerdir /usr/include \
-		-featuredir /usr/lib/qt/mkspecs/features
+	./configure
 	make
 }
 

@@ -15,8 +15,9 @@ makedepends=('gcc' 'git' 'qtchooser')
 _gitroot="git://github.com/communi/communi-desktop.git"
 _gitname=communi-desktop
 _gitbranch=master
-source=(${_gitname}::${_gitroot}#branch=${_gitbranch})
-md5sums=('SKIP')
+source=(${_gitname}::${_gitroot}#branch=${_gitbranch}
+        git://github.com/communi/communi-shared.git)
+md5sums=('SKIP' 'SKIP')
 
 pkgver() {
 	cd ${_gitname}
@@ -25,7 +26,9 @@ pkgver() {
 
 prepare() {
 	cd ${_gitname}
-	git submodule update --init
+	git submodule init
+	git config submodule.src/libs/base/shared.url $srcdir/communi-shared
+	git submodule update
 }
 
 build() {
@@ -42,4 +45,16 @@ build() {
 package() {
 	cd ${_gitname}
 	make INSTALL_ROOT="${pkgdir}" install
+
+	# Since we are using Qt from git we create a script that
+	# sets LD_LIBRARY_PATH and runs the executable
+	path=/usr
+	exe=communi
+	mv $pkgdir/$path/bin/$exe $pkgdir/$path/bin/$exe.real
+	cat > $pkgdir/$path/bin/$exe <<EOF
+#!/bin/bash
+export LD_LIBRARY_PATH=/opt/qt-git/lib
+exec $path/bin/$exe.real "\$@"
+EOF
+	chmod 755 $pkgdir/$path/bin/$exe
 }

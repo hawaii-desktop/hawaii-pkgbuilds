@@ -11,14 +11,12 @@ license=('LGPL')
 depends=('qt5-x11extras' 'qt5-svg' 'polkit')
 makedepends=('cmake' 'extra-cmake-modules-git' 'git' 'qtchooser')
 options=('debug')
-#source=(git://anongit.kde.org/polkit-qt-1.git#branch=qt5)
-source=(git://github.com/hawaii-desktop/polkit-qt-1#branch=hawaii)
+source=(git://anongit.kde.org/polkit-qt-1.git#branch=master)
 md5sums=('SKIP')
 
 pkgver() {
   cd polkit-qt-1
-  #git describe --always | sed 's|-|.|g' 
-  echo v0.103.0.6.g1f3b311
+  git describe --always | sed 's|-|.|g'
 }
 
 prepare() {

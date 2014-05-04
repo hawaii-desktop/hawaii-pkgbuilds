@@ -9,7 +9,7 @@ url="http://www.maui-project.org"
 license=('GPL', 'LGPL')
 depends=('qtchooser' 'qttools-git' 'qtgraphicaleffects-git' 'qtwayland-git' 'qtsvg-git' 'qtscript-git'
          'fluid-git' 'hawaii-wallpapers-git' 'hawaii-widget-styles-git' 'hawaii-icon-themes-git'
-         'greenisland-git' 'weston' 'accountsservice' 'alsa-lib'
+         'greenisland-git' 'libhawaii-git' 'weston' 'accountsservice' 'alsa-lib'
          'hawaii-polkit-qt5-git' 'qtconfiguration-git' 'qtaccountsservice-git'
          'ttf-dejavu' 'ttf-droid' 'ttf-ubuntu-font-family' 'ttf-raleway-font-family')
 makedepends=('git' 'gdb' 'cmake')
@@ -41,12 +41,13 @@ build() {
 	cd build
 	cmake ../${_gitname} \
 		-DCMAKE_PREFIX_PATH=/opt/qt-git/lib/cmake \
-		-DPolkitQt-1_DIR=/opt/hawaii-git/lib/cmake/PolkitQt-1 \
+		-DPolkitQt5-1_DIR=/opt/hawaii-git/lib/cmake/PolkitQt5-1 \
 		-DCMAKE_INSTALL_PREFIX=/opt/hawaii-git \
 		-DCMAKE_INSTALL_LIBDIR=/opt/hawaii-git/lib \
 		-DADDITIONAL_LDLIBPATH=/opt/qt-git/lib \
 		-DADDITIONAL_PATH=/opt/qt-git/bin \
 		-DCMAKE_BUILD_TYPE=RelWithDebInfo
+	make VERBOSE=1
 }
 
 package() {

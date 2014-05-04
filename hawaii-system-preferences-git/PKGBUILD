@@ -7,7 +7,7 @@ pkgdesc="Hawaii system preferences"
 arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
 license=('GPL')
-depends=('hawaii-polkit-qt5-git' 'qtconfiguration-git' 'qtaccountsservice-git')
+depends=('hawaii-polkit-qt5-git' 'qtconfiguration-git' 'qtaccountsservice-git' 'libhawaii-git')
 makedepends=('git' 'cmake' 'qttools-git')
 options=('debug')
 
@@ -34,7 +34,7 @@ build() {
 	cd build
 	cmake ../${_gitname} \
 		-DCMAKE_PREFIX_PATH=/opt/qt-git/lib/cmake \
-		-DPolkitQt-1_DIR=/opt/hawaii-git/lib/cmake/PolkitQt-1 \
+		-DPolkitQt5-1_DIR=/opt/hawaii-git/lib/cmake/PolkitQt5-1 \
 		-DCMAKE_INSTALL_PREFIX=/opt/hawaii-git \
 		-DCMAKE_INSTALL_LIBDIR=/opt/hawaii-git/lib \
 		-DCMAKE_BUILD_TYPE=RelWithDebInfo

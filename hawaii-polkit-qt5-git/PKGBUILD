@@ -32,7 +32,7 @@ build() {
     -DCMAKE_PREFIX_PATH=/opt/qt-git/lib/cmake \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/opt/hawaii-git \
-    -DLIB_INSTALL_DIR=lib
+    -DLIB_INSTALL_DIR=/opt/hawaii-git/lib
   make
 }
 

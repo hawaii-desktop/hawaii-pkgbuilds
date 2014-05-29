@@ -1,6 +1,6 @@
 *.log
 *.pkg.tar.*
-qtwayland-git/qtwayland/
+hawaii-qt5-wayland-git/qtwayland/
 qtconfiguration-git/qtconfiguration/
 qtaccountsservice-git/qtaccountsservice/
 extra-cmake-modules-git/extra-cmake-modules/

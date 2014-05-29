@@ -1,16 +1,16 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
-pkgname=qtwayland-git
+pkgname=hawaii-qt5-wayland-git
 pkgver=0.0.0
 pkgrel=1
 pkgdesc="A cross-platform application and UI framework (QtWayland)"
 arch=('i686' 'x86_64')
 url="http://qt-project.org/"
 license=('GPL3' 'LGPL')
-depends=('qtbase-git' 'qtdeclarative-git' 'libxcomposite' 'wayland')
-makedepends=('git' 'gdb')
+depends=('qt5-base' 'qt5-declarative' 'libxcomposite' 'libxrender' 'wayland')
+makedepends=('git' 'gdb' 'qtchooser')
 options=('!libtool' 'debug')
-source=(git://gitorious.org/qt/qtwayland.git#branch=stable)
+source=(git://gitorious.org/qt/qtwayland.git#branch=dev)
 md5sums=('SKIP')
 
 pkgver() {
@@ -23,8 +23,10 @@ prepare() {
 }
 
 build() {
+  export QT_SELECT=5
+
   cd qtwayland
-  /opt/qt-git/bin/qmake CONFIG+=wayland-compositor
+  qmake CONFIG+=wayland-compositor QMAKE_LIBS_PRIVATE+="-lfontconfig -lfreetype"
   make
 }
 

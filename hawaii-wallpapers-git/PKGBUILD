@@ -21,7 +21,6 @@ prepare() {
 
 pkgver() {
 	cd ${_gitname}
-	#echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
 	git describe --always | sed 's|-|.|g'
 }
 

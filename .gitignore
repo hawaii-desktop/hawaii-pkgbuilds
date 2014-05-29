@@ -53,7 +53,5 @@ communi-desktop-git/communi-shared/
 libconnman-qt-git/libconnman-qt/
 sddm-qt5-git/sddm/
 qupzilla-qt5-git/qupzilla/
-xwayland-git/xserver/
-xf86-video-intel-xwayland-git/xf86-video-intel/
 ttf-raleway-font-family/update-*-source.zip
 yat-git/yat/

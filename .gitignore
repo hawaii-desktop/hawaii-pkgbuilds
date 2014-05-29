@@ -21,15 +21,7 @@ extra-cmake-modules-git/extra-cmake-modules/
 qt5-wayland-git/qtwayland/
 hawaii-polkit-qt5-git/polkit-qt-1/
 polkit-qt5-git/polkit-qt-1/
-kf5-kdelibs-git/kdelibs/
-kf5-attica-git/attica/
-kf5-libdbusmenu-qt-bzr/libdbusmenu-qt/
-kf5-phonon-git/phonon/
-kf5-kdelibs-git/kdelibs/
 kde-solid-git/solid/
-kde-libkdeqt5staging-git/libkdeqt5staging/
-kde-kcoreaddons-git/kcoreaddons/
-kde-kconfig-git/kconfig/
 wayland-git/wayland/
 weston-git/weston/
 linux-user-chroot-git/linux-user-chroot/

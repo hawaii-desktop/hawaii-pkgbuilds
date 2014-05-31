@@ -27,9 +27,16 @@ prepare() {
 build() {
   export QT_SELECT=5
 
+  _lib=lib
+  if [ "$(uname -m)" = "x86_64" ]; then
+    _lib=lib64
+  fi
+
   cd build
   cmake ../polkit-qt-1 \
     -DCMAKE_INSTALL_PREFIX=/usr \
+    -DINCLUDE_INSTALL_DIR=/usr/include \
+    -DLIB_INSTALL_DIR=/usr/${_lib} \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo
   make
 }

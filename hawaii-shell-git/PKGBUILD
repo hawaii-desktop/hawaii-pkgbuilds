@@ -38,7 +38,8 @@ build() {
 	cd build
 	cmake ../${_gitname} \
 		-DCMAKE_INSTALL_PREFIX=/usr \
-		-DCMAKE_BUILD_TYPE=RelWithDebInfo
+		-DCMAKE_BUILD_TYPE=RelWithDebInfo \
+		-DQTWAYLAND_SCANNER_EXECUTABLE=/usr/lib/qt/bin/qtwaylandscanner
 	make VERBOSE=1
 }
 

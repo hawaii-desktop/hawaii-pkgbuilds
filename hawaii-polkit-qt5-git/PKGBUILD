@@ -30,7 +30,7 @@ build() {
   cd build
   cmake ../polkit-qt-1 \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+    -DCMAKE_BUILD_TYPE=RelWithDebInfo
   make
 }
 

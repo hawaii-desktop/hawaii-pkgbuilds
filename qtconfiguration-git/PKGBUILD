@@ -29,8 +29,7 @@ build() {
 
 	cd build
 	cmake ../${_gitname} \
-		-DCMAKE_INSTALL_PREFIX=/opt/hawaii-git \
-		-DCMAKE_INSTALL_LIBDIR=/opt/hawaii-git/lib \
+		-DCMAKE_INSTALL_PREFIX=/usr \
 		-DCMAKE_BUILD_TYPE=RelWithDebInfo
 }
 

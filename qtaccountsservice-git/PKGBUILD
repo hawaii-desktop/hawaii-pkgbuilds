@@ -27,12 +27,11 @@ prepare() {
 }
 
 build() {
-	export QT_SELECT=git
+	export QT_SELECT=5
 
 	cd build
 	cmake ../${_gitname} \
-		-DCMAKE_INSTALL_PREFIX=/opt/hawaii-git \
-		-DCMAKE_INSTALL_LIBDIR=/opt/hawaii-git/lib \
+		-DCMAKE_INSTALL_PREFIX=/usr \
 		-DCMAKE_BUILD_TYPE=RelWithDebInfo
 }
 

@@ -27,7 +27,7 @@ pkgver() {
 build() {
 	cd build
 	cmake ../${_gitname} \
-		-DCMAKE_INSTALL_PREFIX=/opt/hawaii-git
+		-DCMAKE_INSTALL_PREFIX=/usr
 	make
 }
 

@@ -41,4 +41,7 @@ build() {
 package() {
 	cd build
 	make DESTDIR="${pkgdir}" install
+
+	# Remove org.freedesktop.FileManager1.service to avoid conflicts
+	rm -fr ${pkgdir}/usr/share/dbus-1/services/
 }

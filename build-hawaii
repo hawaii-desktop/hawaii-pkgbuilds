@@ -1,8 +1,9 @@
 #!/bin/sh
 
 packages="qtconfiguration-git qtaccountsservice-git
-          hawaii-wallpapers-git hawaii-icon-themes-git fluid-git
-          hawaii-qt5-wayland-git hawaii-polkit-qt5-git greenisland-git
+          hawaii-wallpapers-git hawaii-icon-themes-git
+          hawaii-qt5-wayland-git hawaii-polkit-qt5-git yat-git
+          fluid-git greenisland-git
           hawaii-widget-styles-git libhawaii-git hawaii-shell-git
           hawaii-system-preferences-git hawaii-terminal-git
           hawaii-archiver-git eyesight-git swordfish-git"
@@ -12,7 +13,6 @@ for pkg in $packages; do
 
 	[ "${pkg}" = "hawaii-archiver-git" ] && continue
 	[ "${pkg}" = "greenisland-git" ] && continue
-	[ "${pkg}" = "hawaii-terminal-git" ] && continue
 
 	[ -f ~/chroot/root/repo/${file} ] && continue
 

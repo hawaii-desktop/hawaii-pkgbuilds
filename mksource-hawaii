@@ -2,10 +2,12 @@
 
 packages="qtconfiguration-git qtaccountsservice-git
           hawaii-wallpapers-git hawaii-icon-themes-git
-          hawaii-widget-styles-git fluid-git hawaii-qt5-wayland-git
-          greenisland-git hawaii-shell-git hawaii-system-preferences-git
-          hawaii-terminal-git hawaii-archiver-git eyesight-git
-          swordfish-git hawaii-meta-git
+          hawaii-qt5-wayland-git hawaii-polkit-qt5-git yat-git
+          fluid-git greenisland-git
+          hawaii-widget-styles-git libhawaii-git hawaii-shell-git
+          hawaii-system-preferences-git hawaii-terminal-git
+          hawaii-archiver-git eyesight-git swordfish-git
+          hawaii-meta-git"
 
 srcpkgsdir=`readlink -f $(dirname $0)/srcpkgs`
 rm -rf $srcpkgsdir

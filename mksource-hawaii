@@ -18,7 +18,7 @@ for pkg in $packages; do
 
 	echo "===> ${pkg}"
 
-	makepkg --source -f
+	mkaurball
 	rm -rf src
 	mv *.src.tar.gz $srcpkgsdir
 

@@ -2,13 +2,13 @@
 
 pkgname=hawaii-polkit-qt5-git
 pkgver=v0.103.0.3.g4ed9c3f
-pkgrel=1
+pkgrel=2
 pkgdesc='Qt wrapper around polkit-1 client libraries'
 arch=('i686' 'x86_64')
 url='http://www.kde.org'
 license=('LGPL')
 depends=('qt5-x11extras' 'qt5-svg' 'polkit')
-makedepends=('cmake' 'extra-cmake-modules-git' 'git' 'qtchooser')
+makedepends=('cmake' 'extra-cmake-modules' 'git' 'qtchooser')
 provides=('kf5-polkit-qt' 'kf5-polkit-qt-git')
 conflicts=('kf5-polkit-qt' 'kf5-polkit-qt-git')
 options=('debug')

@@ -13,7 +13,7 @@ conflicts=('qt-accountsservice-addon-git')
 replaces=('qt-accountsservice-addon-git')
 _gitroot="git://github.com/mauios/qtaccountsservice.git"
 _gitname="qtaccountsservice"
-_gitbranch="dev"
+_gitbranch="master"
 source=(${_gitname}::${_gitroot}#branch=${_gitbranch})
 md5sums=('SKIP')
 

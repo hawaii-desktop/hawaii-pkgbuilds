@@ -13,6 +13,7 @@ options=('!libtool' 'debug')
 #source=(git://gitorious.org/qt/qtwayland.git#branch=dev)
 source=(git://github.com/maui-packages/qtwayland#branch=upstream54)
 md5sums=('SKIP')
+_ver=5.5.0
 
 pkgver() {
   cd qtwayland
@@ -36,6 +37,6 @@ package() {
   make INSTALL_ROOT="${pkgdir}" install
 
   # Workaround to install generated private headers
-  cp ./include/QtCompositor/5.5.0/QtCompositor/private/{qwayland-server-*,*protocol*}.h \
-      ${pkgdir}/usr/include/qt/QtCompositor/5.5.0/QtCompositor/private/
+  cp ./include/QtCompositor/${_ver}/QtCompositor/private/{qwayland-server-*,*protocol*}.h \
+      ${pkgdir}/usr/include/qt/QtCompositor/${_ver}/QtCompositor/private/
 }

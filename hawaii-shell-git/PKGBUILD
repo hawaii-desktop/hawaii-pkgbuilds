@@ -9,7 +9,7 @@ url="https://github.com/hawaii-desktop/hawaii-shell"
 license=('GPL', 'LGPL')
 depends=('qt5-tools' 'qt5-graphicaleffects' 'hawaii-qt5-wayland-git' 'qt5-svg'
          'greenisland-git' 'weston' 'xkeyboard-config' 'gnome-backgrounds'
-         'plasma-framework' 'plasma-workspace' 'plasma-nm'
+         'plasma-framework-git' 'plasma-workspace-git' 'plasma-nm-git'
          'ttf-dejavu' 'hawaii-icon-themes-git')
 makedepends=('git' 'gdb' 'cmake' 'qtchooser')
 conflicts=('hawaii-shell-weston-plugins-git' 'fluid-git')

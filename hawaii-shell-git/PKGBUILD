@@ -15,7 +15,7 @@ license=('GPL', 'LGPL')
 depends=('qt5-tools' 'qt5-graphicaleffects' 'hawaii-qt5-wayland-git' 'qt5-svg'
          'greenisland-git' 'weston' 'xkeyboard-config' 'gnome-backgrounds'
          'plasma-framework' 'plasma-workspace' 'plasma-nm'
-         'ttf-dejavu')
+         'ttf-dejavu' 'hawaii-icon-themes-git')
 makedepends=('git' 'gdb' 'cmake' 'qtchooser')
 conflicts=('hawaii-shell-weston-plugins-git' 'fluid-git')
 replaces=('hawaii-shell-weston-plugins-git' 'fluid-git')

@@ -7,11 +7,6 @@ pkgdesc="Hawaii Shell"
 arch=('i686' 'x86_64')
 url="https://github.com/hawaii-desktop/hawaii-shell"
 license=('GPL', 'LGPL')
-#depends=('qtchooser' 'qt5-tools' 'qt5-graphicaleffects' 'hawaii-qt5-wayland-git' 'qt5-svg' 'qt5-script'
-#         'fluid-git' 'hawaii-wallpapers-git' 'hawaii-widget-styles-git' 'hawaii-icon-themes-git'
-#         'libhawaii-git' 'weston' 'accountsservice' 'alsa-lib'
-#         'hawaii-polkit-qt5-git' 'qtconfiguration-git' 'qtaccountsservice-git'
-#         'ttf-dejavu' 'ttf-droid' 'ttf-ubuntu-font-family' 'ttf-raleway-font-family')
 depends=('qt5-tools' 'qt5-graphicaleffects' 'hawaii-qt5-wayland-git' 'qt5-svg'
          'greenisland-git' 'weston' 'xkeyboard-config' 'gnome-backgrounds'
          'plasma-framework' 'plasma-workspace' 'plasma-nm'

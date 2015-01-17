@@ -7,7 +7,7 @@ pkgdesc="Hawaii Shell"
 arch=('i686' 'x86_64')
 url="https://github.com/hawaii-desktop/hawaii-shell"
 license=('GPL', 'LGPL')
-depends=('qt5-tools' 'qt5-graphicaleffects' 'hawaii-qt5-wayland-git' 'qt5-svg'
+depends=('qt5-tools' 'qt5-quickcontrols' 'qt5-graphicaleffects' 'hawaii-qt5-wayland-git' 'qt5-svg'
          'greenisland-git' 'weston' 'xkeyboard-config' 'gnome-backgrounds'
          'plasma-framework-git' 'plasma-workspace-git' 'plasma-nm-git'
          'libpulse' 'ttf-dejavu' 'hawaii-icon-themes-git')

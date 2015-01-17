@@ -12,8 +12,8 @@ depends=('qt5-tools' 'qt5-quickcontrols' 'qt5-graphicaleffects' 'hawaii-qt5-wayl
          'plasma-framework-git' 'plasma-workspace-git' 'plasma-nm-git'
          'libpulse' 'ttf-dejavu' 'hawaii-icon-themes-git')
 makedepends=('git' 'gdb' 'cmake' 'qtchooser')
-conflicts=('hawaii-shell-weston-plugins-git' 'fluid-git')
-replaces=('hawaii-shell-weston-plugins-git' 'fluid-git')
+conflicts=('hawaii-shell-weston-plugins-git' 'fluid-git' 'libhawaii-git')
+replaces=('hawaii-shell-weston-plugins-git' 'fluid-git' 'libhawaii-git')
 options=('debug')
 
 _gitroot="git://github.com/hawaii-desktop/hawaii-shell.git"

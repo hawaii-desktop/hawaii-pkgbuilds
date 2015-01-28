@@ -1,10 +1,10 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=hawaii-shell-git
-pkgver=20141228.68b7bee
+pkgver=20150127.df86419
 pkgrel=1
 pkgdesc="Hawaii Shell"
-arch=('i686' 'x86_64')
+arch=('i686' 'x86_64' 'armv6h')
 url="https://github.com/hawaii-desktop/hawaii-shell"
 license=('GPL', 'LGPL')
 depends=('qt5-tools' 'qt5-quickcontrols' 'qt5-graphicaleffects' 'qt5-svg'

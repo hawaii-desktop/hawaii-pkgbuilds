@@ -28,7 +28,7 @@ build() {
   export QT_SELECT=5
 
   cd qtwayland
-  qmake CONFIG+=wayland-compositor QMAKE_LIBS_PRIVATE+="-lfontconfig -lfreetype -lXrender"
+  qmake CONFIG+=wayland-compositor
   make
 }
 

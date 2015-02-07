@@ -8,6 +8,7 @@ arch=('i686' 'x86_64')
 url="http://qt-project.org/"
 license=('GPL3' 'LGPL')
 depends=('qt5-base' 'qt5-declarative' 'libxcomposite' 'libxrender' 'mtdev' 'wayland')
+provides=('qt5-wayland')
 conflicts=('qt5-wayland')
 replaces=('qt5-wayland')
 makedepends=('git' 'gdb')

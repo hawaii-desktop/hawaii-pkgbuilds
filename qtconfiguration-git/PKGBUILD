@@ -8,7 +8,7 @@ arch=('i686' 'x86_64')
 url="https://github.com/mauios/qtconfiguration"
 license=('GPL3' 'LGPL' 'custom')
 depends=('qt5-base' 'qt5-declarative' 'dconf')
-makedepends=('gcc' 'git' 'cmake' 'qtchooser')
+makedepends=('gcc' 'git' 'cmake')
 _gitroot="git://github.com/mauios/qtconfiguration.git"
 _gitname="qtconfiguration"
 _gitbranch="master"
@@ -25,8 +25,6 @@ prepare() {
 }
 
 build() {
-	export QT_SELECT=5
-
 	cd build
 	cmake ../${_gitname} \
 		-DCMAKE_INSTALL_PREFIX=/usr \

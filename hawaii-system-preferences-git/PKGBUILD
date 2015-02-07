@@ -8,7 +8,7 @@ arch=('i686' 'x86_64')
 url="http://www.maui-project.org"
 license=('GPL')
 depends=('hawaii-polkit-qt5-git' 'qtconfiguration-git' 'qtaccountsservice-git' 'libhawaii-git')
-makedepends=('git' 'cmake' 'qt5-tools' 'qtchooser')
+makedepends=('git' 'cmake' 'qt5-tools')
 options=('debug')
 
 _gitroot="git://github.com/mauios/hawaii-system-preferences.git"
@@ -27,8 +27,6 @@ prepare() {
 }
 
 build() {
-	export QT_SELECT=5
-
 	cd build
 	cmake ../${_gitname} \
 		-DCMAKE_INSTALL_PREFIX=/usr \

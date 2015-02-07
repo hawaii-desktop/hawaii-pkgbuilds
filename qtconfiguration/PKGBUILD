@@ -8,7 +8,7 @@ arch=('i686' 'x86_64')
 url="https://github.com/mauios/qtconfiguration"
 license=('GPL3' 'LGPL' 'custom')
 depends=('qt5-base' 'dconf')
-makedepends=('cmake' 'qtchooser')
+makedepends=('cmake')
 source=("http://sourceforge.net/projects/mauios/files/hawaii/${pkgname}/${pkgname}-${pkgver}.tar.gz")
 md5sums=('b95d0d796b89cea2db45305c9eac04f0')
 
@@ -18,8 +18,6 @@ prepare() {
 }
 
 build() {
-	export QT_SELECT=5
-
 	cd ${pkgname}-${pkgver}/build
 	cmake -DCMAKE_INSTALL_PREFIX=/usr ..
 	make

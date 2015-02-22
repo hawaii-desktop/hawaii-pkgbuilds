@@ -1,6 +1,8 @@
 *.log
 *.pkg.tar.*
 hawaii-qt5-wayland-git/src/qtwayland/
+hawaii-qt5-wayland-rpi-git/src/
+hawaii-qt5-wayland-rpi-git/qtwayland/
 qtconfiguration-git/src/qtconfiguration/
 qtaccountsservice-git/src/qtaccountsservice/
 greenisland-git/src/greenisland/

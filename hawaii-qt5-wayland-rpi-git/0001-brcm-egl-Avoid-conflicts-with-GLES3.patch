@@ -1,0 +1,42 @@
+From c005b1c986e00646bc228af9488c2cf526a3b08f Mon Sep 17 00:00:00 2001
+From: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+Date: Wed, 4 Mar 2015 22:30:00 +0000
+Subject: [PATCH] brcm-egl: Avoid conflicts with GLES3
+
+qopengl.h includes GLES3 which conflicts with GLES2 declarations.
+Might happen because Qt is built with desktop GL.
+
+This patch fixes the following build error.
+
+In file included from ../../../../hardwareintegration/compositor/brcm-egl/brcmeglintegration.cpp:61:0:
+/opt/vc/include/GLES2/gl2.h:600:125: error: conflicting declaration of C function 'void glShaderSource(GLuint, GLsizei, const GLchar**, const GLint*)'
+ GL_APICALL void         GL_APIENTRY glShaderSource (GLuint shader, GLsizei count, const GLchar** string, const GLint* length);
+                                                                                                                             ^
+In file included from /usr/include/qt/QtGui/qopengl.h:97:0,
+                 from ../../../../../include/QtCompositor/5.5.0/QtCompositor/private/../../../../../src/compositor/hardware_integration/qwlclientbufferintegration_p.h:46,
+                 from ../../../../../include/QtCompositor/5.5.0/QtCompositor/private/qwlclientbufferintegration_p.h:1,
+                 from ../../../../hardwareintegration/compositor/brcm-egl/brcmeglintegration.h:44,
+                 from ../../../../hardwareintegration/compositor/brcm-egl/brcmeglintegration.cpp:44:
+
+/usr/include/GLES3/gl3.h:475:29: note: previous declaration 'void glShaderSource(GLuint, GLsizei, const GLchar* const*, const GLint*)'
+ GL_APICALL void GL_APIENTRY glShaderSource (GLuint shader, GLsizei count, const GLchar *const*string, const GLint *length);
+---
+ src/hardwareintegration/compositor/brcm-egl/brcmeglintegration.cpp | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/src/hardwareintegration/compositor/brcm-egl/brcmeglintegration.cpp b/src/hardwareintegration/compositor/brcm-egl/brcmeglintegration.cpp
+index 9e2ae52..1de601e 100644
+--- a/src/hardwareintegration/compositor/brcm-egl/brcmeglintegration.cpp
++++ b/src/hardwareintegration/compositor/brcm-egl/brcmeglintegration.cpp
+@@ -38,6 +38,8 @@
+ **
+ ****************************************************************************/
+ 
++#define __gl3_h_ 1
++
+ #include "brcmeglintegration.h"
+ #include "brcmbuffer.h"
+ #include <QtCompositor/private/qwlsurface_p.h>
+-- 
+2.3.0
+

@@ -5,7 +5,7 @@ pkgver=20150222.b57979f
 pkgrel=1
 pkgdesc="Qt5 eglfs plugin built against Broadcom's GL libs."
 url="http://qt.io"
-arch=('armv6h')
+arch=('armv6h' 'armv7h')
 license=('GPL3' 'LGPL' 'FDL' 'custom')
 depends=('qt5-base' 'mtdev')
 

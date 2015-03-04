@@ -26,7 +26,7 @@ md5sums=('SKIP'
          'd4fae1a1f8a51bb2ee4a38cdc6afd635'
          'c1b0043d80697a1005ef9e15ffd788c0'
          'b4671b4aa85fcd46b05fe64c044bf843'
-         '43d3e74b464e6b412ca9b79450aa2d11')
+         '17bbee0eeab0096f725daa0b887650c4')
 _ver=5.5.0
 
 pkgver() {
@@ -45,12 +45,13 @@ prepare() {
 
 build() {
   cd qtwayland
-  qmake CONFIG+=wayland-compositor
+  qmake CONFIG+=wayland-compositor DEFINES+=QT_NO_OPENGL_ES_3
   make
 }
 
 package() {
   cd qtwayland
+  export CFLAGS=-DQT_NO_OPENGL_ES_3
   make INSTALL_ROOT="${pkgdir}" install
 
   # Workaround to install generated private headers

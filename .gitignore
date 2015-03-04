@@ -4,6 +4,7 @@ hawaii-qt5-wayland-git/src/qtwayland/
 hawaii-qt5-wayland-rpi-git/src/
 hawaii-qt5-wayland-rpi-git/qtwayland/
 hawaii-qt5-wayland-rpi-git/sources/
+hawaii-qt5-wayland-rpi-git/pkg/
 qtconfiguration-git/src/qtconfiguration/
 qtaccountsservice-git/src/qtaccountsservice/
 greenisland-git/greenisland/

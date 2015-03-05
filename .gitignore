@@ -32,3 +32,6 @@ communi-desktop-git/communi-shared/
 libconnman-qt-git/libconnman-qt/
 ttf-raleway-font-family/update-*-source.zip
 yat-git/yat/
+qt5-qpa-rpi-plugin-git/src/
+qt5-qpa-rpi-plugin-git/pkg/
+qt5-qpa-rpi-plugin-git/qt5-qpa-rpi-plugin/

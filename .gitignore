@@ -16,6 +16,9 @@ greenisland-rpi-git/pkg/
 hawaii-shell-git/hawaii-shell/
 hawaii-shell-git/src/
 hawaii-shell-git/pkg/
+hawaii-shell-rpi-git/hawaii-shell/
+hawaii-shell-rpi-git/src/
+hawaii-shell-rpi-git/pkg/
 hawaii-system-preferences-git/system-preferences/
 hawaii-system-preferences-git/libqtxdg/
 hawaii-terminal-git/terminal/

@@ -11,7 +11,7 @@ depends=('qt5-tools' 'qt5-quickcontrols' 'qt5-graphicaleffects' 'qt5-svg' 'qt5-q
          'greenisland-rpi-git' 'hawaii-wallpapers-git' 'xkeyboard-config'
          'kdoctools' 'kdelibs4support' 'krunner' 'kwayland' 'plasma-framework' 'plasma-workspace' 'plasma-nm'
          'libpulse' 'ttf-dejavu' 'ttf-droid' 'hawaii-icon-themes-git')
-optdepends=('weston: nested mode support'
+optdepends=('weston-rpi: nested mode support'
             'pulseaudio: audio support')
 makedepends=('git' 'gdb' 'extra-cmake-modules')
 conflicts=('hawaii-shell-weston-plugins-git' 'fluid-git' 'libhawaii-git' 'hawaii-shell-git')

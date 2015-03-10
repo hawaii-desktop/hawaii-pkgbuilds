@@ -10,6 +10,7 @@ arch=('armv6h' 'armv7h')
 url='https://github.com/greenisland/greenisland.git'
 license=('GPL', 'LGPL')
 depends=('qt5-declarative' 'hawaii-qt5-wayland-rpi-git' 'libkscreen-frameworks')
+optdepends=('weston-rpi: nested mode support')
 provides=('greenisland-git')
 conflicts=('greenisland-git')
 replaces=('greenisland-git')

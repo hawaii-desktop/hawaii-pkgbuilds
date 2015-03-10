@@ -8,6 +8,9 @@ arch=('i686' 'x86_64' 'armv6h' 'armv7h')
 url='https://github.com/greenisland/greenisland.git'
 license=('GPL', 'LGPL')
 depends=('qt5-declarative' 'hawaii-qt5-wayland-git' 'libkscreen-frameworks')
+provides=('greenisland')
+conflicts=('greenisland')
+replaces=('greenisland')
 makedepends=('git' 'gdb' 'extra-cmake-modules')
 options=('debug')
 

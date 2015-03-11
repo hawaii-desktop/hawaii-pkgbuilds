@@ -9,6 +9,7 @@ url="https://github.com/hawaii-desktop"
 license=('LGPL')
 depends=('captiva-icons-git' 'faba-icon-theme-git' 'gnome-icon-theme' 'hicolor-icon-theme')
 makedepends=('git' 'cmake')
+groups=('hawaii-git')
 
 _gitroot="git://github.com/hawaii-desktop/hawaii-icon-themes.git"
 _gitbranch=master

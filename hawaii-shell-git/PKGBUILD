@@ -13,7 +13,6 @@ depends=('qt5-tools' 'qt5-quickcontrols' 'qt5-graphicaleffects' 'qt5-svg'
          'ttf-dejavu' 'ttf-droid')
 optdepends=('weston: nested mode support'
             'pulseaudio: audio support'
-            'pam: lock screen authentication'
             'hawaii-icon-themes-git: icon theme'
             'hawaii-wallpapers-git: wallpapers')
 makedepends=('git' 'gdb' 'extra-cmake-modules')

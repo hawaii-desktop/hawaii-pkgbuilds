@@ -11,7 +11,7 @@ depends=('captiva-icons-git' 'faba-icon-theme-git' 'gnome-icon-theme' 'hicolor-i
 makedepends=('cmake')
 conflicts=('hawaii-icon-themes-git')
 groups=('hawaii')
-source=("https://github.com/hawaii-desktop/hawaii-icon-themes/archive/v${pkgver}.tar.gz")
+source=("https://github.com/hawaii-desktop/${pkgname}/archive/v${pkgver}.tar.gz")
 md5sums=('4e368b3dbccac5741bc89c173e827464')
 
 prepare() {

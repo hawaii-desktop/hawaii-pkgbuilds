@@ -10,7 +10,7 @@ license=('GPL')
 makedepends=('git' 'extra-cmake-modules')
 conflicts=('hawaii-wallpapers-git')
 groups=('hawaii')
-source=('https://github.com/hawaii-desktop/hawaii-wallpapers/archive/v0.4.0.tar.gz')
+source=("https://github.com/hawaii-desktop/${pkgname}/archive/v${pkgver}.tar.gz")
 md5sums=('60935f18e84733c9c10a5c9216ab7a38')
 
 prepare() {

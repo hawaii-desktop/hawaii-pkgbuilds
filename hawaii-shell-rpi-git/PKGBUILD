@@ -15,8 +15,8 @@ optdepends=('pulseaudio: audio support'
             'hawaii-icon-themes-git: icon theme'
             'hawaii-wallpapers-git: wallpapers')
 makedepends=('git' 'gdb' 'extra-cmake-modules')
-conflicts=('hawaii-shell-weston-plugins-git' 'fluid-git' 'libhawaii-git' 'hawaii-shell-git' 'hawaii-shell')
-replaces=('hawaii-shell-weston-plugins-git' 'fluid-git' 'libhawaii-git' 'hawaii-shell-git' 'hawaii-shell')
+conflicts=('hawaii-shell-git' 'hawaii-shell')
+replaces=('hawaii-shell-git' 'hawaii-shell')
 provides=('hawaii-shell-git' 'hawaii-shell')
 options=('debug')
 

@@ -7,7 +7,7 @@ pkgdesc="Hawaii Shell"
 arch=('armv6h' 'armv7h')
 url="https://github.com/hawaii-desktop/hawaii-shell"
 license=('GPL', 'LGPL')
-depends=('qt5-tools' 'qt5-quickcontrols' 'qt5-graphicaleffects' 'qt5-svg' 'qt5-qpa-rpi-plugin-git'
+depends=('qt5-tools' 'qt5-quickcontrols' 'qt5-graphicaleffects' 'qt5-svg'
          'greenisland-rpi-git' 'pam' 'libpulse'
          'kdoctools' 'kdelibs4support' 'krunner' 'kwayland' 'plasma-framework' 'plasma-workspace' 'plasma-nm'
          'ttf-dejavu' 'ttf-droid')

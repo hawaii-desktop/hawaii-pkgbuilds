@@ -11,8 +11,7 @@ depends=('qt5-tools' 'qt5-quickcontrols' 'qt5-graphicaleffects' 'qt5-svg' 'qt5-q
          'greenisland-rpi-git' 'pam' 'libpulse'
          'kdoctools' 'kdelibs4support' 'krunner' 'kwayland' 'plasma-framework' 'plasma-workspace' 'plasma-nm'
          'ttf-dejavu' 'ttf-droid')
-optdepends=('weston-rpi: nested mode support'
-            'pulseaudio: audio support'
+optdepends=('pulseaudio: audio support'
             'hawaii-icon-themes-git: icon theme'
             'hawaii-wallpapers-git: wallpapers')
 makedepends=('git' 'gdb' 'extra-cmake-modules')

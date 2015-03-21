@@ -22,6 +22,7 @@ hawaii-shell-rpi-git/pkg/
 hawaii-system-preferences-git/system-preferences/
 hawaii-system-preferences-git/libqtxdg/
 hawaii-terminal-git/terminal/
+hawaii-terminal-git/src/terminal/
 hawaii-wallpapers-git/wallpapers/
 hawaii-wallpapers-git/src/
 hawaii-wallpapers-git/pkg/

@@ -1,24 +1,30 @@
-#!/bin/sh
+#!/bin/bash
 
-packages="qtconfiguration-git qtaccountsservice-git
-          hawaii-wallpapers-git hawaii-icon-themes-git
-          hawaii-qt5-wayland-git hawaii-polkit-qt5-git yat-git
-          fluid-git greenisland-git
-          hawaii-widget-styles-git libhawaii-git hawaii-shell-git
-          hawaii-system-preferences-git hawaii-terminal-git
-          hawaii-archiver-git eyesight-git swordfish-git
-          hawaii-meta-git"
+packages=(
+          'hawaii-qt5-wayland-git'
+          'hawaii-qt5-wayland-rpi-git'
+          'hawaii-shell-git'
+          'hawaii-shell-rpi-git'
+          'hawaii-meta-git'
+          'hawaii-rpi-meta-git'
+          'hawaii-wallpapers-git'
+          'hawaii-icon-themes-git'
+          'hawaii-system-preferences-git'
+          'greenisland-git'
+)
 
 srcpkgsdir=`readlink -f $(dirname $0)/srcpkgs`
 rm -rf $srcpkgsdir
 mkdir -p $srcpkgsdir
 
-for pkg in $packages; do
+for pkg in ${packages[@]}; do
 	pushd $pkg
 
 	echo "===> ${pkg}"
 
 	mkaurball
+	burp *.src.tar.gz
+
 	rm -rf src
 	mv *.src.tar.gz $srcpkgsdir
 

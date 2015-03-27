@@ -1,14 +1,16 @@
 #!/bin/sh
 
-packages="qtconfiguration-git qtaccountsservice-git
-          hawaii-wallpapers-git hawaii-icon-themes-git
-          hawaii-qt5-wayland-git hawaii-polkit-qt5-git yat-git
-          fluid-git greenisland-git
-          hawaii-widget-styles-git libhawaii-git hawaii-shell-git
-          hawaii-system-preferences-git hawaii-terminal-git
-          hawaii-archiver-git eyesight-git swordfish-git"
+packages=(
+          'hawaii-qt5-wayland-git'
+          'hawaii-shell-git'
+          'hawaii-meta-git'
+          'hawaii-wallpapers-git'
+          'hawaii-icon-themes-git'
+          'hawaii-system-preferences-git'
+          'greenisland-git'
+)
 
-for pkg in $packages; do
+for pkg in ${packages[@]}; do
 	file=${pkg}-v*-1-x86_64.pkg.tar.xz
 
 	[ "${pkg}" = "hawaii-archiver-git" ] && continue

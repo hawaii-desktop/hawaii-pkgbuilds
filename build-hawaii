@@ -11,7 +11,7 @@ packages=(
 )
 
 for pkg in ${packages[@]}; do
-	file=${pkg}-v*-1-x86_64.pkg.tar.xz
+	file=${pkg}*.pkg.tar.xz
 
 	[ "${pkg}" = "hawaii-archiver-git" ] && continue
 	[ "${pkg}" = "greenisland-git" ] && continue

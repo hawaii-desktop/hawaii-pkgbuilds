@@ -2,12 +2,12 @@
 
 packages=(
           'hawaii-qt5-wayland-git'
+          'greenisland-git'
           'hawaii-shell-git'
-          'hawaii-meta-git'
           'hawaii-wallpapers-git'
           'hawaii-icon-themes-git'
           'hawaii-system-preferences-git'
-          'greenisland-git'
+          'hawaii-meta-git'
 )
 
 for pkg in ${packages[@]}; do

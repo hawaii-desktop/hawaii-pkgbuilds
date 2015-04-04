@@ -7,7 +7,7 @@ pkgdesc="Hawaii icon themes"
 arch=('any')
 url="https://github.com/hawaii-desktop"
 license=('LGPL')
-depends=('captiva-icons-git' 'faba-icon-theme-git' 'gnome-icon-theme' 'hicolor-icon-theme')
+depends=('captiva-icons-git' 'faba-icon-theme-git' 'gnome-icon-theme' 'gnome-icon-theme-symbolic' 'hicolor-icon-theme')
 makedepends=('git' 'cmake')
 groups=('hawaii-git')
 

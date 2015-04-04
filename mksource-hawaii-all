@@ -1,0 +1,23 @@
+#!/bin/bash
+
+packages=(
+          'hawaii-qt5-wayland-git'
+          'hawaii-qt5-wayland-rpi-git'
+          'hawaii-shell-git'
+          'hawaii-shell-rpi-git'
+          'hawaii-meta-git'
+          'hawaii-rpi-meta-git'
+          'hawaii-wallpapers-git'
+          'hawaii-icon-themes-git'
+          'hawaii-system-preferences-git'
+          'greenisland-git'
+)
+
+rootdir=`readlink -f $(dirname $0)`
+srcpkgsdir=`readlink -f $rootdir/srcpkgs`
+rm -rf $srcpkgsdir
+mkdir -p $srcpkgsdir
+
+for pkg in ${packages[@]}; do
+	$rootdir/mksource-hawaii $pkg
+done

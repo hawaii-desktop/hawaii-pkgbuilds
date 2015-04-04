@@ -1,32 +1,22 @@
 #!/bin/bash
 
-packages=(
-          'hawaii-qt5-wayland-git'
-          'hawaii-qt5-wayland-rpi-git'
-          'hawaii-shell-git'
-          'hawaii-shell-rpi-git'
-          'hawaii-meta-git'
-          'hawaii-rpi-meta-git'
-          'hawaii-wallpapers-git'
-          'hawaii-icon-themes-git'
-          'hawaii-system-preferences-git'
-          'greenisland-git'
-)
+pkg=$1
+
+if [ -z "$pkg" ]; then
+	echo "Usage: $0 [pkg]"
+	exit 1
+fi
 
 srcpkgsdir=`readlink -f $(dirname $0)/srcpkgs`
-rm -rf $srcpkgsdir
-mkdir -p $srcpkgsdir
 
-for pkg in ${packages[@]}; do
-	pushd $pkg
+pushd $pkg
 
-	echo "===> ${pkg}"
+echo "===> ${pkg}"
 
-	mkaurball
-	burp *.src.tar.gz
+mkaurball
+burp *.src.tar.gz
 
-	rm -rf src
-	mv *.src.tar.gz $srcpkgsdir
+rm -rf src
+mv *.src.tar.gz $srcpkgsdir
 
-	popd
-done
+popd

@@ -3,7 +3,7 @@
 buildarch=20
 
 pkgname=greenisland-rpi-git
-pkgver=20150316.09afea6
+pkgver=20150406.c37acd7
 pkgrel=1
 pkgdesc="Green Island: Qt-based compositor infrastructure for Wayland"
 arch=('armv6h' 'armv7h')

@@ -10,6 +10,7 @@ packages=(
           'hawaii-wallpapers-git'
           'hawaii-icon-themes-git'
           'hawaii-system-preferences-git'
+          'hawaii-widget-styles-git'
           'greenisland-git'
 )
 

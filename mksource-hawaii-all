@@ -12,6 +12,7 @@ packages=(
           'hawaii-system-preferences-git'
           'hawaii-widget-styles-git'
           'greenisland-git'
+          'hawaii-baseapps-git'
 )
 
 rootdir=`readlink -f $(dirname $0)`

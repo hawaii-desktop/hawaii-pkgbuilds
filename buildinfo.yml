@@ -1,0 +1,25 @@
+ci:
+    i686:
+        - hawaii-icon-themes-git
+        - hawaii-wallpapers-git
+        - hawaii-widget-styles-git
+        - hawaii-qt5-wayland-git
+        - greenisland-git
+        - hawaii-shell-git
+        - hawaii-system-preferences-git
+        - hawaii-baseapps-git
+        - eyesight-git
+        - hawaii-meta-git
+        - ttf-raleway-font-family
+    x86_64:
+        - hawaii-icon-themes-git
+        - hawaii-wallpapers-git
+        - hawaii-widget-styles-git
+        - hawaii-qt5-wayland-git
+        - greenisland-git
+        - hawaii-shell-git
+        - hawaii-system-preferences-git
+        - hawaii-baseapps-git
+        - eyesight-git
+        - hawaii-meta-git
+        - ttf-raleway-font-family

@@ -1,5 +1,7 @@
 ci:
     i686:
+        - captiva-icons-git
+        - faba-icon-theme-git
         - hawaii-icon-themes-git
         - hawaii-wallpapers-git
         - hawaii-widget-styles-git
@@ -12,6 +14,8 @@ ci:
         - hawaii-meta-git
         - ttf-raleway-font-family
     x86_64:
+        - captiva-icons-git
+        - faba-icon-theme-git
         - hawaii-icon-themes-git
         - hawaii-wallpapers-git
         - hawaii-widget-styles-git

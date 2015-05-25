@@ -9,8 +9,6 @@ license=('GPL3')
 depends=()
 makedepends=('git')
 optdepends=()
-provides=('captiva-icons-git')
-conflicts=('captiva-icons-git')
 source=('git+https://github.com/captiva-project/captiva-icon-theme.git')
 md5sums=('SKIP')
 

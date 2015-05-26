@@ -8,7 +8,7 @@ arch=('i686' 'x86_64' 'armv6h' 'armv7h')
 url="https://github.com/hawaii-desktop"
 license=('GPL')
 depends=('qt5-base' 'qt5-declarative' 'xkeyboard-config' 'hawaii-shell-git'
-         'libkscreen')
+         'polkit-qt5' 'libkscreen')
 conflicts=('hawaii-system-preferences')
 replaces=('hawaii-system-preferences')
 provides=('hawaii-system-preferences')

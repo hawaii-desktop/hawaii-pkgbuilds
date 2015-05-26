@@ -1,6 +1,6 @@
 pkgname=captiva-icons-git
 _pkgname=captiva-icon-theme
-pkgver=30.409b039
+pkgver=54.3d78e9f
 pkgrel=1
 pkgdesc="Captiva Icon Theme by Francisco Villarroel."
 arch=('any')

@@ -1,0 +1,17 @@
+pkgbase = ttf-raleway-font-family
+	pkgdesc = Matt McInerney's Raleway family
+	pkgver = 3.0
+	pkgrel = 1
+	url = http://theleagueofmoveabletype.com/raleway
+	install = updatefont.install
+	arch = any
+	groups = -fonts
+	license = custom:OFL
+	depends = fontconfig
+	depends = xorg-font-utils
+	conflicts = otf-raleway
+	source = http://www.impallari.com/media/uploads/prosources/update-100-source.zip
+	md5sums = fd753c68236f5c712a89bb798a90c4a1
+
+pkgname = ttf-raleway-font-family
+
